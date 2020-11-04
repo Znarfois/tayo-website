@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: Karla;
+  font-family: Karla;
 }
 
 h1,
@@ -21,23 +21,34 @@ h3 {
 h1 {
   font-size: 48px;
   line-height: 56px;
-  letter-spacing: -5%;
+  /* letter-spacing: -5%; */
 }
 
 h2 {
   font-size: 24px;
   line-height: 32px;
-  letter-spacing: -5%;
+  /* letter-spacing: -5%; */
 }
 
 h3 {
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: -5%;
+  /* letter-spacing: -5%; */
 }
 
 p {
   font-size: 24px;
   font-weight: 400;
-  line-height: 32px;
+  /* line-height: 32px; */
+}
+
+input:focus {
+  outline: none;
+}
+
+button:focus {
+  border-color: grey;
+  box-shadow: 0 1px 1px grey,
+    0 0 2px grey;
+  outline: 0 none;
 }
