@@ -1,30 +1,32 @@
 <template>
   <footer>
-      <aside class="column footer-column-1">
-          <section class="footer-intro">
-              <h2>Let's work together</h2>
-              <img src="../assets/img/footer-rectangle.png" alt="rectangle">
-              <p class="footer-mobile">Email</p>
-              <p class="footer-mobile">Contact #</p>
-          </section>
-          <aside>
-              <p class="footer-mobile copyright">Copyright &copy; TAYO Sustainable Strategies & Creative Consultancy 2020</p>
-          </aside>
-      </aside>
-      <aside class="column footer-column-2">
-          <section>
-            <h2>Join our newsletter!</h2>
-            <img src="../assets/img/footer-rectangle2.png" alt="rectangle">
-            <form>
-                <input type="email" placeholder="Enter your email">
-                <button type="submit" class="email-submit">Submit</button>
-            </form>
-            <a href="#"><img class="footer-logo" src="../assets/img/footer-fb.png" alt="facebook"></a>
-            <a href="#"><img class="footer-logo" src="../assets/img/footer-ig.png" alt="instagram"></a>
-            <a href="#"><img class="footer-logo" src="../assets/img/footer-m.png" alt="m"></a>
-          </section>
-          <button class="portfolio-link">Request for Portfolio</button>
-      </aside>
+      <section class="footer-content">
+        <aside class="column footer-column-1">
+            <section class="footer-intro">
+                <h2>Let's work together</h2>
+                <img src="../assets/img/footer-rectangle.png" alt="rectangle">
+                <p class="footer-mobile">Email</p>
+                <p class="footer-mobile">Contact #</p>
+            </section>
+            <aside>
+                <p class="footer-mobile copyright">Copyright &copy; TAYO Sustainable Strategies & Creative Consultancy 2020</p>
+            </aside>
+        </aside>
+        <aside class="column footer-column-2">
+            <section>
+                <h2>Join our newsletter!</h2>
+                <img src="../assets/img/footer-rectangle2.png" alt="rectangle">
+                <form>
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="email-submit">Submit</button>
+                </form>
+                <a href="#"><img class="footer-logo" src="../assets/img/footer-fb.png" alt="facebook"></a>
+                <a href="#"><img class="footer-logo" src="../assets/img/footer-ig.png" alt="instagram"></a>
+                <a href="#"><img class="footer-logo" src="../assets/img/footer-m.png" alt="m"></a>
+            </section>
+            <a href=""><button class="portfolio-link">Request for Portfolio</button></a>
+        </aside>
+      </section>
   </footer>
 </template>
 
@@ -36,10 +38,21 @@ export default {
 </script>
 
 <style scoped>
+
     footer {
+        height: 344px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    section.footer-content {
         background: #ffffff;
         display: flex;
         justify-content: space-around;
+        width: 100%;
+
     }
 
     input {
@@ -56,15 +69,9 @@ export default {
     }
 
     button {
-        font: inherit;
-        color: white;
-        border: none;
-        border-radius: 3px;
         height: 40px;
-        cursor: pointer;
     }
 
- 
     .footer-column-1 {
         display: flex;
         flex-direction: column;

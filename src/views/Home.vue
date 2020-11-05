@@ -1,9 +1,16 @@
 <template>
-  <div class="home">
-    <h1>This is the home page</h1>
-  </div>
+  <Header />
+  <HomeContent />
 </template>
 
 <script>
+import Header from '../components/Header'
+import HomeContent from '../components/Home/HomeContent.Vue'
 
+export default {
+  components: {
+    Header, 
+    HomeContent,
+  }
+}
 </script>
