@@ -40,6 +40,7 @@ export default {
 <style scoped>
 
     footer {
+        background: #ffffff;
         height: 344px;
         display: flex;
         align-items: center;
@@ -48,7 +49,6 @@ export default {
 
 
     section.footer-content {
-        background: #ffffff;
         display: flex;
         justify-content: space-around;
         width: 100%;

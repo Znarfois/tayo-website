@@ -1,16 +1,16 @@
 <template>
   <Header />
-  <HomeContent />
+  <HomeArticle />
 </template>
 
 <script>
 import Header from '../components/Header'
-import HomeContent from '../components/Home/HomeContent.Vue'
+import HomeArticle from '../components/Home/HomeArticle.vue'
 
 export default {
   components: {
     Header, 
-    HomeContent,
+    HomeArticle,
   }
 }
 </script>
