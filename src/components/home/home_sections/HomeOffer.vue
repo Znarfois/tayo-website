@@ -2,6 +2,9 @@
   <div class="offer">
     <img class="offer-image" :src="require('@/assets/img/' + image)" alt="">
     <h2 class="offer-header">{{ title }}</h2>
+    <p class="body-2" v-for="service in services" :key="service.id">
+        {{ service }}
+    </p>
   </div>
 </template>
 
@@ -11,17 +14,19 @@ export default {
     props: {
         image: String,
         title: String,
+        services: Array,
     }
 }
 </script>
 
-<style>
+<style scoped>
     .offer {
         text-align: center;
     }
 
     .offer-header {
         width: 200px;
+        margin: auto;
     }
 
     .offer-image {

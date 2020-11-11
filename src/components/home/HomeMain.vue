@@ -3,6 +3,7 @@
       <HomeMission />
       <HomeStats />
       <HomeOffers />
+      <HomeClients />
   </main>
 </template>
       
@@ -11,12 +12,14 @@
 import HomeStats from './home_sections/HomeStats'
 import HomeMission from './home_sections/HomeMission'
 import HomeOffers from './home_sections/HomeOffers'
+import HomeClients from './home_sections/HomeClients'
 export default {
     name: "HomeMain",
     components: {
         HomeStats, 
         HomeMission,
-        HomeOffers
+        HomeOffers,
+        HomeClients,
     }
 }
 

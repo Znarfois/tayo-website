@@ -29,7 +29,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         max-width: 80%;
-        margin: auto;
         height: 100%;
+        margin: auto;
     }
 </style>

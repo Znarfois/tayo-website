@@ -1,12 +1,13 @@
 <template>
   <header>
-      <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="">
-      <h1>A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</h1>
-      <div>
-          <button class="header-button button-request">Request for Porfolio</button>
-          <button class="header-button button-contact">Contact Us</button>
+      <div class="header-content">
+        <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="">
+        <h1>A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</h1>
+        <div>
+            <button class="header-button button-request"><strong>Request for Porfolio</strong></button>
+            <button class="header-button button-contact"><strong>Contact Us</strong></button>
+        </div>
       </div>
-      
   </header>
 </template>
 
@@ -25,22 +26,29 @@ export default {
         align-items: center;
         height: 100vh;
         text-align: center;
-        padding: 10rem;
+        padding: 10rem 0;
     }
 
     header h1 {
         color: white;
-        margin-top: 56px;
+        font-size: 32px;
+        margin: auto;
+        margin-top: 32px;
+        width: 790px;
+    }
+
+    .header-content {
+        width: 80%;
     }
 
     .header-logo {
-        width: 336px;
+        width: 272px;
     }
 
     .header-button {
         height: 64px;
         width: 208px;
-        margin: 56px 16px;
+        margin: 32px 16px;
     }
 
     .button-request {

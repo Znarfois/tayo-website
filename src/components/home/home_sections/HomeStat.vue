@@ -1,7 +1,7 @@
 <template>
     <div class="home-stat">
         <h1>{{ num }}</h1>
-        <p>{{ subj }}</p>
+        <h2>{{ subj }}</h2>
     </div>
 </template>
 
@@ -18,5 +18,6 @@ export default {
 <style>
     .home-stat {
         text-align: center;
+        margin-right: 50px;
     }
 </style>
