@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .offers-content {
         max-width: 80%;
         display: flex;

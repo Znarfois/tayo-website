@@ -2,11 +2,9 @@
   <div class="client-list">
       <p class="client-list__header">{{ title }}</p>
       <div class="client-logos">
-          <!-- Placeholders -->
-          <div style="width: 176px; height: 176px; background:grey;"></div>
-          <div style="width: 176px; height: 176px; background:grey;"></div>
-          <div style="width: 176px; height: 176px; background:grey;"></div>
-          <div style="width: 176px; height: 176px; background:grey;"></div>
+          <div class="client" v-for="image in images" :key="image">
+              <img class="client-image" :src="require(`@/assets/img/clients/${image}.png`)">
+          </div>
       </div>
   </div>
 </template>
@@ -16,6 +14,7 @@ export default {
     name: "ClientList",
     props: {
         title: String,
+        images: Array,
     }
 }
 </script>
@@ -31,6 +30,12 @@ export default {
 
     .client-logos {
         display: grid;
+        grid-gap: 48px;
         grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+    }
+
+    .client-image {
+        width: 100%;
     }
 </style>

@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .home-stat {
         text-align: center;
         margin-right: 50px;
