@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header isHome=true background="homeheader.png"/>
   <HomeMain />
 </template>
 

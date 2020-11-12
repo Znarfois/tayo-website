@@ -1,9 +1,9 @@
 <template>
-  <header>
+  <header :style="{ background: 'no-repeat center/cover url(' + require(`../assets/img/${background}`) + ')'}">
       <div class="header-content">
         <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="">
         <h1>A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</h1>
-        <div>
+        <div v-if="isHome">
             <button class="header-button button-request"><strong>Request for Porfolio</strong></button>
             <button class="header-button button-contact"><strong>Contact Us</strong></button>
         </div>
@@ -14,6 +14,13 @@
 <script>
 export default {
     name: 'Header',
+    props: {
+        isHome: {
+            type: Boolean,
+            required: true,
+        },
+        background: String,
+    },
 }
 </script>
 
@@ -55,12 +62,8 @@ export default {
         background: #F2E5D2;
         color: black;
     }
-
+    
     .button-contact {
         background: #EAA200;
     }
-
-    
-
-
 </style>
