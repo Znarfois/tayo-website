@@ -23,9 +23,9 @@ export default {
 
 <style>
     #mission {
-        padding-bottom: 150px;
-        max-width: 80%;
         margin: auto;
+        margin-bottom: 150px;
+        max-width: 80%;
     }
 
     .mission-content {
@@ -34,7 +34,7 @@ export default {
     }
 
     .mission-statement {
-        width: 450px;
+        max-width: 450px;
         font-size: 32px;
         line-height: 48px;
     }
@@ -45,7 +45,30 @@ export default {
     }
 
     .mission-details {
-        width: 568px;
+        max-width: 568px;
+    }
+
+    @media (max-width: 320px) {
+        #mission {
+            max-width: 90%;
+            margin-bottom: 0;
+            margin: 70px auto;
+
+        }
+
+        .mission-content {
+            display: block;
+        }
+        
+        .mission-statement, .mission-details {
+            font-size: 16px;
+            line-height: 32px;
+        }
+
+        .mission-statement {
+            margin-bottom: 20px;
+            width: 240px;
+        }
     }
     
 </style>

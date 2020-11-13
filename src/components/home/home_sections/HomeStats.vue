@@ -21,7 +21,7 @@ export default {
 <style scoped>
     #home-stats {
         background: #F9F4EE;
-        height: 136px;
+        padding: 40px 0;
     }
 
     .home-stats__content {
@@ -31,5 +31,16 @@ export default {
         max-width: 80%;
         height: 100%;
         margin: auto;
+    }
+
+    @media (max-width: 320px){
+        #home-stats {
+            height: 340px;
+            padding: 30px 0;
+        }
+
+        .home-stats__content {
+            flex-direction: column;
+        }
     }
 </style>

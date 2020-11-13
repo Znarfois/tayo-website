@@ -31,11 +31,24 @@ export default {
     .client-logos {
         display: grid;
         grid-gap: 48px;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
         align-items: center;
     }
 
     .client-image {
         width: 100%;
     }
+
+    @media (max-width: 320px) {
+        .client-list__header {
+            font-size: 16px;
+            line-height: 32px;
+        }
+
+        .client-logos {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
 </style>

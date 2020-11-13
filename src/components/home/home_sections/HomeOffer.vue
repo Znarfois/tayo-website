@@ -1,8 +1,8 @@
 <template>
   <div class="offer">
     <img class="offer-image" :src="require('@/assets/img/' + image)" alt="">
-    <h2 class="offer-header">{{ title }}</h2>
-    <p class="body-2" v-for="service in services" :key="service.id">
+    <h3 class="offer-header">{{ title }}</h3>
+    <p class="body-2 offer-text" v-for="service in services" :key="service.id">
         {{ service }}
     </p>
   </div>
@@ -32,5 +32,21 @@ export default {
     .offer-image {
         width: 176px;
         margin-bottom: 1rem;
+    }
+
+    @media (max-width: 320px) {
+        .offer {
+            margin-bottom: 34px;
+        }
+
+
+        .offer-text {
+            font-size: 12px;
+            line-height: 24px;
+        }
+
+        .offer-image {
+            margin: 8px;
+        }
     }
 </style>

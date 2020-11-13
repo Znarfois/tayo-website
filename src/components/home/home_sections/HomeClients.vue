@@ -34,14 +34,32 @@ export default {
 }
 
 #clients .clients-header {
-    padding-bottom: 10px;
+    padding: 0;
+    margin-bottom: 10px;
 }
 
 .clients-subheading {
-    width: 510px;
+    max-width: 510px;
     text-align: center;
     margin: auto;
     margin-bottom: 1rem;
 }
+
+@media (max-width: 320px) {
+        #clients .clients-header {
+            text-align: center;
+        }
+        #clients .clients-sections {
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .clients-subheading {
+            margin: auto;
+            margin-right: 5px;
+            margin-left: 5px;
+            margin-bottom: 40px;
+        }
+    }
 
 </style>

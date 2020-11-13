@@ -2,7 +2,7 @@
   <header :style="{ background: 'no-repeat center/cover url(' + require(`../assets/img/${background}`) + ')'}">
       <div class="header-content">
         <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="">
-        <h1>A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</h1>
+        <h2>A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</h2>
         <div v-if="isHome">
             <button class="header-button button-request"><strong>Request for Porfolio</strong></button>
             <button class="header-button button-contact"><strong>Contact Us</strong></button>
@@ -36,9 +36,8 @@ export default {
         padding: 10rem 0;
     }
 
-    header h1 {
+    header h2 {
         color: white;
-        font-size: 32px;
         margin: auto;
         margin-top: 32px;
         width: 790px;
@@ -65,5 +64,35 @@ export default {
     
     .button-contact {
         background: #EAA200;
+    }
+
+    @media (max-width: 320px) {
+        header {
+            padding: 0;
+        }
+        
+        .header-logo {
+            width: 120px;
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        header h2 {
+            font-size: 16px;
+            line-height: 24px;
+            width: 288px;
+            margin-bottom: 23px;
+        }
+
+        .header-button {
+            font-size: 16px;
+            line-height: 24px;
+            width: 168px;
+            height: 40px;
+            margin: 0;
+            margin-bottom: 16px;
+        }
     }
 </style>

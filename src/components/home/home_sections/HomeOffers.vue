@@ -49,4 +49,24 @@ export default {
         margin: auto;
     }
 
+    @media (max-width: 320px) {
+        #offers {
+            max-width: 90%;
+            margin: 70px auto;
+        }
+
+        .offers-content {
+            max-width: 100%;
+        }
+
+        .offering-header {
+            text-align: center;
+        }
+
+
+        .offers-content {
+            flex-direction: column;
+        }
+    }
+
 </style>

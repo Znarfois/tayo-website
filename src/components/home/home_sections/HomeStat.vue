@@ -1,7 +1,7 @@
 <template>
     <div class="home-stat">
         <h1>{{ num }}</h1>
-        <h2>{{ subj }}</h2>
+        <h3>{{ subj }}</h3>
     </div>
 </template>
 
@@ -20,4 +20,22 @@ export default {
         text-align: center;
         margin-right: 50px;
     }
+
+    @media (max-width: 320px) {
+        .home-stat {
+            margin: 0;
+        }
+
+        .home-stat h1 {
+            font-size: 32px;
+            line-height: 56px;
+        }
+
+        .home-stat h3 {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    
 </style>
