@@ -42,7 +42,7 @@ export default {
     max-width: 510px;
     text-align: center;
     margin: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 320px) {

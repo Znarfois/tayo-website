@@ -22,10 +22,5 @@ export default {
         HomeClients,
     }
 }
-
 </script>
 
-<style scoped>
-
-
-</style>

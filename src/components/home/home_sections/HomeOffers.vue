@@ -45,7 +45,7 @@ export default {
     .offers-content {
         max-width: 80%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         margin: auto;
     }
 

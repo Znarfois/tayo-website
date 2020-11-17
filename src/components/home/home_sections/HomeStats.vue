@@ -26,7 +26,7 @@ export default {
 
     .home-stats__content {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         max-width: 80%;
         height: 100%;

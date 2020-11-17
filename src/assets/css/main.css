@@ -22,33 +22,33 @@ h3 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 3rem;
   line-height: 64px;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 2rem;
   line-height: 56px;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 32px;
 }
 
 h4 {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 24px;
 }
 
 p {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 40px;
 }
 
 p.body-2 {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 32px;
 }
 
@@ -68,17 +68,15 @@ button:focus {
   outline: none;
 }
 
-
 button:active {
   opacity: 0.9;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  opacity: 0.9;   
+  opacity: 0.9;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
 }
-    
 
 .section-header {
   color: #5aa3a9;
@@ -90,11 +88,11 @@ button:hover {
 }
 
 @media (max-width: 320px) {
-        .section-header {
-            font-size: 24px;
-            line-height: 32px;
-            margin: 0;
-            margin-bottom: 32px;
-            text-align: left;
-        }
-    }
+  .section-header {
+    font-size: 1.5rem;
+    line-height: 32px;
+    margin: 0;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+}

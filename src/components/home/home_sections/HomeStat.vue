@@ -27,12 +27,12 @@ export default {
         }
 
         .home-stat h1 {
-            font-size: 32px;
+            font-size: 2rem;
             line-height: 56px;
         }
 
         .home-stat h3 {
-            font-size: 16px;
+            font-size: 1rem;
             line-height: 24px;
         }
     }

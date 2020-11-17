@@ -30,12 +30,12 @@ export default {
 
     .mission-content {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .mission-statement {
         max-width: 450px;
-        font-size: 32px;
+        font-size: 2rem;
         line-height: 48px;
     }
 
@@ -61,7 +61,7 @@ export default {
         }
         
         .mission-statement, .mission-details {
-            font-size: 16px;
+            font-size: 1rem;
             line-height: 32px;
         }
 
