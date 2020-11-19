@@ -14,21 +14,31 @@
 </template>
 
 <script>
+
 export default {
     name: 'Navbar'
 }
 </script>
 
 <style scoped>
+    /* Import Fonts */
+    @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+    
     nav a {
         text-decoration: none;
         color: #000000;
+        padding: 0 12px;
     }
 
     nav {
         display: flex;
-        padding: 48px 0;
+        padding: 48px 24px;
         justify-content: space-between;
     }
 
+    nav a:hover {
+        font-family: "Karla"; 
+        /* font-weight: 700; */
+        text-decoration: underline;
+    }
 </style>
