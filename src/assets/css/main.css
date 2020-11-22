@@ -96,3 +96,10 @@ button:hover {
     text-align: left;
   }
 }
+
+/* Utilities */
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}

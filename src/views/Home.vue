@@ -1,18 +1,28 @@
 <template>
-  <Header :isHome="true" background="homeheader.png"/>
+  <header id="home-header">
+      <div class="header-content">
+        <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="">
+        <h3>A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</h3>
+        <div>
+            <button class="header-button button-request"><strong>Request for Porfolio</strong></button>
+            <button class="header-button button-contact"><strong>Contact Us</strong></button>
+        </div>
+      </div>
+  </header>
+
   <main id="home-content">
 <!-- Mission Section -->
-      <article id="mission">
+      <article id="mission" class="container">
         <h1 class="mission-header section-header">TAYO: For and by our generation</h1>
         <div class="mission-content">
-            <p class="mission-statement">We collaborate to innovate brands to disrupt and change the world, through design and sustainable strategies. We integrate culture in innovating purpose, evolve with the times, and collaborate to innovate — all for the benefit of the people and the planet. <strong>Generations are evolving, and you should too. Innovate your brand for the futures to come.</strong></p>
-            <p class="mission-details">Our mission is to <span class='mission-statement__strong'>cultivate collaboration & innovation</span> amongst people.</p>
+            <p class="mission-statement">Our mission is to <span class='mission-statement__strong'>cultivate collaboration & innovation</span> amongst people.</p>
+            <p class="mission-details"> We collaborate to innovate brands to disrupt and change the world, through design and sustainable strategies. We integrate culture in innovating purpose, evolve with the times, and collaborate to innovate — all for the benefit of the people and the planet. <strong>Generations are evolving, and you should too. Innovate your brand for the futures to come.</strong></p>
         </div>
     </article>
 
 <!-- Stats Section -->
     <section id="home-stats">
-      <div class="home-stats__content">
+      <div class="home-stats__content container">
         <HomeStat num="21" subj="clients & partners" />
         <HomeStat num="24,433" subj="cumulative media reach" />
         <HomeStat num="16" subj="beneficiaries" />
@@ -22,7 +32,7 @@
 <!-- Offer Sections -->
       <section id="offers">
       <h1 class="offering-header section-header">What We Offer</h1>
-      <div class="offers-content"> 
+      <div class="offers-content container"> 
           <HomeOffer 
           image="service_a.png" 
           title="Advocacy & Awareness" 
@@ -56,7 +66,7 @@
 
 <!-- Clients page -->
   <section id="clients">
-        <div class="clients-sections">
+        <div class="clients-sections container">
             <h1 class="section-header clients-header">Our Clients</h1>
             <p class="body-2 clients-subheading">TAYO Sustainable Strategies & Creative Consultancy caters to different NGOs, companies, and startups that are looking to take the next big step in sustainability and creativity for positive change.</p>
             <ClientList title="TAYO Clients:" :images="['D&G', 'Smart']"/>
@@ -88,15 +98,12 @@
 </template>
 
 <script>
-import Header from '../components/Header'
 import HomeStat from '../components/home/HomeStat'
 import HomeOffer from '../components/home/HomeOffer'
 import ClientList from '../components/home/ClientList'
 
 export default {
-    name: "Home",
     components: {
-        Header,
         HomeOffer,
         HomeStat,
         ClientList
@@ -106,11 +113,83 @@ export default {
 </script>
 
 <style scoped>
+/* Header */
+    #home-header {
+        background: no-repeat center/cover url('../assets/img/homeheader.png');
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        padding: 10rem 0;
+    }
+
+    #home-header h3 {
+        color: white;
+        margin: auto;
+        margin-top: 32px;
+        width: 664px;
+    }
+
+    .header-content {
+        width: 80%;
+    }
+
+    .header-logo {
+        width: 360px;
+    }
+
+    .header-button {
+        height: 64px;
+        width: 208px;
+        margin: 32px 16px;
+    }
+
+    .button-request {
+        background: #F2E5D2;
+        color: black;
+    }
+    
+    .button-contact {
+        background: #EAA200;
+    }
+
+    @media (max-width: 320px) {
+        header {
+            padding: 0;
+        }
+        
+        .header-logo {
+            width: 120px;
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        header h3 {
+            font-size: 16px;
+            line-height: 24px;
+            width: 288px;
+            margin-bottom: 23px;
+        }
+
+        .header-button {
+            font-size: 16px;
+            line-height: 24px;
+            width: 168px;
+            height: 40px;
+            margin: 0;
+            margin-bottom: 16px;
+        }
+    }
+
+
+
  /* Mission */
     #mission {
-        margin: auto;
         margin-bottom: 150px;
-        max-width: 80%;
     }
 
     .mission-content {
@@ -166,9 +245,7 @@ export default {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        max-width: 80%;
         height: 100%;
-        margin: auto;
     }
 
     @media (max-width: 320px){
@@ -184,10 +261,8 @@ export default {
 
     /* Offers */
     .offers-content {
-        max-width: 80%;
         display: flex;
         justify-content: space-around;
-        margin: auto;
     }
 
     @media (max-width: 320px) {
@@ -213,11 +288,6 @@ export default {
     /* Clients */
     #clients {
         margin-bottom: 120px;
-    }
-
-    #clients .clients-sections {
-        max-width: 80%;
-        margin: auto;
     }
 
     #clients .clients-header {
