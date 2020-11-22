@@ -41,7 +41,7 @@ export default {
 
 
         .offer-text {
-            font-size: 1.33rem;
+            font-size: 0.75rem;
             line-height: 24px;
         }
 
