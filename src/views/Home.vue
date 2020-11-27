@@ -23,9 +23,9 @@
 <!-- Stats Section -->
     <section id="home-stats">
       <div class="home-stats__content container">
-        <HomeStat num="21" subj="clients & partners" />
-        <HomeStat num="24,433" subj="cumulative media reach" />
-        <HomeStat num="16" subj="beneficiaries" />
+        <HomeStat num=21 subj="clients & partners" />
+        <HomeStat num=24,433 subj="cumulative media reach" />
+        <HomeStat num=16 subj="beneficiaries" />
       </div>
     </section>
 
@@ -168,7 +168,7 @@ export default {
             width: 100%;
         }
 
-        header h3 {
+        #home-header h3 {
             font-size: 16px;
             line-height: 24px;
             width: 288px;

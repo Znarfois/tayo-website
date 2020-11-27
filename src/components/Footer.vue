@@ -59,10 +59,6 @@ export default {
     }
 
     input {
-        font: inherit;
-        border: #e1e1e1 1px solid;
-        border-radius: 3px;
-        border-right: none;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         height: 40px;

@@ -38,7 +38,7 @@
                 </div>
             </div>  
             <form class="subscribe" action="">
-                <input type="text">
+                <input type="text" placeholder="Email">
                 <button type="submit">Update Me</button>
             </form>
         </section>
@@ -93,7 +93,6 @@ export default {
     .subscribe input {
         width: 70%;
         height: 100%;
-        font: inherit;
         font-size: 24px;
         padding: 0 2rem;
     }
@@ -121,7 +120,70 @@ export default {
         color: #375998;
         margin-bottom: 1rem;
     }
+
+    @media screen and (max-width: 320px) {
+     
+        img {
+            height: 200px;
+            object-fit: cover;
+        }
+    
+
+
+        .project-logo img {
+            width: 112px;
+            margin-top: 3rem;
+        }
+
+        .project-title {
+            color: #375998;
+            font-size: 24px;
+            margin: 0;
+            position: relative;
+            bottom: 20px
+        }
+
+        .project-details {
+            width: 100%;
+        }
+
+        .project-detail__content {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .project-detail {
+            margin: 4rem auto;
+            display: block;
+        }
+
+        .project-detail__header {
+            font-size: 24px;
+            line-height: 24px;
+        }
+
+        .project-detail__par {
+            font-size: 16px;
+            line-height: 32px;
+        }
+
+        .subscribe {
+            width: 90%;
+            height: 40px;
+            margin: 0 auto 4rem;
+
+        }
+
+        .subscribe input {
+            font-size: 12px;
+        }
+
+        .subscribe button {
+            background: #375998;
+            width: 30%;
+            height: 100%;
+            font-size: 12px;
+        }
+    }
    
-
-
 </style>
