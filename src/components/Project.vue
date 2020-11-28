@@ -128,10 +128,7 @@ export default {
             object-fit: cover;
         }
     
-
-
         .project-logo img {
-            width: 112px;
             margin-top: 3rem;
         }
 

@@ -1,30 +1,35 @@
 <template>
     <main id="who-content">
-      <p class="who-statement"><strong>We are a change agency that cultivates creative solutions & sustainable strategies, always taking a global perspective rooted in local culture & tradition.</strong></p>
+      <div class="who-content__intro">
+            <p class="text-bold who-statement">We are a change agency that cultivates creative solutions & sustainable strategies, always taking a global perspective rooted in local culture & tradition.</p>
 
-      <!-- Image here -->
-      <div style="width: 100%; background:lightgrey; height: 432px;"></div>
+            <div class="who-statement__img">
+                <img src="@/assets/img/projects/kfk/head-1.png" alt="who-statement image">
+            </div>
+      </div>
 
-      <section class="who-subheadings-1">
-          <!-- Image -->
-          <div style="width: 608px; background:lightgrey; height: 120px;"></div>
-          <p class="who-sub1"><strong>We authentically connect you to the next generation of world leaders, dreamers, & thinkers to put positive purpose in your next endeavor.</strong></p>
+      <section class="who-subheading who-subheadings-1">
+          <div class="who-subheadings__img">
+              <img src="@/assets/img/projects/kfk/head-1.png" alt="">
+          </div>
+          <p class="text-bold who-sub who-sub1">We authentically connect you to the next generation of world leaders, dreamers, & thinkers to put positive purpose in your next endeavor.</p>
       </section>
 
-      <section class="who-subheadings-2">
-          <p class="who-sub2"><strong>We advocate awareness, build brands, & create content (ABC’s) through research to redesign & redefine the way our world works.</strong></p>
-          <!-- Image -->
-          <div style="width: 608px; background:lightgrey; height: 120px;"></div>
+      <section class="who-subheading  who-subheadings-2">
+          <p class="text-bold who-sub who-sub2">We advocate awareness, build brands, & create content (ABC’s) through research to redesign & redefine the way our world works.</p>
+          <div class="who-subheadings__img">
+              <img src="@/assets/img/projects/kfk/head-1.png" alt="">
+          </div>
       </section>
 
       <section class="who-images">
-          <div style="height: 240px; border: 1px solid gray; background: lightgray"></div>
-          <div style="height: 240px; border: 1px solid gray; background: lightgray"></div>
-          <div style="height: 240px; border: 1px solid gray; background: lightgray"></div>
-          <div style="height: 240px; border: 1px solid gray; background: lightgray"></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
       </section>
 
-      <p class="who-statement"><strong>We aim to foster the Filipino spirit of Bayanihan amongst our clients & communities, redefining how society operates through building a Barangay that stands for both people & planet.</strong></p>
+      <p class="who-statement">We aim to foster the Filipino spirit of Bayanihan amongst our clients & communities, redefining how society operates through building a Barangay that stands for both people & planet.</p>
 
       <section class="who-about who-about1 container">
           <h1 class="section-header">Sustainable strategies & creative consultancy for and by our generation</h1>
@@ -87,18 +92,41 @@ export default {
 
 <style scoped>
 
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* Statement */
+    .who-content__intro {
+        display: flex;
+        flex-direction: column;
+    }
+
+
     .who-statement {
         text-align: center;
         max-width: 928px;
         margin: 3rem auto;
     }
 
+    .who-statement__img {
+        width: 100%; 
+        height: 432px;
+    }
+
+
 /* Subheadings */
     .who-subheadings-1 {
         margin-top: 80px;
         display: flex;
         justify-content: flex-start;
+    }
+
+    .who-subheadings__img {
+        width: 608px;
+        height: 120px;
     }
 
     .who-sub1 {
@@ -126,6 +154,9 @@ export default {
 
     .who-images div {
         width: 100%;
+        height: 240px; 
+        border: 1px solid gray; 
+        background: lightgray
     }
 
 /* About */
@@ -155,5 +186,84 @@ export default {
         margin-bottom: 88px;
     }
 
+/* Responsive */
+@media screen and (max-width: 320px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .text-bold {
+        font-weight: 400;
+    }
+
+/* Statement */
+
+    .who-statement {
+        order: 2;
+        margin: 0;
+        text-align: left;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .who-statement__img {
+        order: 1;
+        margin: 3rem 0;
+        height: 200px;
+    }
+
+
+/* Subheadings */
+
+    .who-subheading {
+        margin: 3rem 0;
+    }
+
+    .who-sub {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .who-subheadings__img {
+        display: none;
+    }
+
+/* Images */
+
+    .who-images {
+        margin: 3rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .who-images div {
+        height: 100px;
+    }
+
+    .who-about {
+        margin: 5rem auto 3rem;
+    }
+
+    /* About */
+
+    .who-about1__details {
+        flex-direction: column;
+    }
+
+    .who-detail {
+        margin-bottom: 3rem;
+    }
+
+    .who-cards, .comm-cards {
+        display: block;
+    }
+
+    .card, .comm-card {
+        margin-top: 24px;
+    }
+
+    
+}
 
 </style>

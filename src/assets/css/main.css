@@ -52,6 +52,13 @@ p.body-2 {
   line-height: 32px;
 }
 
+@media screen and (max-width: 320px) {
+  p {
+    font-size: 1rem;
+    line-height: 32px;
+  }
+}
+
 input {
   font: inherit;
   border: #e1e1e1 1px solid;
@@ -108,5 +115,9 @@ button:hover {
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+.text-bold {
+  font-weight: 700;
 }
 

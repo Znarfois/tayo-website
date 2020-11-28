@@ -25,4 +25,12 @@ export default {
     .detail-image {
         margin-bottom: 16px;
     }
+
+    @media screen and (max-width: 320px) {
+        .who-detail {
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+
 </style>
