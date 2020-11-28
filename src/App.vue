@@ -1,13 +1,17 @@
 <template>
   <Navbar />
+  <Services />
 </template>
 
 <script>
-import Navbar from "../src/components/Navbar.vue"
+import Navbar from "./components/Navbar.vue";
+import Services from "./views/Services.vue";
+
 export default {
   name: 'App',
   components: {
-    Navbar
+    Navbar,
+    Services
   }
 }
 </script>
