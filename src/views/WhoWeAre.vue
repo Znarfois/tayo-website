@@ -186,7 +186,7 @@ img {
 
     .comm-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 300px);
+        grid-template-columns: repeat(auto-fit, 300px);
         grid-gap: 24px;
         justify-content: center;
     }
