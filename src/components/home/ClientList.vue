@@ -31,7 +31,7 @@ export default {
     .client-logos {
         display: grid;
         grid-gap: 48px;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
         align-items: center;
     }
 
@@ -39,16 +39,12 @@ export default {
         width: 100%;
     }
 
-    @media (max-width: 320px) {
+/* Mobile */
+    @media screen and (max-width: 767px) {
         .client-list__header {
             font-size: 1rem;
             line-height: 32px;
         }
-
-        .client-logos {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
     }
 
 </style>

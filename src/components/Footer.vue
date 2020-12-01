@@ -75,6 +75,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        width: 40%;
     }
 
     .footer-mobile {
@@ -107,7 +108,11 @@ export default {
         margin-top: 10px;
     }
 
-    @media (max-width: 320px) {
+    @media screen and (max-width: 1300px) {
+     
+    }
+
+    @media screen and (max-width: 767px) {
         footer {
             height: 480px;   
             padding: 9px 0;      
@@ -140,6 +145,7 @@ export default {
 
         .footer-column-1 {
             margin-bottom: 24px;
+            width: 100%;
         }
 
         .footer-logo {

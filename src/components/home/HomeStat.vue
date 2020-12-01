@@ -21,7 +21,8 @@ export default {
         margin-right: 50px;
     }
 
-    @media (max-width: 320px) {
+/* Tablet */
+    @media screen and (max-width: 1300px) {
         .home-stat {
             margin: 0;
         }

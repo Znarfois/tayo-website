@@ -34,14 +34,17 @@ export default {
         margin-bottom: 1rem;
     }
 
-    @media (max-width: 320px) {
+/* Tablet */
+    @media screen and (max-width: 1300px) {
         .offer {
-            margin-bottom: 34px;
+            margin-bottom: 40px;
         }
+    }
 
-
+/* Mobile */
+    @media screen and (max-width: 767px) {
         .offer-text {
-            font-size: 0.75rem;
+            font-size: 12px;
             line-height: 24px;
         }
 

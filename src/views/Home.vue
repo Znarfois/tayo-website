@@ -2,8 +2,8 @@
   <header id="home-header">
       <div class="header-content">
         <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="">
-        <h3>A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</h3>
-        <div>
+        <h3 class="header-text">A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</h3>
+        <div class="header-buttons">
             <button class="header-button button-request"><strong>Request for Porfolio</strong></button>
             <button class="header-button button-contact"><strong>Contact Us</strong></button>
         </div>
@@ -125,7 +125,7 @@ export default {
         padding: 10rem 0;
     }
 
-    #home-header h3 {
+    .header-text {
         color: white;
         margin: auto;
         margin-top: 32px;
@@ -155,36 +155,6 @@ export default {
         background: #EAA200;
     }
 
-    @media (max-width: 320px) {
-        header {
-            padding: 0;
-        }
-        
-        .header-logo {
-            width: 120px;
-        }
-
-        .header-content {
-            width: 100%;
-        }
-
-        #home-header h3 {
-            font-size: 16px;
-            line-height: 24px;
-            width: 288px;
-            margin-bottom: 23px;
-        }
-
-        .header-button {
-            font-size: 16px;
-            line-height: 24px;
-            width: 168px;
-            height: 40px;
-            margin: 0;
-            margin-bottom: 16px;
-        }
-    }
-
 
 
  /* Mission */
@@ -212,28 +182,6 @@ export default {
         max-width: 568px;
     }
 
-    @media (max-width: 320px) {
-        #mission {
-            max-width: 90%;
-            margin-bottom: 0;
-            margin: 70px auto;
-
-        }
-
-        .mission-content {
-            display: block;
-        }
-        
-        .mission-statement, .mission-details {
-            font-size: 1rem;
-            line-height: 32px;
-        }
-
-        .mission-statement {
-            margin-bottom: 20px;
-            width: 240px;
-        }
-    }
 
     /* Stats */
     #home-stats {
@@ -248,41 +196,11 @@ export default {
         height: 100%;
     }
 
-    @media (max-width: 320px){
-        #home-stats {
-            height: 340px;
-            padding: 30px 0;
-        }
-
-        .home-stats__content {
-            flex-direction: column;
-        }
-    }
 
     /* Offers */
     .offers-content {
         display: flex;
         justify-content: space-around;
-    }
-
-    @media (max-width: 320px) {
-        #offers {
-            max-width: 90%;
-            margin: 70px auto;
-        }
-
-        .offers-content {
-            max-width: 100%;
-        }
-
-        .offering-header {
-            text-align: center;
-        }
-
-
-        .offers-content {
-            flex-direction: column;
-        }
     }
 
     /* Clients */
@@ -302,21 +220,152 @@ export default {
         margin-bottom: 2rem;
     }
 
-    @media (max-width: 320px) {
-            #clients .clients-header {
-                text-align: center;
-            }
-            #clients .clients-sections {
-                max-width: 90%;
-                margin: auto;
-            }
+/* Tablet */
+@media screen and (max-width: 1300px) {
+    p, .mission-statement {
+        font-size: 16px;
+        line-height: 32px;
+    }
 
-            .clients-subheading {
-                margin: auto;
-                margin-right: 5px;
-                margin-left: 5px;
-                margin-bottom: 40px;
-            }
+    .header-logo {
+        width: 43%;
+    }
+
+    .header-text {
+        width: 500px
+    }
+
+
+    .mission-statement {
+        max-width: 250px;
+    }
+
+    .section-header {
+        margin-bottom: 32px;
+    }
+
+    /* Mission */
+
+    .mission-details {
+        width: 410px;
+    }
+
+    /* Offers */
+
+    #offers {
+            max-width: 90%;
+            margin: 70px auto;
         }
+
+        .offers-content {
+            max-width: 100%;
+        }
+
+
+        .offers-content {
+            flex-direction: column;
+        }
+
+
+
+}
+
+
+/* Phone */
+@media screen and (max-width: 767px){
+    /* Header */
+        #home-header {
+            padding: 0;
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        .header-text {
+            font-size: 20px;
+            line-height: 26px;
+            width: 80%;
+            margin-bottom: 23px;
+        }
+
+        .header-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-button {
+            font-size: 16px;
+            line-height: 24px;
+            width: 168px;
+            height: 40px;
+            margin: 0;
+            margin-bottom: 16px;
+        }
+
+        /* Mission */
+        #mission {
+            max-width: 90%;
+            margin-bottom: 0;
+            margin: 70px auto;
+        }
+
+        .mission-content {
+            display: block;
+        }
+        
+
+        .mission-statement {
+            margin-bottom: 20px;
+            width: 240px;
+        } 
+
+        .mission-details {
+            width: auto;
+        }
+
+        /* Stats */
+        #home-stats {
+            height: 340px;
+            padding: 30px 0;
+        }
+
+        .home-stats__content {
+            flex-direction: column;
+        }
+
+        /* Offers */
+        .offering-header {
+            text-align: center;
+        }
+
+        /* Clients */
+         #clients .clients-header {
+            text-align: center;
+        }
+
+        #clients .clients-sections {
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .clients-subheading {
+            margin: 0 5px 40px;
+        }
+}
+
+@media screen and (orientation: landscape) and (max-width: 767px){
+    #home-header {
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header-text {
+            font-size: 16px;
+            line-height: 24px;
+        }
+}
 
 </style>
