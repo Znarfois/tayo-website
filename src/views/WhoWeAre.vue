@@ -187,7 +187,7 @@ img {
     }
 
 /* Responsive */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
 
     .container {
         width: 90%;
