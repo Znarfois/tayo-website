@@ -12,21 +12,25 @@
         <img src="../assets/images/value-image.png">
     </div>
     <div class="what-we-offer-section">
+        <h1>WHAT WE OFFER</h1>
         <!-- Can be componentised -->
-        <div class="offer">
-            <img src="../assets/images/Icon.png">
-            <h2>Advocacy and Awareness</h2>
-            <span>It’s up to us to create an ideal world that lives in harmony with the greater good, thus we’re here to amplify and generate new voices for change, working hand-in-hand with innovative thinkers and designers to create campaigns that matter, and are remembered. </span>
-        </div>
-        <div class="offer">
-            <img src="../assets/images/Icon.png">
-            <h2>Advocacy and Awareness</h2>
-            <span>It’s up to us to create an ideal world that lives in harmony with the greater good, thus we’re here to amplify and generate new voices for change, working hand-in-hand with innovative thinkers and designers to create campaigns that matter, and are remembered. </span>
-        </div>
-        <div class="offer">
-            <img src="../assets/images/Icon.png">
-            <h2>Advocacy and Awareness</h2>
-            <span>It’s up to us to create an ideal world that lives in harmony with the greater good, thus we’re here to amplify and generate new voices for change, working hand-in-hand with innovative thinkers and designers to create campaigns that matter, and are remembered. </span>
+        <div class='offers'>
+            <div class="offer">
+                <img src="../assets/images/Icon.png">
+                <h2>Advocacy and Awareness</h2>
+                <span>It’s up to us to create an ideal world that lives in harmony with the greater good, thus we’re here to amplify and generate new voices for change, working hand-in-hand with innovative thinkers and designers to create campaigns that matter, and are remembered.</span>
+            </div>
+            <div class="offer">
+                <img src="../assets/images/Icon.png">
+                <h2>Branding & Design Solutions</h2>
+                <span>Storytelling is our favorite thing to do. We bring art and creativity at the forefront of innovative publications, events, and initiatives that bring people together
+for a purpose. </span>
+            </div>
+            <div class="offer">
+                <img src="../assets/images/Icon.png">
+                <h2>Communications & Executions</h2>
+                <span>We love to work just as much as we love to tell stories. Whether it be on ground or on screen, we aim to bring the same transformational experiences that impact the community through collaboration for good.</span>
+            </div>
         </div>
     </div>
     <div class="and-more-section">
@@ -34,35 +38,35 @@
         <div class="more-offers">
             <div class="more-offer">
                 <p>01</p>
-                <span>We blah</span>
+                <span>We have a wide network, making our friends your friends</span>
             </div>
             <div class="more-offer">
-                <p>01</p>
-                <span></span>
+                <p>02</p>
+                <span>We have connections to everyone, especially the youth</span>
             </div>
             <div class="more-offer">
-                <p>01</p>
-                <span></span>
+                <p>03</p>
+                <span>Because our generation is the future, we care</span>
             </div>
             <div class="more-offer">
-                <p>01</p>
-                <span></span>
+                <p>04</p>
+                <span>We keep you relevant and make sure you’re up-to-date</span>
             </div>
             <div class="more-offer">
-                <p>01</p>
-                <span></span>
+                <p>05</p>
+                <span>We don’t just follow trends, we are trendsetters</span>
             </div>
             <div class="more-offer">
-                <p>01</p>
-                <span></span>
+                <p>06</p>
+                <span>We are honest and transparent, we want what’s best for you</span>
             </div>
             <div class="more-offer">
-                <p>01</p>
-                <span></span>
+                <p>07</p>
+                <span>We make sure you can resonate with us</span>
             </div>
             <div class="more-offer">
-                <p>01</p>
-                <span></span>
+                <p>08</p>
+                <span>We make sure you can resonate with us</span>
             </div>
         </div>
     </div>
@@ -70,13 +74,9 @@
 </template>
 
 <script>
-// import Navbar from "components/Navbar.vue";
-// import Footer from "../src/components/Footer.vue";
 export default {
   name: 'Services',
   components: {
-    // Navbar,
-    // Footer
   }
 }
 </script>
@@ -143,24 +143,53 @@ h1 {
 }
 
 /* WHAT WE OFFER SECTION */
-.what-we-offer-section {
-    /* display: flex; */
+.what-we-offer-section h1{
+    display: flex;
+    justify-content: center;
+    margin: 144px 0 72px 0;
 }
+
+.what-we-offer-section {
+    justify-items: center;
+}
+
+/* .offers {
+    display: flex;
+    /* justify-items: center; */
+    /* flex-wrap: wrap;
+} */
 
 .offer {
     display: inline-flex;
     width: 40%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 48px;
     margin: 0 64px;
+    left: 0 auto;
+    padding: 32px;
+    text-align: center;
 }
 
 .offer:first-child {
     display: flex;
     width: 40%;
     margin: 48px auto;
+}
+
+.offer:nth-child(2) {
+    margin-left: 100px;
+}
+
+.offer h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.offer span {
+    width: 414px;
+    line-height: 32px;
 }
 
 /* AND MORE SECTION */
@@ -176,11 +205,14 @@ h1 {
 .and-more-section h1 {
     display: flex;
     align-self: center;
+    margin: 0 0 72px 0;
 }
 
 .more-offers {
+    display: flex;
     margin: 0 30%;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .more-offer {
@@ -188,11 +220,13 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 40%;
+    margin: 0 0 100px 0;
 }
 
-.more-offer p {
+.more-offer span {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    text-align: center;
 }
 
 .more-offer p {
@@ -200,6 +234,10 @@ h1 {
     font-weight: 700;
     font-size: 64px;
     margin: 24px;
+}
+
+.more-offer:last-child {
+    margin-bottom: 184px;
 }
 
 /* RESPONSIVE  */
