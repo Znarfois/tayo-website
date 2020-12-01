@@ -265,9 +265,12 @@ export default {
         .offers-content {
             flex-direction: column;
         }
+}
 
-
-
+@media screen and (orientation: landscape) and (max-width: 1300px) {
+    .header-logo {
+        width: 35%;
+    }
 }
 
 
