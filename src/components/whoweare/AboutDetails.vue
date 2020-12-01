@@ -26,11 +26,19 @@ export default {
         margin-bottom: 16px;
     }
 
+    @media screen and (max-width: 1250px) {
+        .who-detail {
+         margin: 50px 0;
+        }
+    }
+
     @media screen and (max-width: 767px) {
         .who-detail {
             align-items: flex-start;
             text-align: left;
         }
     }
+
+
 
 </style>
