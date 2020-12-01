@@ -1,9 +1,8 @@
 <template>
-  <!-- <Navbar /> -->
   <main>
     <div class="services-landing">
         <img class='landing-logo' src="../assets/images/tayo-logo.png">
-        <p>A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</p>
+        <p>A change agency that innovates for <br /> transformational growth — where <br/> sustainability and creativity meet for positive change</p>
     </div>
     <div class="value-section">
         <div class="value-content">
@@ -68,7 +67,6 @@
         </div>
     </div>
   </main>
-  <!-- <Footer /> -->
 </template>
 
 <script>
@@ -84,11 +82,14 @@ export default {
 </script>
 
 <style scoped>
+
+/* GLOBAL */
 h1 {
     color: #5AA3A9;
     font-weight: bold;
 }
 
+/* LANDING */
 .services-landing {
     display: flex;
     background: url("../assets/images/services-bg.png") no-repeat center center fixed;
@@ -105,9 +106,17 @@ h1 {
 
 .landing-logo {
     width: 272px;
-    margin-bottom: 60px;
+    margin-bottom: 32px;
 }
 
+.services-landing p {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+/* VALUE SECTION */ 
 .value-section {
     display: flex;
     justify-content: space-between;
@@ -124,11 +133,16 @@ h1 {
     margin-bottom: 48px;
 }
 
+.value-content p {
+    color: #333333;
+}
+
 .value-section img {
     display: inline-block;
     width: 40%;
 }
 
+/* WHAT WE OFFER SECTION */
 .what-we-offer-section {
     /* display: flex; */
 }
@@ -149,6 +163,7 @@ h1 {
     margin: 48px auto;
 }
 
+/* AND MORE SECTION */
 .and-more-section {
     display: flex;
     width: 100vw;
@@ -186,5 +201,7 @@ h1 {
     font-size: 64px;
     margin: 24px;
 }
+
+/* RESPONSIVE  */
 
 </style>
