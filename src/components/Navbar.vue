@@ -18,6 +18,16 @@
 export default {
     name: 'Navbar'
 }
+var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+if (scrollTop >= 40) {
+    document.querySelector('nav').style.backgroundColor = '#FFFFFF';
+    document.querySelector('nav').style.position = 'fixed';
+
+}
+else if (scrollTop < 40) {
+    document.querySelector('nav').style.backgroundColor = 'none';
+    document.querySelector('nav').style.position = 'static';
+}
 </script>
 
 <style scoped>
