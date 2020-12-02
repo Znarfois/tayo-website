@@ -1,2 +1,6 @@
 node_modules
-
+firebase-config.js
+.firebasesrc
+firebase.json
+package-lock.json
+.firebase
