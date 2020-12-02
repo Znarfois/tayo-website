@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav id='nav'>
         <div class="nav-primary">
             <img src="#" alt="TAYO logo">
         </div>
@@ -18,16 +18,28 @@
 export default {
     name: 'Navbar'
 }
-var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-if (scrollTop >= 40) {
-    document.querySelector('nav').style.backgroundColor = '#FFFFFF';
-    document.querySelector('nav').style.position = 'fixed';
+// var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+// if (scrollTop >= 40) {
+//     document.querySelector('nav').style.backgroundColor = '#FFFFFF';
+//     document.querySelector('nav').style.position = 'fixed';
 
-}
-else if (scrollTop < 40) {
-    document.querySelector('nav').style.backgroundColor = 'none';
-    document.querySelector('nav').style.position = 'static';
-}
+// }
+// else if (scrollTop < 40) {
+//     document.querySelector('nav').style.backgroundColor = 'none';
+//     document.querySelector('nav').style.position = 'static';
+// }
+var myNav = document.getElementById('nav');
+window.onscroll = function () { 
+    "use strict";
+    if (document.body.scrollTop >= 200 ) {
+        myNav.classList.add("nav-colored");
+        myNav.classList.remove("nav-transparent");
+    } 
+    else {
+        myNav.classList.add("nav-transparent");
+        myNav.classList.remove("nav-colored");
+    }
+};
 </script>
 
 <style scoped>
@@ -50,5 +62,13 @@ else if (scrollTop < 40) {
         font-family: "Karla"; 
         /* font-weight: 700; */
         text-decoration: underline;
+    }
+
+    .nav-transparent {
+        background-color: transparent;
+    }
+
+    .nav-colored {
+        background-color: #FFFFFF;
     }
 </style>
