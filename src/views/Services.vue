@@ -160,26 +160,30 @@ h1 {
 } */
 
 .offer {
-    display: inline-flex;
+    display: flex;
     width: 40%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 48px;
-    margin: 0 64px;
-    left: 0 auto;
+    /* margin: 0 64px; */
     padding: 32px;
     text-align: center;
 }
 
 .offer:first-child {
     display: flex;
-    width: 40%;
-    margin: 48px auto;
+    margin: 48px auto 0 auto;
 }
 
 .offer:nth-child(2) {
-    margin-left: 100px;
+    display: inline-flex;
+    margin: 48px 100px;
+}
+
+.offer:last-child {
+    display: inline-flex;
+    margin: 48px auto;
 }
 
 .offer h2 {
@@ -242,4 +246,144 @@ h1 {
 
 /* RESPONSIVE  */
 
+/* TABLET */
+@media screen and (max-width: 800px){
+    p {
+        font-size: 16px;
+    }
+
+    .h1 {
+        display: block;
+        width: 100vw;
+    }
+
+    .offer {
+        width: 100vw;
+    }
+
+    .offer h2 {
+        font-size: 24px;
+    }
+
+    .offer:nth-child(2) {
+        display: flex;
+        margin: 40px auto;
+    }
+
+    .offer:last-child {
+        display: flex; 
+        margin: 40px auto;
+    }
+
+    .more-offers {
+        margin: 0 15%;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 320px){
+
+    /* * {
+        width: 100vw;
+    } */
+
+    h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .landing-logo {
+        width: 120px;
+    }
+
+    .services-landing p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .value-section {
+        width: 100vw;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .value-section h1 {
+        margin: 72px 0 12px 0;
+    }
+
+    .value-content {
+        display: block;
+        width: 90vw;   
+        margin: 0 5vw;  
+    }
+
+    .value-section img {
+        width: 100vw;
+        margin: 24px 0 24px 0;
+    }
+
+    .and-more-section h1 {
+        margin: 0 0 48px 0;
+    }
+
+    .what-we-offer-section {
+        width: 100vw;
+    }
+
+    .offer {
+        width: 90vw;
+        /* justify-content: flex-start; */
+        align-items: flex-start;
+        margin: 0 5vw; 
+        text-align: left;
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    .offer span {
+        font-size: 16px;
+        width: auto;
+    }
+
+    .offer img {
+        margin: 0 0 16px 0;
+    }
+
+    .what-we-offer-section h1 {
+        justify-content: flex-start;
+        margin: 0 5vw; 
+    }
+
+    .what-we-offer-section h2 {
+        line-height: 32px;
+        justify-content: flex-start;
+        margin: 0 0 12px 0;
+    }
+
+    .more-offers {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 20%;
+    }
+
+    .more-offer {
+        width: 60vw;
+        margin: 0 0 30px 0;
+    }
+
+    .more-offer p {
+        font-size: 32px;
+        margin: 0 0 8px 0;
+    }
+
+    .more-offer span {
+        line-height: 32px;
+        font-size: 12px;
+    }
+
+    .more-offer:last-child {
+        margin: 0 0 70px 0;
+    }
+
+}
 </style>
