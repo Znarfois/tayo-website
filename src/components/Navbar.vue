@@ -1,14 +1,14 @@
 <template>
     <nav id='nav'>
         <div class="nav-primary">
-            <img src="#" alt="TAYO logo">
+            <img src="../assets/img/tayo-logo.png" alt="TAYO logo">
         </div>
         <div class="nav-secondary">
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Projects</a>
-            <a href="#">Who We Are</a>
-            <a href="#">Contact Us</a>
+            <router-link to="/">Home</router-link>
+            <router-link to="/about">Who We Are</router-link>
+            <router-link to="/projects/kidsforkids">Projects</router-link>
+            <router-link to="/services">Services</router-link>
+            <router-link to="/contactus">Contact Us</router-link>
         </div>
     </nav>
 </template>
@@ -31,7 +31,7 @@ export default {
 var myNav = document.getElementById('nav');
 window.onscroll = function () { 
     "use strict";
-    if (document.body.scrollTop >= 200 ) {
+    if (document.body.scrollTop >= 40 || document.documentElement.scrollTop >= 40 ) {
         myNav.classList.add("nav-colored");
         myNav.classList.remove("nav-transparent");
     } 
@@ -53,9 +53,14 @@ window.onscroll = function () {
     }
 
     nav {
+        position: fixed;
         display: flex;
         padding: 48px 24px;
         justify-content: space-between;
+    }
+
+    nav img {
+        width: 48px;
     }
 
     nav a:hover {
@@ -70,5 +75,6 @@ window.onscroll = function () {
 
     .nav-colored {
         background-color: #FFFFFF;
+        z-index: 4000;
     }
 </style>
