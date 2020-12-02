@@ -78,6 +78,16 @@ export default {
   name: 'Services',
   components: {
   }
+};
+var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+if (scrollTop >= 40) {
+    document.querySelector('nav').style.backgroundColor = '#FFFFFF';
+    document.querySelector('nav').style.position = 'fixed';
+
+}
+else if (scrollTop < 40) {
+    document.querySelector('nav').style.backgroundColor = 'none';
+    document.querySelector('nav').style.position = 'static';
 }
 </script>
 
@@ -247,7 +257,7 @@ h1 {
 /* RESPONSIVE  */
 
 /* TABLET */
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1300px){
     p {
         font-size: 16px;
     }
@@ -255,6 +265,15 @@ h1 {
     .h1 {
         display: block;
         width: 100vw;
+    }
+
+    .value-section {
+        width: 0 10%;
+        margin: 0 5%;
+    }
+
+    .value-section img {
+        width: 360px;
     }
 
     .offer {
