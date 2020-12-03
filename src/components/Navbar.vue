@@ -1,15 +1,17 @@
 <template>
-    <nav id='nav'>
-        <div class='nav-content'>
-            <div class="nav-primary">
-                <router-link to="/"><img :src="require('../assets/img/' + brand + '')" id="tayo-logo" alt="TAYO logo"></router-link>
-            </div>
-            <div class="nav-secondary">
-                <router-link to="/">Home</router-link>
-                <router-link to="/about">Who We Are</router-link>
-                <router-link to="/projects/kidsforkids">Projects</router-link>
-                <router-link to="/services">Services</router-link>
-                <router-link to="/contactus">Contact Us</router-link>
+    <nav>
+        <div class='nav'>
+            <div class='nav-content'>
+                <div class="nav-primary">
+                    <router-link to="/"><img :src="require('../assets/img/' + brand + '')" id="tayo-logo" alt="TAYO logo"></router-link>
+                </div>
+                <div class="nav-secondary">
+                    <router-link to="/">Home</router-link>
+                    <router-link to="/about">Who We Are</router-link>
+                    <router-link to="/projects/kidsforkids">Projects</router-link>
+                    <router-link to="/services">Services</router-link>
+                    <router-link to="/contactus">Contact Us</router-link>
+                </div>
             </div>
         </div>
     </nav>
@@ -21,7 +23,7 @@ export default {
     name: 'Navbar',
     data() {
         return {
-            brand: "tayo-logo.png",
+            brand: "tayo-logo-black.png",
         }
     }
 }
@@ -65,16 +67,21 @@ window.onscroll = function () {
     nav {
         position: fixed;
         display: block;
-        height: 72px;
+        height: 80px;
         width: 100%;
         z-index: 4000;
     }
 
+    .nav {
+        display: block;
+    }
+
     nav a {
         text-decoration: none;
-        color: #FFFFFF;
+        color: #000000;
         margin: 0 32px;
         padding-bottom: 4px;
+        font-weight: 700;
     }
 
     .nav-content {
@@ -82,6 +89,8 @@ window.onscroll = function () {
         justify-content: space-between;
         padding: 12px 52px;
         align-items: center;
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     }
 
     nav img {
@@ -104,5 +113,18 @@ window.onscroll = function () {
         background-color: #FFFFFF;
         color: #000000;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px;
+    }
+
+    @media screen and (max-width: 1300px) {
+
+        .nav-content {
+            padding: 12px 28px;
+        }
+        .nav-secondary a {
+            margin: 0 24px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        
     }
 </style>
