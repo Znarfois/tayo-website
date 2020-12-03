@@ -110,12 +110,8 @@ img {
     .who-statement {
         text-align: center;
         max-width: 928px;
-        margin: 3rem 0;
-        font-weight: 700;
-    }
-
-    .statement-1 {
         margin: 3rem auto;
+        font-weight: 700;
     }
 
     .who-statement__img {
@@ -245,13 +241,12 @@ img {
 
     .statement-1 {
         width: 85%;
-        margin: 3rem auto;
     }
 
     .statement-2 {
         text-align: left;
         width: 70%;
-        margin-right: auto;
+        margin: 3rem 0;
     }
 
     /* About */

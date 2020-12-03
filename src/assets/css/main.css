@@ -11,7 +11,7 @@
 body {
   font-family: Karla;
   color: #333333;
-  background: #fafafa;
+  background: #FCF7F2;
 }
 
 h1,
@@ -91,8 +91,19 @@ button:hover {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+
+/* Utilities */
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
 .section-header {
-  color: #5aa3a9;
   text-align: center;
   margin-bottom: 64px;
   margin-top: 100px;
@@ -108,16 +119,5 @@ button:hover {
     margin-bottom: 32px;
     text-align: left;
   }
-}
-
-/* Utilities */
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.text-bold {
-  font-weight: 700;
 }
 

@@ -96,11 +96,13 @@ export default {
     .subscribe input {
         width: 60%;
         padding: 0 1rem;
+        background: inherit;
+        border: 1px solid #375998;
     }
 
     .subscribe button {
         background: #375998;
-        width: 104px;
+        width: 150px;
         position: relative;
         right: 10px;
     }
@@ -182,6 +184,10 @@ export default {
         .project-detail__par {
             font-size: 16px;
             line-height: 32px;
+        }
+
+        .subscribe button {
+            width: 100px;
         }
     }
    

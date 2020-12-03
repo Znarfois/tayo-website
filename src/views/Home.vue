@@ -15,7 +15,7 @@
       <article id="mission" class="container">
         <h1 class="mission-header section-header">TAYO: For and by our generation</h1>
         <div class="mission-content">
-            <p class="mission-statement">Our mission is to <span class='mission-statement__strong'>cultivate collaboration & innovation</span> amongst people.</p>
+            <p class="mission-statement">Our mission is to cultivate collaboration & innovation amongst people.</p>
             <p class="mission-details"> We collaborate to innovate brands to disrupt and change the world, through design and sustainable strategies. We integrate culture in innovating purpose, evolve with the times, and collaborate to innovate — all for the benefit of the people and the planet. <strong>Generations are evolving, and you should too. Innovate your brand for the futures to come.</strong></p>
         </div>
     </article>
@@ -147,8 +147,9 @@ export default {
     }
 
     .button-request {
-        background: #F2E5D2;
-        color: black;
+        background: none;
+        border: 2px solid #fafafa;
+        color: #fafafa;
     }
     
     .button-contact {
@@ -173,10 +174,10 @@ export default {
         line-height: 48px;
     }
 
-    .mission-statement__strong {
+    /* .mission-statement__strong {
         color: #375998;
         font-weight: 700;
-    }
+    } */
 
     .mission-details {
         max-width: 568px;
