@@ -108,9 +108,7 @@ export default {
         margin-top: 10px;
     }
 
-    @media screen and (max-width: 1300px) {
-     
-    }
+  
 
     @media screen and (max-width: 767px) {
         footer {
@@ -120,9 +118,8 @@ export default {
 
         input {
             height: 32px;
-            width: 65%;
+            width: 35%;
             font-size: 12px;
-
         }
 
         .copyright-desktop {
@@ -160,6 +157,14 @@ export default {
 
         .copyright {
             margin-top: 30px;
+            font-size: 12px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        input {
+            height: 32px;
+            width: 65%;
             font-size: 12px;
         }
     }
