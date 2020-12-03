@@ -2,7 +2,7 @@
     <main>
         <section id="project-intro">
             <div class="project-logo">
-                <img :src="require(`../assets/img/projects/${logo}`)" alt="">
+                <img class="project-logo__img" :src="require(`../assets/img/projects/${logo}`)" alt="">
             </div>
             <h1 class="project-title">{{ title }}</h1>
             <div class="project-header">
@@ -13,34 +13,34 @@
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">Who</h1>
-                    <p class="project-detail__par">{{ who }} </p>
+                    <p class="project-detail__par" v-for="(i, index) in who" :key="index" v-html="i"></p>
                 </div>
             </div>  
             <img :src="require(`../assets/img/projects/${image1}`)" alt="">
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">What</h1>
-                    <p class="project-detail__par">{{ what }}</p>
+                    <p class="project-detail__par" v-for="(i, index) in what" :key="index" v-html="i"></p>
                 </div>
             </div>  
             <img :src="require(`../assets/img/projects/${image2}`)" alt="">
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">Why</h1>
-                    <p class="project-detail__par">{{ why }}</p>
+                    <p class="project-detail__par" v-for="(i, index) in why" :key="index" v-html="i"></p>
                 </div>
             </div>  
             <img :src="require(`../assets/img/projects/${image3}`)" alt="">
-            <div class="project-detail">
+            <div class="project-detail volunteer">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">Be one of ### volunteers!</h1>
-                    <p class="project-detail__par">{{ volunteer }}</p>
+                    <p class="project-detail__par" v-for="(i, index) in volunteer" :key="index" v-html="i"></p>
+                    <form class="subscribe" action="">
+                        <input type="text" placeholder="Email">
+                        <button type="submit">Update Me</button>
+                    </form>
                 </div>
             </div>  
-            <form class="subscribe" action="">
-                <input type="text" placeholder="Email">
-                <button type="submit">Update Me</button>
-            </form>
         </section>
     </main>
 </template>
@@ -55,10 +55,10 @@ export default {
         image1: String,
         image2: String,
         image3: String,
-        who: String,
-        what: String,
-        why: String,
-        volunteer: String
+        who: Array,
+        what: Array,
+        why: Array,
+        volunteer: Array,
     }
 }
 </script>
@@ -73,7 +73,7 @@ export default {
         text-align:  center;
     }
 
-    .project-logo img {
+    .project-logo__img {
         width: 160px;
         margin-top: 3rem;
     }
@@ -84,24 +84,25 @@ export default {
     }
 
     .subscribe {
-        width: 50%;
-        margin-left: auto;
-        height: 64px;
-        margin-bottom: 5rem;
+        width: 100%;
+        
+    }
+
+    .subscribe input, .subscribe button {
+        height: 50px;
+        font-size: 16px;
     }
 
     .subscribe input {
-        width: 70%;
-        height: 100%;
-        font-size: 24px;
-        padding: 0 2rem;
+        width: 60%;
+        padding: 0 1rem;
+        background: inherit;
+        border: 1px solid #375998;
     }
 
     .subscribe button {
         background: #375998;
-        width: 30%;
-        height: 100%;
-        font-size: 24px;
+        width: 150px;
         position: relative;
         right: 10px;
     }
@@ -116,20 +117,44 @@ export default {
         width: 50%;
     }
 
+    .project-detail__par {
+        margin-bottom: 50px;
+    }
+
     .project-detail__header {
         color: #375998;
         margin-bottom: 1rem;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 1024px) {
+        .project-detail__content {
+            width: 90%;
+        }
+
+        .project-details {
+            width: 100%;
+        }
+
+        .project-detail {
+            width: 80%;
+            margin: 3rem auto;
+        }
+
+    }
+
+
+    @media screen and (max-width: 500px) {
      
-        img {
+        img:not(.project-logo__img) {
             height: 200px;
             object-fit: cover;
         }
     
-        .project-logo img {
+        .project-logo__img {
             margin-top: 3rem;
+            width: 130px;
+            height: 130px;
+            object-fit: fill;
         }
 
         .project-title {
@@ -140,10 +165,6 @@ export default {
             bottom: 20px
         }
 
-        .project-details {
-            width: 100%;
-        }
-
         .project-detail__content {
             width: 90%;
             margin: 0 auto;
@@ -152,6 +173,7 @@ export default {
         .project-detail {
             margin: 4rem auto;
             display: block;
+            width: 100%;
         }
 
         .project-detail__header {
@@ -164,22 +186,8 @@ export default {
             line-height: 32px;
         }
 
-        .subscribe {
-            width: 90%;
-            height: 40px;
-            margin: 0 auto 4rem;
-
-        }
-
-        .subscribe input {
-            font-size: 12px;
-        }
-
         .subscribe button {
-            background: #375998;
-            width: 30%;
-            height: 100%;
-            font-size: 12px;
+            width: 100px;
         }
     }
    

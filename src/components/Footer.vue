@@ -15,7 +15,7 @@
         <aside class="column footer-column-2">
             <section>
                 <h3>Join our newsletter!</h3>
-                <img src="../assets/img/footer-rectangle2.png" alt="rectangle">
+                <img src="../assets/img/footer-rectangle.png" alt="rectangle">
                 <form>
                     <input type="email" placeholder="Enter your email">
                     <button type="submit" class="email-submit">Subscribe</button>
@@ -98,19 +98,19 @@ export default {
     }
 
     .email-submit {
-        background: #375998;
+        background: #EAA201;
         width: 120px;
     }
 
     .portfolio-link {
-        background: #5aa3a9;
+        background: none;
+        border: 1px solid #333333;
+        color: #333333;
         width: 208px;
         margin-top: 10px;
     }
 
-    @media screen and (max-width: 1300px) {
-     
-    }
+  
 
     @media screen and (max-width: 767px) {
         footer {
@@ -120,9 +120,8 @@ export default {
 
         input {
             height: 32px;
-            width: 65%;
+            width: 35%;
             font-size: 12px;
-
         }
 
         .copyright-desktop {
@@ -160,6 +159,14 @@ export default {
 
         .copyright {
             margin-top: 30px;
+            font-size: 12px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        input {
+            height: 32px;
+            width: 65%;
             font-size: 12px;
         }
     }
