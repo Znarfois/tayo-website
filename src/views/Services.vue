@@ -5,14 +5,14 @@
         <p>A change agency that innovates for <br /> transformational growth — where <br/> sustainability and creativity meet for positive change</p>
     </div>
     <div class="value-section">
+        <h1>OUR VALUE</h1>
         <div class="value-content">
-            <h1>Our Value</h1>
             <p>We are the intersection of sustainability & creativity, and we use authentic connections with young people to include your company as part of our vision in promoting the spirit of Bayanihan within the economy, environment, & society of the Philippines and the new world. </p>
+            <img src="../assets/images/value-image.png">
         </div>
-        <img src="../assets/images/value-image.png">
     </div>
     <div class="what-we-offer-section">
-        <h1>WHAT WE OFFER</h1>
+        <h1>THINGS WE CAN DO</h1>
         <!-- Can be componentised -->
         <div class='offers'>
             <div class="offer">
@@ -79,23 +79,17 @@ export default {
   components: {
   }
 };
-var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-if (scrollTop >= 40) {
-    document.querySelector('nav').style.backgroundColor = '#FFFFFF';
-    document.querySelector('nav').style.position = 'fixed';
-
-}
-else if (scrollTop < 40) {
-    document.querySelector('nav').style.backgroundColor = 'none';
-    document.querySelector('nav').style.position = 'static';
-}
 </script>
 
 <style scoped>
 
 /* GLOBAL */
+
+main {
+    background-color: #FCF7F2;
+}
 h1 {
-    color: #5AA3A9;
+    color: #333333;
     font-weight: bold;
 }
 
@@ -130,17 +124,20 @@ h1 {
 .value-section {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     margin-top: 64px;
     margin-left: 10%;
 }
 
 .value-content {
-    display: inline-block;
-    width: 50%;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.value-content h1 {
-    margin-bottom: 48px;
+.value-section h1 {
+    margin: 0 0 4px 0;
 }
 
 .value-content p {
@@ -150,6 +147,7 @@ h1 {
 .value-section img {
     display: inline-block;
     width: 40%;
+    margin: -68px 30px 0 30px;
 }
 
 /* WHAT WE OFFER SECTION */
@@ -209,7 +207,7 @@ h1 {
 /* AND MORE SECTION */
 .and-more-section {
     display: flex;
-    width: 100vw;
+    width: 100%;
     align-self: center;
     flex-direction: column;
     justify-self: center;
@@ -257,14 +255,17 @@ h1 {
 /* RESPONSIVE  */
 
 /* TABLET */
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1000px){
     p {
         font-size: 16px;
     }
 
-    .h1 {
-        display: block;
-        width: 100vw;
+    .value-section h1 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 100px;
+        margin-bottom: 48px;
     }
 
     .value-section {
@@ -273,7 +274,8 @@ h1 {
     }
 
     .value-section img {
-        width: 360px;
+        width: 46vw;
+        margin: 0 0 0 40px;
     }
 
     .offer {
@@ -300,7 +302,7 @@ h1 {
 }
 
 /* MOBILE */
-@media screen and (max-width: 320px){
+@media screen and (max-width: 768px){
 
     /* * {
         width: 100vw;
@@ -321,24 +323,37 @@ h1 {
     }
 
     .value-section {
-        width: 100vw;
+        width: 100%;
         flex-direction: column;
         margin: 0;
     }
 
     .value-section h1 {
         margin: 72px 0 12px 0;
+        justify-content: center;
+        display: flex;
     }
 
-    .value-content {
+    .value-content{
         display: block;
-        width: 90vw;   
+        width: 100%;   
+    }
+
+    .value-content p {
         margin: 0 5vw;  
     }
 
     .value-section img {
-        width: 100vw;
+        width: 100%;
         margin: 24px 0 24px 0;
+    }
+
+    .and-more-section {
+        display: flex;
+    }
+
+    .more-offers {
+        align-items: center;
     }
 
     .and-more-section h1 {
@@ -346,11 +361,11 @@ h1 {
     }
 
     .what-we-offer-section {
-        width: 100vw;
+        width: 100%;
     }
 
     .offer {
-        width: 90vw;
+        width: 90%;
         /* justify-content: flex-start; */
         align-items: flex-start;
         margin: 0 5vw; 
@@ -370,7 +385,7 @@ h1 {
 
     .what-we-offer-section h1 {
         justify-content: flex-start;
-        margin: 0 5vw; 
+        margin: 0 5%; 
     }
 
     .what-we-offer-section h2 {
@@ -386,7 +401,7 @@ h1 {
     }
 
     .more-offer {
-        width: 60vw;
+        width: 60%;
         margin: 0 0 30px 0;
     }
 
