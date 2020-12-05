@@ -87,6 +87,7 @@ export default {
 
 main {
     background-color: #FCF7F2;
+    margin-top: 80px;
 }
 h1 {
     color: #333333;
