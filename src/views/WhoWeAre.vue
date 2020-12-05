@@ -1,7 +1,7 @@
 <template>
     <main id="who-content">
       <div class="who-content__intro">
-            <p class="text-bold who-statement">We are a change agency that cultivates creative solutions & sustainable strategies, always taking a global perspective rooted in local culture & tradition.</p>
+            <p class="text-bold who-statement statement-1">We are a change agency that cultivates creative solutions & sustainable strategies, always taking a global perspective rooted in local culture & tradition.</p>
 
             <div class="who-statement__img">
                 <img src="@/assets/img/projects/kfk/head-1.png" alt="who-statement image">
@@ -29,7 +29,9 @@
           <div></div>
       </section>
 
-      <p class="who-statement">We aim to foster the Filipino spirit of Bayanihan amongst our clients & communities, redefining how society operates through building a Barangay that stands for both people & planet.</p>
+        <div class="container">
+            <p class="text-bold who-statement statement-2">We aim to foster the Filipino spirit of Bayanihan amongst our clients & communities, redefining how society operates through building a Barangay that stands for both people & planet.</p>
+        </div>
 
       <section class="who-about who-about1 container">
           <h1 class="section-header">Sustainable strategies & creative consultancy for and by our generation</h1>
@@ -109,6 +111,7 @@ img {
         text-align: center;
         max-width: 928px;
         margin: 3rem auto;
+        font-weight: 700;
     }
 
     .who-statement__img {
@@ -129,8 +132,11 @@ img {
         height: 120px;
     }
 
+    .who-sub {
+        width: 544px;
+    }
+
     .who-sub1 {
-        max-width: 544px;
         margin-left: 24px;
     }
 
@@ -141,7 +147,6 @@ img {
     }
 
     .who-sub2 {
-        max-width: 544px;
         margin-right: 24px;
     }
 
@@ -170,14 +175,14 @@ img {
 
     .who-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+        grid-template-columns: repeat(auto-fit, 480px);
         grid-gap: 48px;
         justify-content: center;
     }
 
     .comm-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+        grid-template-columns: repeat(auto-fit, 300px);
         grid-gap: 24px;
         justify-content: center;
     }
@@ -186,13 +191,105 @@ img {
         margin-bottom: 88px;
     }
 
-/* Responsive */
-@media screen and (max-width: 767px) {
+
+
+
+
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 1250px) {
 
     .container {
         width: 90%;
     }
 
+    /* Subheadings */
+    .who-subheadings__img {
+        display: none;
+    }
+
+    .who-subheading {
+        width: 90%;
+        margin: 3rem auto;
+    }
+
+    .who-subheadings-1, .who-subheadings-2 {
+        display: block;
+    }
+
+    .who-sub {
+        width: 70%;
+    }
+
+    .who-sub1, .who-sub2 {
+        margin: 0;
+    }
+
+    /* Images */
+    .who-images {
+        margin: 0;
+    }
+
+    .who-images div {
+        height: 200px;
+    }
+
+    /* Statement */
+
+    .statement-1 {
+        width: 85%;
+    }
+
+    .statement-2 {
+        text-align: left;
+        width: 70%;
+        margin: 3rem 0;
+    }
+
+    /* About */
+    .who-about1__details {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .who-images div {
+        height: 170px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .who-cards, .comm-cards {
+        display: block;
+    }
+
+    .who-detail {
+        margin-bottom: 3rem;
+    }
+
+    .card, .comm-card {
+        margin-top: 24px;
+    }
+
+    /* Images */
+
+    .who-images {
+        margin: 3rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .who-about {
+        margin: 5rem auto 3rem;
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 500px) {
     .text-bold {
         font-weight: 400;
     }
@@ -201,10 +298,17 @@ img {
 
     .who-statement {
         order: 2;
-        margin: 0;
-        text-align: left;
-        width: 90%;
         margin: 0 auto;
+        font-weight: 400;
+        text-align: left;
+    }
+    
+    .statement-1 {
+        width: 90%;
+    }
+
+    .statement-2 {
+        width: 100%;
     }
 
     .who-statement__img {
@@ -216,54 +320,16 @@ img {
 
 /* Subheadings */
 
-    .who-subheading {
-        margin: 3rem 0;
-    }
-
     .who-sub {
-        width: 90%;
-        margin: 0 auto;
+        width: 100%;
     }
 
-    .who-subheadings__img {
-        display: none;
-    }
-
-/* Images */
-
-    .who-images {
-        margin: 3rem 0;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+    /* Images */
     .who-images div {
         height: 100px;
     }
-
-    .who-about {
-        margin: 5rem auto 3rem;
-    }
-
-    /* About */
-
-    .who-about1__details {
-        flex-direction: column;
-    }
-
-    .who-detail {
-        margin-bottom: 3rem;
-    }
-
-    .who-cards, .comm-cards {
-        display: block;
-    }
-
-    .card, .comm-card {
-        margin-top: 24px;
-    }
-
-    
 }
+
+
 
 </style>
