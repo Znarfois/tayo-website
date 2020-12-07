@@ -12,7 +12,7 @@
         </form>
         <img 
             alt="contact-asset"
-            :src="require('@/assets/img/Rectangle 79.png')"
+            :src="require('@/assets/img/contact_us_asset.png')"
         />
     </main>
 </template>
@@ -32,6 +32,10 @@ export default {
 
     form {
         width: 100vw;
+    }
+
+    main img {
+        width: 43%;
     }
 
     p {
@@ -73,4 +77,19 @@ export default {
     /* textarea {
         rows: '4';
     } */
+
+    @media screen and (max-width: 1024px) {
+        main img {
+            display: none;
+        }
+
+        input, textarea {
+            width: 90%;
+        }
+
+        button {
+            width: 90%;
+            height: 48px;
+        }
+    }
 </style>
