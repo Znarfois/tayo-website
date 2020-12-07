@@ -59,20 +59,6 @@
           </div>
       </section>
 
-      <section class="who-about who-about4 container">
-          <h1 class="section-header">Communities We Have Worked With</h1>
-          <div class="comm-cards">
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-          </div>
-      </section>
 
   </main>
 </template>
@@ -80,14 +66,12 @@
 <script>
 import AboutDetails from '../components/whoweare/AboutDetails'
 import AboutCard from '../components/whoweare/AboutCard'
-import CommunityCard from '../components/whoweare/CommunityCard'
 
 export default {
     name: "WhoWeAre",
     components: {
         AboutDetails,
         AboutCard,
-        CommunityCard,
     },
 }
 </script>
@@ -180,22 +164,9 @@ img {
         justify-content: center;
     }
 
-    .comm-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 300px);
-        grid-gap: 24px;
-        justify-content: center;
-    }
-
-    .who-about4 {
+    .who-about3 {
         margin-bottom: 88px;
     }
-
-
-
-
-
-
 
 
 /* Media Queries */
@@ -263,7 +234,7 @@ img {
 }
 
 @media screen and (max-width: 700px) {
-    .who-cards, .comm-cards {
+    .who-cards{
         display: block;
     }
 
@@ -271,7 +242,7 @@ img {
         margin-bottom: 3rem;
     }
 
-    .card, .comm-card {
+    .card {
         margin-top: 24px;
     }
 

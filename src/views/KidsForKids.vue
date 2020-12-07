@@ -1,14 +1,12 @@
 <template>
     <Project 
-    
+
     logo='kfk/logo.png'
     title='Kids for Kids PH'
-
-    header='kfk/image.png'
-
-    image1='kfk/head-1.png'
-    image2='kfk/head-1.png'
-    image3='kfk/head-1.png'
+    header='kfk/KFK_COVER.png'
+    image1='kfk/KFK_WHAT.png'
+    image2='kfk/KFK_WHY.png'
+    image3='kfk/KFK_VOL.png'
 
     :who="[
 
