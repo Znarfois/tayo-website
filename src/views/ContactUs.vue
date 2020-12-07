@@ -24,60 +24,65 @@ export default {
 
 <style scoped>
     main {
-        padding: 80px 0 80px 10%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+            padding: 80px 0 80px 10%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        form {
+            width: 100vw;
+        }
+
+        main img {
+            width: 60%;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 40px;
+        }
+
+        h1 {
+            font-size: 32px;
+            line-height: 48px;
+            margin: 0 0 14px 0;
+        }
+
+        input, textarea{
+            display: block;
+            background: transparent;
+            font-size: 14px;
+            line-height: 1.2;
+            padding: 10px;
+            width: 46vw;
+            max-width: 600px;
+            border: 2px solid #d2d2d2;
+            border-radius: 5px;
+            margin: 0 0 20px 0;
+            opacity: 0.5;
+        }   
+
+        textarea {
+            height: 14%;
+            margin-bottom: 20px
+        }
+
+        button {
+            width: 208px;
+            height: 64px;
+            background-color: #EAA200;
+            color: #FFFFFF;
+        }
+
+        /* textarea {
+            rows: '4';
+        } */
+    @media screen and (max-width: 1440px) {
+        main img {
+            width: 43%;
+        }
     }
-
-    form {
-        width: 100vw;
-    }
-
-    main img {
-        width: 43%;
-    }
-
-    p {
-        font-size: 20px;
-        line-height: 40px;
-    }
-
-    h1 {
-        font-size: 32px;
-        line-height: 48px;
-        margin: 0 0 14px 0;
-    }
-
-    input, textarea{
-        display: block;
-        background: transparent;
-        font-size: 14px;
-        line-height: 1.2;
-        padding: 10px;
-        width: 46vw;
-        border: 2px solid #d2d2d2;
-        border-radius: 5px;
-        margin: 0 0 20px 0;
-        opacity: 0.5;
-    }   
-
-    textarea {
-        height: 14%;
-        margin-bottom: 20px
-    }
-
-    button {
-        width: 208px;
-        height: 64px;
-        background-color: #EAA200;
-        color: #FFFFFF;
-    }
-
-    /* textarea {
-        rows: '4';
-    } */
-
     @media screen and (max-width: 1024px) {
         main img {
             display: none;
