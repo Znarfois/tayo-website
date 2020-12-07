@@ -2,11 +2,11 @@
     <main>
         <section id="project-intro">
             <div class="project-logo">
-                <img class="project-logo__img" :src="require(`../assets/img/projects/${logo}`)" alt="">
+                <img class="project-logo__img" :src="require(`../assets/img/wwa-projects/${logo}`)" alt="">
             </div>
             <h1 class="project-title">{{ title }}</h1>
             <div class="project-header">
-                <img :src="require(`../assets/img/projects/${header}`)" alt="">
+                <img :src="require(`../assets/img/wwa-projects/${header}`)" alt="">
             </div>
         </section>
         <section class="container project-details">
@@ -16,24 +16,25 @@
                     <p class="project-detail__par" v-for="(i, index) in who" :key="index" v-html="i"></p>
                 </div>
             </div>  
-            <img :src="require(`../assets/img/projects/${image1}`)" alt="">
+            <img :src="require(`../assets/img/wwa-projects/${image1}`)" alt="">
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">What</h1>
                     <p class="project-detail__par" v-for="(i, index) in what" :key="index" v-html="i"></p>
                 </div>
             </div>  
-            <img :src="require(`../assets/img/projects/${image2}`)" alt="">
+            <img :src="require(`../assets/img/wwa-projects/${image2}`)" alt="">
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">Why</h1>
                     <p class="project-detail__par" v-for="(i, index) in why" :key="index" v-html="i"></p>
                 </div>
             </div>  
-            <img :src="require(`../assets/img/projects/${image3}`)" alt="">
-            <div class="project-detail volunteer">
+
+            <img :src="require(`../assets/img/wwa-projects/${image3}`)" alt="" v-if="isKfk">
+            <div class="project-detail volunteer" v-if="isKfk">
                 <div class="project-detail__content">
-                    <h1 class="project-detail__header">Be one of ### volunteers!</h1>
+                    <h1 class="project-detail__header">Be one of {{ volunteersCount }} volunteers!</h1>
                     <p class="project-detail__par" v-for="(i, index) in volunteer" :key="index" v-html="i"></p>
                     <form class="subscribe" action="">
                         <input type="text" placeholder="Email">
@@ -41,6 +42,7 @@
                     </form>
                 </div>
             </div>  
+
         </section>
     </main>
 </template>
@@ -59,6 +61,8 @@ export default {
         what: Array,
         why: Array,
         volunteer: Array,
+        volunteersCount: String,
+        isKfk: Boolean,
     }
 }
 </script>
@@ -74,7 +78,7 @@ export default {
     }
 
     .project-logo__img {
-        width: 160px;
+        width: 200px;
         margin-top: 3rem;
     }
 
@@ -152,8 +156,8 @@ export default {
     
         .project-logo__img {
             margin-top: 3rem;
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
             object-fit: fill;
         }
 

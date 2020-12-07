@@ -1,12 +1,14 @@
 <template>
     <Project 
 
-    logo='kfk/logo.png'
+    :isKfk="true"
+    logo='kfk/KFK_LOGO.png'
     title='Kids for Kids PH'
     header='kfk/KFK_COVER.png'
     image1='kfk/KFK_WHAT.png'
     image2='kfk/KFK_WHY.png'
     image3='kfk/KFK_VOL.png'
+    volunteersCount="998"
 
     :who="[
 
@@ -27,14 +29,14 @@
 
     :volunteer="[
     
-    '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>'
+    '<p>Kids for Kids gives opportunities to volunteers to use their passions in order to make the change they see in this world! We have different committees depending on our projects, which usually revolve around helping different communities in the Philippines through campaigns, outreaches and more! We also have opportunities for our volunteers to learn from one another through different workshops and bonding sessions too! Everyone is welcome!</p>'
     
     ]"/>
 
 </template>
 
 <script>
-import Project from '../components/Project'
+import Project from '../components/WWA_Project'
 export default {
     components: {
         Project

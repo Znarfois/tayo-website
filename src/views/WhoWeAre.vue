@@ -4,13 +4,13 @@
             <p class="text-bold who-statement statement-1">We are a change agency that cultivates creative solutions & sustainable strategies, always taking a global perspective rooted in local culture & tradition.</p>
 
             <div class="who-statement__img">
-                <img src="@/assets/img/projects/kfk/head-1.png" alt="who-statement image">
+                <img src="@/assets/img/wwa-projects/kfk/head-1.png" alt="who-statement image">
             </div>
       </div>
 
       <section class="who-subheading who-subheadings-1">
           <div class="who-subheadings__img">
-              <img src="@/assets/img/projects/kfk/head-1.png" alt="">
+              <img src="@/assets/img/wwa-projects/kfk/head-1.png" alt="">
           </div>
           <p class="text-bold who-sub who-sub1">We authentically connect you to the next generation of world leaders, dreamers, & thinkers to put positive purpose in your next endeavor.</p>
       </section>
@@ -18,7 +18,7 @@
       <section class="who-subheading  who-subheadings-2">
           <p class="text-bold who-sub who-sub2">We advocate awareness, build brands, & create content (ABC’s) through research to redesign & redefine the way our world works.</p>
           <div class="who-subheadings__img">
-              <img src="@/assets/img/projects/kfk/head-1.png" alt="">
+              <img src="@/assets/img/wwa-projects/kfk/head-1.png" alt="">
           </div>
       </section>
 
