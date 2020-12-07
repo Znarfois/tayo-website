@@ -1,8 +1,8 @@
 <template>
   <header id="home-header">
       <div class="header-content">
-        <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="">
-        <h3 class="header-text">A change agency that innovates for transformational growth — where sustainability and creativity meet for positive change</h3>
+        <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="Tayo logo">
+        <img class="header-logo-desktop" src="@/assets/img/headerlogo.png" alt="Tayo logo">
         <div class="header-buttons">
             <button class="header-button button-request"><strong>Request for Porfolio</strong></button>
             <button class="header-button button-contact"><strong>Contact Us</strong></button>
@@ -13,10 +13,11 @@
   <main id="home-content">
 <!-- Mission Section -->
       <article id="mission" class="container">
-        <h1 class="mission-header section-header">TAYO: For and by our generation</h1>
+        <h1 class="mission-header section-header">We are a change agency that innovates design for both people and planet. </h1>
         <div class="mission-content">
-            <p class="mission-statement">Our mission is to cultivate collaboration & innovation amongst people.</p>
-            <p class="mission-details"> We collaborate to innovate brands to disrupt and change the world, through design and sustainable strategies. We integrate culture in innovating purpose, evolve with the times, and collaborate to innovate — all for the benefit of the people and the planet. <strong>Generations are evolving, and you should too. Innovate your brand for the futures to come.</strong></p>
+            <!-- <p class="mission-statement">Our mission is to cultivate collaboration & innovation amongst people.</p> -->
+            <img class="mission-illus" src="@/assets/img/homeillustration.png" alt="">
+            <p class="mission-details">Generations are progressing, and you should too. We are here to help people move forward through design and sustainable strategies, by collaborating to disrupt and change the world. We integrate culture in innovating purpose, evolving with the times, and fostering a community that goes beyond for people and planet. </p>
         </div>
     </article>
 
@@ -24,7 +25,7 @@
     <section id="home-stats">
       <div class="home-stats__content container">
         <HomeStat num="21" subj="clients & partners" />
-        <HomeStat num="24,433" subj="cumulative media reach" />
+        <HomeStat num="47,707" subj="cumulative media reach" />
         <HomeStat num="16" subj="beneficiaries" />
       </div>
     </section>
@@ -68,7 +69,7 @@
   <section id="clients">
         <div class="clients-sections container">
             <h1 class="section-header clients-header">Our Clients</h1>
-            <p class="body-2 clients-subheading">TAYO Sustainable Strategies & Creative Consultancy caters to different NGOs, companies, and startups that are looking to take the next big step in sustainability and creativity for positive change.</p>
+            <p class="body-2 clients-subheading">We believe that everyone we work with has become a part of a community for change, hence, we call them our <strong>Barangay</strong> - a Filipino term for community or kinship. We cater to different individuals, startups, companies, and NGOs that are looking to take the next big step for positive change.</p>
             <ClientList title="TAYO Clients:" :images="['D&G', 'Smart']"/>
             <ClientList title="Our Partners Prior to TAYO:" 
             :images="[
@@ -115,29 +116,33 @@ export default {
 <style scoped>
 /* Header */
     #home-header {
-        background: no-repeat center/cover url('../assets/img/homeheader.png');
+        background: no-repeat right center/cover fixed url('../assets/img/homeheader.jpg');
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         height: 100vh;
         text-align: center;
-        padding: 10rem 0;
+        padding: 5rem 0;
     }
 
-    .header-text {
-        color: white;
-        margin: auto;
-        margin-top: 32px;
-        width: 664px;
-    }
 
     .header-content {
-        width: 80%;
+        width: 90%;
+        margin-top: 8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .header-logo {
-        width: 360px;
+        display: none;
+    }
+
+    .header-logo-desktop {
+        width: 100%;
+        margin-bottom: 100px;
     }
 
     .header-button {
@@ -166,27 +171,20 @@ export default {
     .mission-content {
         display: flex;
         justify-content: space-around;
+        align-items: center;
     }
 
-    .mission-statement {
-        max-width: 450px;
-        font-size: 2rem;
-        line-height: 48px;
+    .mission-illus {
+        width: 30%;
     }
-
-    /* .mission-statement__strong {
-        color: #375998;
-        font-weight: 700;
-    } */
 
     .mission-details {
-        max-width: 568px;
+        width: 568px;
     }
 
 
     /* Stats */
     #home-stats {
-        background: #F9F4EE;
         padding: 40px 0;
     }
 
@@ -215,7 +213,7 @@ export default {
     }
 
     .clients-subheading {
-        max-width: 510px;
+        max-width: 580px;
         text-align: center;
         margin: auto;
         margin-bottom: 2rem;
@@ -223,32 +221,48 @@ export default {
 
 /* Tablet */
 @media screen and (max-width: 1300px) {
-    p, .mission-statement {
+    p {
         font-size: 16px;
         line-height: 32px;
     }
 
-    .header-logo {
-        width: 43%;
-    }
-
-    .header-text {
-        width: 500px
-    }
-
-
-    .mission-statement {
-        max-width: 250px;
-    }
 
     .section-header {
         margin-bottom: 32px;
     }
 
+    /* header */
+
+    .header-content {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .header-logo {
+        display: block;
+        width: 50%;
+        margin: 0 auto 50px;
+    }   
+
+    .header-logo-desktop {
+        display: none;
+    }
+
     /* Mission */
 
     .mission-details {
-        width: 410px;
+        width: auto;
+    }
+
+    .mission-illus {
+        width: 80%;
+        margin: 1rem auto 2rem;
+        display: block;
+    }
+
+    .mission-content {
+        display: block;
     }
 
     /* Offers */
@@ -282,16 +296,10 @@ export default {
             padding: 0;
         }
 
-        .header-content {
-            width: 100%;
+        .section-header {
+            text-align: center;
         }
 
-        .header-text {
-            font-size: 20px;
-            line-height: 26px;
-            width: 80%;
-            margin-bottom: 23px;
-        }
 
         .header-buttons {
             display: flex;
@@ -315,28 +323,15 @@ export default {
             margin: 70px auto;
         }
 
-        .mission-content {
-            display: block;
-        }
-        
-
-        .mission-statement {
-            margin-bottom: 20px;
-            width: 240px;
-        } 
-
-        .mission-details {
-            width: auto;
-        }
-
         /* Stats */
         #home-stats {
-            height: 340px;
-            padding: 30px 0;
+            height: 420px;
+            padding: 10px 0;
         }
 
         .home-stats__content {
             flex-direction: column;
+            height: 100%;
         }
 
         /* Offers */
@@ -363,13 +358,6 @@ export default {
     #home-header {
         height: 600px;
     }
-}
-
-@media screen and (max-width: 320px) {
-    .header-text {
-            font-size: 16px;
-            line-height: 24px;
-        }
 }
 
 </style>
