@@ -325,12 +325,13 @@ export default {
 
         /* Stats */
         #home-stats {
-            height: 340px;
-            padding: 30px 0;
+            height: 420px;
+            padding: 10px 0;
         }
 
         .home-stats__content {
             flex-direction: column;
+            height: 100%;
         }
 
         /* Offers */
