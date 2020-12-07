@@ -27,6 +27,11 @@
           />
         </router-link>
       </div>
+      <div class="burger-btn" onclick="showBurger()">
+          <div class="bar-1"></div>
+          <div class="bar-2"></div>
+          <div class="bar-3"></div>
+        </div>
       <ul
         v-if="isDesktop"
         id="desktop-nav"
@@ -36,16 +41,16 @@
             >Home</router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/about"
-            >Who We Are</router-link>
+          <router-link :style="isHome ? navLink : {}" to="/services"
+            >Services</router-link>
         </li>
         <li>
           <router-link :style="isHome ? navLink : {}" to="/projects/kidsforkids"
             >Projects</router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/services"
-            >Services</router-link>
+          <router-link :style="isHome ? navLink : {}" to="/about"
+            >Who We Are</router-link>
         </li>
         <li>
           <router-link :style="isHome ? navLink : {}" to="/contactus"
@@ -324,6 +329,7 @@ ul {
 
 /* Mobile Nav */
 #mobile-nav {
+  display: none;
   position: fixed;
   width: 100%;
   top: 0;
