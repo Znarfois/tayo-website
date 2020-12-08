@@ -23,6 +23,7 @@
         <router-link to="/">
           <img
             alt="TAYO Logo"
+            id = "tayo-logo"
             :src="require('@/assets/img/' + brand + '')"
           />
         </router-link>
@@ -144,7 +145,7 @@ export default {
     return {
       isHome: this.$route.path === "/" ? true : false,
       isDesktop: window.innerWidth >= 768 ? true : false,
-      brand: "tayo-logo.png",
+      brand: "tayo-logo-black.png",
       navHome: {
         background: "transparent",
         boxShadow: "none"
@@ -158,7 +159,8 @@ export default {
     // eslint-disable-next-line
     $route(to, from) {
       this.isHome = to.path === "/" ? true : false;
-      this.brand = this.isHome ? "tayo-logo.png" : "tayo-logo-black.png";
+      to.path === "/" ? document.querySelector('#tayo-logo').style.visibility = 'hidden' : document.querySelector('#tayo-logo').style.visibility = 'visible';
+      this.brand = this.isHome ? "tayo-logo-black.png" : "tayo-logo-black.png";
     }
   },
   methods: {
@@ -172,7 +174,7 @@ export default {
     handleScroll() {
       if (this.isHome) {
         if (window.scrollY > 20) {
-        this.navHome = {
+          this.navHome = {
             background: "#FFFFFF",
             transition: "background 0.25s ease-in-out",
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
@@ -183,6 +185,7 @@ export default {
             transition: "color 0.25s ease-in-out"
           };
           this.brand = "tayo-logo-black.png";
+          document.querySelector('#tayo-logo').style.visibility = 'visible';
         } 
         else {
           this.navHome = {
@@ -194,24 +197,30 @@ export default {
             color: "#FFFFFF",
             transition: "color 0.25s ease-in-out"
           };
-          this.brand = "tayo-logo.png";
+          this.brand = "tayo-logo-black.png";
+          document.querySelector('#tayo-logo').style.visibility = 'hidden';
         }
       }
       else {
-          if (window.scrollY > 20) {
-            this.navHome = {
-                background: "#FFFFFF",
-                transition: "background 0.25s ease-in-out",
-                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
-                // color: '#000000'
-            };
+        if (window.scrollY > 20) {
+          this.navHome = {
+              background: "#FFFFFF",
+              transition: "background 0.25s ease-in-out",
+              boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
+              // color: '#000000'
+          };
         } 
         else {
           this.navHome = {
             background: "transparent",
             transition: "background 0.25s ease-in-out",
             boxShadow: "none",
+            // color: '#000000'
           };  
+          this.navLink = {
+            color: "#000000",
+            transition: "color 0.25s ease-in-out"
+          };
         }
       }
     }
