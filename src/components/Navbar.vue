@@ -62,27 +62,33 @@
     <div v-if="!isDesktop" id="mobile-nav">
       <ul class="d-flex f-even">
         <li>
-          <router-link to="/">
+          <img
+            alt="TAYO Logo"
+            :src="require('@/assets/img/tayo-logo-black.png')"
+          />
+        </li>
+        <li>
+          <router-link :style="isHome ? navLink : {}" to="/">
             <span>Home</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/services">
+          <router-link :style="isHome ? navLink : {}" to="/services">
             <span>Services</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/projects/kidsforkids">
+          <router-link :style="isHome ? navLink : {}" to="/projects/kidsforkids">
             <span>Projects</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/about">
+          <router-link :style="isHome ? navLink : {}" to="/about">
             <span>Who We Are</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/contactus">
+          <router-link :style="isHome ? navLink : {}" to="/contactus">
             <span>Contact Us</span>
           </router-link>
         </li>
@@ -135,7 +141,6 @@ export default {
   created() {
     window.addEventListener("resize", this.handleResizeNav);
     window.addEventListener("scroll", this.handleScroll);
-    // this.brand = this.isHome ? "tayo-logo.png" : "tayo-logo-black.png";
   },
   unmounted() {
     window.removeEventListener("resize", this.handleResizeNav);
@@ -343,7 +348,8 @@ ul {
   width: 100%;
   top: 0;
   left: 0;
-  background: #FFFFFF;
+  height: 420px;
+  background: #FAFAFA;
 }
 #mobile-nav > ul {
   margin: 0;
@@ -356,17 +362,45 @@ ul {
   text-decoration: none;
 }
 #mobile-nav a > span {
-  font-size: 14px;
-  font-size: 10px;
-  margin-top: 5px;
+  font-size: 16px;
+  margin-bottom: 24px;
+  font-weight: 700px;
 }
 #mobile-nav a > i,
 #mobile-nav a > span {
-  color: #909090;
+  color: #333333;
 }
+
+#mobile-nav li > .router-link-active > span {
+  color: #EAA200;
+  font-weight: 700;
+  line-height: 24px;
+}
+
 @media screen and (max-width: 767px) {
-  img {
+  #tayo-logo {
     display: none;
   }
+
+  #mobile-nav {
+    display: block;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  }
+
+  li img {
+    width: 50px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li:first-child {
+    margin: 32px 0;
+  }
+
 }
 </style>
