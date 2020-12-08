@@ -30,7 +30,7 @@ export default {
     }
 
     form {
-        width: 100vw;
+        width: 100%;
     }
 
     p {
@@ -45,17 +45,23 @@ export default {
     }
 
     input, textarea{
-        display: block;
+        display: inline-block;
         background: transparent;
         font-size: 14px;
         line-height: 1.2;
         padding: 10px;
-        width: 46vw;
+        width: 46%;
+        max-width: 1152px;
         border: 2px solid #d2d2d2;
         border-radius: 5px;
         margin: 0 0 20px 0;
         opacity: 0.5;
     }   
+
+    form:nth-child(n + 2) > input {
+        width: 40%;
+        max-width: 560px;
+    }
 
     textarea {
         height: 14%;
