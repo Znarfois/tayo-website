@@ -9,6 +9,7 @@
     image2='kfk/KFK_WHY.png'
     image3='kfk/KFK_VOL.png'
     volunteersCount="998"
+    color='#375998'
 
     :who="[
 

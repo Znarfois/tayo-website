@@ -4,7 +4,7 @@
             <div class="project-logo">
                 <img class="project-logo__img" :src="require(`../assets/img/wwa-projects/${logo}`)" alt="">
             </div>
-            <h1 class="project-title">{{ title }}</h1>
+            <h1 class="project-title" :style="{'color': color}">{{ title }}</h1>
             <div class="project-header">
                 <img :src="require(`../assets/img/wwa-projects/${header}`)" alt="">
             </div>
@@ -12,21 +12,21 @@
         <section class="container project-details">
             <div class="project-detail">
                 <div class="project-detail__content">
-                    <h1 class="project-detail__header">Who</h1>
+                    <h1 class="project-detail__header" :style="{'color': color}">Who</h1>
                     <p class="project-detail__par" v-for="(i, index) in who" :key="index" v-html="i"></p>
                 </div>
             </div>  
             <img :src="require(`../assets/img/wwa-projects/${image1}`)" alt="">
             <div class="project-detail">
                 <div class="project-detail__content">
-                    <h1 class="project-detail__header">What</h1>
+                    <h1 class="project-detail__header" :style="{'color': color}">What</h1>
                     <p class="project-detail__par" v-for="(i, index) in what" :key="index" v-html="i"></p>
                 </div>
             </div>  
             <img :src="require(`../assets/img/wwa-projects/${image2}`)" alt="">
             <div class="project-detail">
                 <div class="project-detail__content">
-                    <h1 class="project-detail__header">Why</h1>
+                    <h1 class="project-detail__header" :style="{'color': color}">Why</h1>
                     <p class="project-detail__par" v-for="(i, index) in why" :key="index" v-html="i"></p>
                 </div>
             </div>  
@@ -63,6 +63,7 @@ export default {
         volunteer: Array,
         volunteersCount: String,
         isKfk: Boolean,
+        color: String,
     }
 }
 </script>
@@ -83,7 +84,7 @@ export default {
     }
 
     .project-title {
-        color: #375998;
+        /* color: #375998; */
         margin: 1rem 0 3rem;
     }
 
@@ -162,7 +163,6 @@ export default {
         }
 
         .project-title {
-            color: #375998;
             font-size: 24px;
             margin: 0;
             position: relative;

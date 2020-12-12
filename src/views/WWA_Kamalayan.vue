@@ -4,9 +4,10 @@
     :isKfk="false"
     logo='kamalayan/KAMALAYAN_LOGO.png'
     title='Kamalayan'
-    header='retaso/KAM_COVER.png'
-    image1='retaso/KAM_1.png'
-    image2='retaso/KAM_2.png'
+    header='kamalayan/KAM_COVER.png'
+    image1='kamalayan/KAM_1.png'
+    image2='kamalayan/KAM_2.png'
+    color='#2D5F46'
 
     :who="[
 

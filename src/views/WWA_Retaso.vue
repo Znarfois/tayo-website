@@ -7,6 +7,7 @@
     header='retaso/RETASO_COVER.png'
     image1='retaso/RET_1.png'
     image2='retaso/RET_2.png'
+    color='#D463A1'
 
     :who="[
 

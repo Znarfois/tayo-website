@@ -7,6 +7,7 @@
     header='habilin/HAB_COVER.png'
     image1='habilin/HAB_1.png'
     image2='habilin/HAB_2.png'
+    color='#F66324'
 
     :who="[
 
