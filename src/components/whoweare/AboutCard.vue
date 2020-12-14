@@ -1,12 +1,17 @@
 <template>
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-text">
-            <p class="card-type body-2">{{ type }}</p>
-            <h3 class="card-title">{{ title }}</h3>
-            <h3 class="card-advocacy">{{ advocacy }}</h3>
+    <a :href="link">
+        <div class="card">
+            <div class="card-image" :style="{ background: `url(${require('@/assets/img/wwa-projects/' + image)}) center center/cover` }">
+                <!-- <img class="card-background" :src="require(`@/assets/img/wwa-projects/${image}`)" alt="Project Image"> -->
+                <img class="card-icon" :src="require(`@/assets/img/wwa-projects/${icon}`)" alt="Project Icon">
+            </div>
+            <div class="card-text">
+                <p class="card-type body-2">{{ type }}</p>
+                <h3 :style="{'color': color}" class="card-title">{{ title }}</h3>
+                <h4 class="card-advocacy">{{ advocacy }}</h4>
+            </div>
         </div>
-    </div>
+    </a>
 </template>
 
 <script>
@@ -15,14 +20,23 @@ export default {
         type: String,
         title: String,
         advocacy: String, 
-    }
+        color: String,
+        image: String, 
+        icon: String,
+        link: String,
+    },
 }
 </script>
 
 <style scoped>
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
     .card {
         width: 100%;
-        height: 352px;
+        height: 270px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -32,8 +46,14 @@ export default {
 
     .card-image {
         width: 100%;
-        height: 40%;
-        background: lightgrey;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+
+    .card-icon {
+        width: 88px;
     }
 
     .card-type {
@@ -42,17 +62,18 @@ export default {
 
     .card-title {
         text-transform: uppercase;
+        margin-bottom: 5px;
     }
     
     .card-text {
         width: 100%;
-        height: 60%;
+        height: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 1rem;
+        padding: 1.5rem 0;
     }
 
 </style>
