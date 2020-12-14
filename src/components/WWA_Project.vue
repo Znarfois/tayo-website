@@ -2,11 +2,11 @@
     <main>
         <section id="project-intro">
             <div class="project-logo">
-                <img class="project-logo__img" :src="require(`../assets/img/wwa-projects/${logo}`)" alt="">
+                <img class="project-logo__img" :src="require(`../assets/img/wwa-projects/${logo}`)" alt="Project Logo">
             </div>
             <h1 class="project-title" :style="{'color': color}">{{ title }}</h1>
             <div class="project-header">
-                <img :src="require(`../assets/img/wwa-projects/${header}`)" alt="">
+                <img :src="require(`../assets/img/wwa-projects/${header}`)" alt="Project Header Image">
             </div>
         </section>
         <section class="container project-details">
@@ -16,14 +16,14 @@
                     <p class="project-detail__par" v-for="(i, index) in who" :key="index" v-html="i"></p>
                 </div>
             </div>  
-            <img :src="require(`../assets/img/wwa-projects/${image1}`)" alt="">
+            <img :src="require(`../assets/img/wwa-projects/${image1}`)" alt="Who Image">
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header" :style="{'color': color}">What</h1>
                     <p class="project-detail__par" v-for="(i, index) in what" :key="index" v-html="i"></p>
                 </div>
             </div>  
-            <img :src="require(`../assets/img/wwa-projects/${image2}`)" alt="">
+            <img :src="require(`../assets/img/wwa-projects/${image2}`)" alt="What Image">
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header" :style="{'color': color}">Why</h1>
@@ -31,7 +31,8 @@
                 </div>
             </div>  
 
-            <img :src="require(`../assets/img/wwa-projects/${image3}`)" alt="" v-if="isKfk">
+            <img class="imgOriginal" :src="require(`../assets/img/wwa-projects/${image3}`)" alt="Why Image" v-if="isKfk">
+            <img class="imgReplace" :src="require('../assets/img/wwa-projects/kfk/KFK_MOBILE.png')" alt="Why Image" v-if="isKfk">
             <div class="project-detail volunteer" v-if="isKfk">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">Be one of {{ volunteersCount }} volunteers!</h1>
@@ -131,6 +132,10 @@ export default {
         margin-bottom: 1rem;
     }
 
+    .imgReplace {
+        display: none;
+    }
+
     @media screen and (max-width: 1024px) {
         .project-detail__content {
             width: 90%;
@@ -192,6 +197,15 @@ export default {
 
         .subscribe button {
             width: 100px;
+        }
+
+        .imgReplace {
+            display: inline;
+            height: auto !important;
+        }
+
+        .imgOriginal {
+            display: none;
         }
     }
    

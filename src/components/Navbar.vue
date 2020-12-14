@@ -48,7 +48,7 @@
             >Services</router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/projects/kidsforkids"
+          <router-link :style="isHome ? navLink : {}" to="/whoweare/kidsforkids"
             >Projects</router-link>
         </li>
         <li>
@@ -80,7 +80,7 @@
           </router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/projects/kidsforkids" v-on:click="showBurger()">
+          <router-link :style="isHome ? navLink : {}" to="/whoweare/kidsforkids" v-on:click="showBurger()">
             <span>Projects</span>
           </router-link>
         </li>
