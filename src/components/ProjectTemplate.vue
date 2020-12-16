@@ -1,26 +1,27 @@
 <template>
   <main>
-      <p class="container project-name">Projects / Title of Featured Work, Client</p>
-      <div class="carousel">
-
-      </div>
+      <section class="project-intro">
+          <p class="container project-name">Projects / Title of Featured Work, Client</p>
+          <div class="carousel"></div>
+      </section>
+      
       <section class="project-information">
-          <h3 class="project-info cap">Type of Service</h3>
-          <h1 class="project-info cap">Title of Featured Work</h1>
-          <h2 class="project-info">Client</h2>
+          <h3 class="project-info type cap">Type of Service</h3>
+          <h1 class="project-info title cap">Title of Featured Work</h1>
+          <h2 class="project-info client">Client</h2>
       </section>
       <section class="container project-involved">
-          <h3 class="header">Who was involved</h3>
-          <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-          <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+          <h3 class="mini-text">Who was involved</h3>
+          <p class="mini-text mini-par">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+          <p class="mini-text mini-par">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
       </section>
       <section class="container project-date">
-          <h3 class="header">Project Dates</h3>
-          <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+          <h3 class="mini-text">Project Dates</h3>
+          <p class="mini-text mini-par">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
       </section>
       <section class="project-statement container">
           <div class="project-statement__content">
-            <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</h1>
+            <h1 class="project-statement__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</h1>
           </div>
       </section>
       <section class="container project-details">
@@ -63,16 +64,31 @@ export default {
         margin-top: 6rem;
     }
 
+/* Global */
+    .project-involved, .project-date, .medium-article {
+        margin-bottom: 80px;
+    }
+
     .cap {
         text-transform: uppercase;
     }
 
+/* Project intro */
+
+    .project-intro {
+        height: 100vh;
+    }
+
     .carousel {
         width: 100%;
-        height: 600px;
+        height: 80%;
         background: grey;
         margin-bottom: 255px;
     }
+
+
+
+/* Project Info */
 
     .project-name {
         margin-bottom: 36px;
@@ -88,21 +104,14 @@ export default {
         padding-bottom: 30px;
     }
 
-    .header {
-        margin-bottom: 1.2rem;
-    }
-
-    .par {
-        margin-bottom: 1rem;
-    }
-
-    .project-involved, .project-date {
-        margin-bottom: 80px;
-    }
-
     .project-statement__content {
         width: 70%;
     }
+
+    .mini-text {
+        margin-bottom: 1rem;
+    }
+
 
     /* Project details */
     .project-details {
@@ -118,10 +127,6 @@ export default {
     .project-detail__content {
         width: 65%;
         padding-right: 100px;
-    }
-
-    .project-detail__par {
-        margin-bottom: 50px;
     }
 
     .project-detail__header {
@@ -156,18 +161,46 @@ export default {
     }
 
     @media screen and (max-width: 1024px) {
+        .mini-text {
+            margin-bottom: 4px;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 60%;
+            background: grey;
+            margin-bottom: 255px;
+        }
+
         .project-detail__content {
-            width: 90%;
+            width: 100%;
+            padding-right: 0;
         }
 
         .project-details {
             width: 100%;
+            margin-bottom: 3rem;
         }
 
         .project-detail {
             width: 80%;
             margin: 3rem auto;
         }
+
+        .project-quote {
+            width: 80%;
+            margin-bottom: 140px;
+        }
+
+        .project-statement__text {
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        .project-involved, .project-date, .medium-article {
+            margin-bottom: 60px;
+        }
+        
 
     }
 
@@ -179,15 +212,36 @@ export default {
             object-fit: cover;
         }
 
+        .project-information {
+            margin-bottom: 40px;
+        }
+
+        .project-info {
+            padding-bottom: 25px;
+        }
+
+        .project-involved, .project-date, .medium-article {
+            margin-bottom: 40px;
+        }
+
+        .mini-text {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .mini-par {
+            font-size: 12px;
+            margin: 0;
+            line-height: 24px;
+        }
+
         .project-detail__content {
-            width: 90%;
             margin: 0 auto;
         }
 
         .project-detail {
             margin: 4rem auto;
             display: block;
-            width: 100%;
         }
 
         .project-detail__header {
@@ -198,6 +252,42 @@ export default {
         .project-detail__par {
             font-size: 16px;
             line-height: 32px;
+        }
+
+        .project-statement__content {
+            width: 100%;
+        }
+
+        .project-statement__text {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .project-quote {
+            margin-bottom: 50px;
+        }
+
+        .type, .client {
+            font-size: 16px;
+        }
+
+        .title {
+            font-size: 24px;
+        }
+
+        .project-quote {
+            width: 80%;
+        }
+
+        .quote-text {
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        .article-button {
+            height: 40px;
+            width: 168px;
+            background: #EAA200;
         }
     }
 
