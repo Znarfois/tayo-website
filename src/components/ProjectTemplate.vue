@@ -48,14 +48,22 @@
             <button class="article-button">View Medium Article</button>
         </aside>
         <section class="related-work">
-
+            <h3 class="related-work__header cap">Related Work</h3>
+            <div class="related-work__cards">
+                <Hover service="Service" title="Title" client="Client" img="homeheader.jpg"/>
+                <Hover service="Service" title="Title" client="Client" img="homeheader.jpg"/>
+                <Hover service="Service" title="Title" client="Client" img="homeheader.jpg"/>
+            </div>
         </section>
   </main>
 </template>
 
 <script>
+import Hover from '../components/Hover'
 export default {
-
+    components: {
+        Hover,
+    }
 }
 </script>
 
@@ -65,7 +73,7 @@ export default {
     }
 
 /* Global */
-    .project-involved, .project-date, .medium-article {
+    .project-involved, .project-date {
         margin-bottom: 80px;
     }
 
@@ -85,8 +93,6 @@ export default {
         background: grey;
         margin-bottom: 255px;
     }
-
-
 
 /* Project Info */
 
@@ -142,7 +148,7 @@ export default {
         width: 50%;
         margin: 0 auto;
         text-align: center;
-        margin-bottom: 140px;
+        margin-bottom: 100px;
     }
 
     .quote-text {
@@ -159,6 +165,27 @@ export default {
         width: 208px;
         background: #EAA200;
     }
+
+    .medium-article {
+        margin-bottom: 200px;
+    }
+
+/* Related work */
+
+    .related-work {
+        margin-bottom: 80px;
+    }
+
+    .related-work__header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .related-work__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 
     @media screen and (max-width: 1024px) {
         .mini-text {
@@ -200,10 +227,14 @@ export default {
         .project-involved, .project-date, .medium-article {
             margin-bottom: 60px;
         }
-        
-
     }
 
+    @media screen and (max-width: 767px) {
+        .related-work__cards {
+            display: block;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 
     @media screen and (max-width: 500px) {
 
