@@ -6,6 +6,7 @@ import WWA_Habilin from '../views/WWA_Habilin.vue'
 import WWA_Retaso from '../views/WWA_Retaso.vue'
 import WWA_Kamalayan from '../views/WWA_Kamalayan.vue'
 import Services from '../views/Services.vue'
+import Project from '../views/Project'
 
 const routes = [
   {
@@ -42,7 +43,12 @@ const routes = [
     path: '/services',
     name: 'Services',
     component: Services
-  }
+  },
+  {
+    path: '/projects/project',
+    name: 'Project',
+    component: Project
+  },
 ]
 
 const router = createRouter({
