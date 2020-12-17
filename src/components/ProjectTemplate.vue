@@ -2,51 +2,47 @@
   <main>
       <section class="project-intro">
           <p class="container project-name">Projects / Title of Featured Work, Client</p>
-          <div class="carousel"></div>
+          <Carousel :slideshow="slideshow"/>
       </section>
       
       <section class="project-information">
-          <h3 class="project-info type cap">Type of Service</h3>
-          <h1 class="project-info title cap">Title of Featured Work</h1>
-          <h2 class="project-info client">Client</h2>
+          <h3 class="project-info type cap">{{ service }}</h3>
+          <h1 class="project-info title cap">{{ title }}</h1>
+          <h2 class="project-info client">{{ client }}</h2>
       </section>
-      <section class="container project-involved">
+      <section v-if="hasPeople" class="container project-involved">
           <h3 class="mini-text">Who was involved</h3>
-          <p class="mini-text mini-par">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-          <p class="mini-text mini-par">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+          <p class="multi-par mini-text mini-par" v-for="(i, index) in who" :key="index" v-html="i"></p>
       </section>
-      <section class="container project-date">
+      <section v-if="hasDate" class="container project-date">
           <h3 class="mini-text">Project Dates</h3>
-          <p class="mini-text mini-par">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+          <p class="multi-par mini-text mini-par" v-for="(i, index) in date" :key="index" v-html="i"></p>
       </section>
       <section class="project-statement container">
           <div class="project-statement__content">
-            <h1 class="project-statement__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</h1>
+            <h1 class="project-statement__text">{{ statement }}</h1>
           </div>
       </section>
       <section class="container project-details">
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">How It Began</h1>
-                    <p class="project-detail__par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam repellat ipsa quis architecto. Maxime rem harum, nisi architecto veritatis porro deserunt fugiat corporis asperiores dolorem consequuntur quod, est amet dignissimos.</p>
+                    <p class="multi-par project-detail__par" v-for="(i, index) in began" :key="index" v-html="i"></p>
                 </div>
             </div>  
-            <img class="project-image" :src="require(`../assets/img/wwa-projects/kfk/KFK_COVER.png`)" alt="Who Image">
+            <img class="project-image" :src="require(`../assets/img/template-projects/${image1}`)" alt="image1">
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">What We Were Successful With</h1>
-                    <p class="project-detail__par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero neque eaque dolore harum aliquid, maxime, delectus repudiandae nemo facilis error quaerat nostrum expedita soluta totam laudantium ipsa vero, obcaecati non!</p>
+                    <p class="multi-par project-detail__par" v-for="(i, index) in successful" :key="index" v-html="i"></p>
                 </div>
             </div>  
-            <img class="project-image" :src="require(`../assets/img/wwa-projects/kfk/KFK_COVER.png`)" alt="Who Image">
+            <img class="project-image" :src="require(`../assets/img/template-projects/${image2}`)" alt="image2">
         </section>
         <section class="project-quote container">
-            <h1 class="quote-text">“Quote quote quote maybe if they want to put a quote or somethin”</h1>
-            <p>– Name of Person, Position</p>
+            <h1 class="quote-text">{{ quote }}</h1>
+            <p>– {{ author }}</p>
         </section>
-        <aside class="medium-article">
-            <button class="article-button">View Medium Article</button>
-        </aside>
         <section class="related-work">
             <h3 class="related-work__header cap">Related Work</h3>
             <div class="related-work__cards">
@@ -60,9 +56,33 @@
 
 <script>
 import Hover from '../components/Hover'
+import Carousel from '../components/Carousel'
 export default {
     components: {
         Hover,
+        Carousel
+    },
+    props: {
+        slideshow: Array,
+        service: String,
+        title: String,
+        client: String, 
+        image1: String,
+        image2: String,
+        who: String,
+        date: String, 
+        statement: String, 
+        began: Array, 
+        successful: Array,
+        quote: String,
+        author: String,
+        hasPeople: Boolean,
+        hasDate: Boolean,
+    },
+    data() {
+        return {
+            
+        }
     }
 }
 </script>
@@ -81,18 +101,22 @@ export default {
         text-transform: uppercase;
     }
 
+    .multi-par {
+        margin-bottom: 50px;
+    }
+
 /* Project intro */
 
     .project-intro {
-        height: 100vh;
+        margin-bottom: 200px;
     }
 
-    .carousel {
+    /* .carousel {
         width: 100%;
         height: 80%;
         background: grey;
         margin-bottom: 255px;
-    }
+    } */
 
 /* Project Info */
 
@@ -116,6 +140,10 @@ export default {
 
     .mini-text {
         margin-bottom: 1rem;
+    }
+
+    .title {
+        color: #EAA200;
     }
 
 
@@ -153,21 +181,6 @@ export default {
 
     .quote-text {
         margin-bottom: 30px;
-    }
-
-    /* Article Button */
-    .medium-article {
-       text-align: center;
-    }
-
-    .article-button {
-        height: 64px;
-        width: 208px;
-        background: #EAA200;
-    }
-
-    .medium-article {
-        margin-bottom: 200px;
     }
 
 /* Related work */
@@ -313,12 +326,6 @@ export default {
         .quote-text {
             font-size: 24px;
             line-height: 32px;
-        }
-
-        .article-button {
-            height: 40px;
-            width: 168px;
-            background: #EAA200;
         }
     }
 

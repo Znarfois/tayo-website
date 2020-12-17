@@ -128,6 +128,7 @@ export default {
     }
 
     .project-detail__header {
+        color: #385997;
         margin-bottom: 1rem;
     }
 

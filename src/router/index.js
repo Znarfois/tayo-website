@@ -6,7 +6,7 @@ import WWA_Habilin from '../views/WWA_Habilin.vue'
 import WWA_Retaso from '../views/WWA_Retaso.vue'
 import WWA_Kamalayan from '../views/WWA_Kamalayan.vue'
 import Services from '../views/Services.vue'
-import Project from '../views/Project'
+import Smart from '../views/Template_Smart'
 
 const routes = [
   {
@@ -45,9 +45,9 @@ const routes = [
     component: Services
   },
   {
-    path: '/projects/project',
-    name: 'Project',
-    component: Project
+    path: '/projects/smart',
+    name: 'Smart',
+    component: Smart,
   },
 ]
 

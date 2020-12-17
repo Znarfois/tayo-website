@@ -52,6 +52,7 @@ a, .project, .project-img {
 
 .overlay-text {
     display: none;
+    color: black;
 }
 
 .title {
