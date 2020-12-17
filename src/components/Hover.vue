@@ -50,6 +50,10 @@ a, .project, .project-img {
   flex-direction: column;
 }
 
+.overlay-text {
+    overflow: hidden;
+}
+
 .title {
     text-transform: uppercase;
     color: #EAA200;
