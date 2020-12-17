@@ -2,7 +2,7 @@
 <main class="projects">
   <section class="projects-header">
       <div class="project-header__content">
-          <img class="header-image" src="../assets/img/homeheader.png" alt="Project Heading">
+          <img class="header-image" src="../assets/img/homeheader.jpg" alt="Project Heading">
           <h2>We want the world not just to survive, but to thrive.</h2>
       </div>
   </section>
@@ -36,13 +36,13 @@ export default {
                 service: "Brand Identity", 
                 title: "Where Telco meets Child Protection", 
                 client: "PLDT-SMART",
-                img:"homeheader.png"
+                img:"homeheader.jpg"
                 }, 
                 { 
                 service: "Logo Design & Brand Identity", 
                 title: "Where Global Traveller Meets Local Explorer", 
                 client: "Good Stories Movement",
-                img:"homeheader.png"
+                img:"homeheader.jpg"
                 }, 
             ],
 
@@ -51,13 +51,13 @@ export default {
                 service: "Brand Identity", 
                 title: "Where Telco meets Child Protection", 
                 client: "PLDT-SMART",
-                img:"homeheader.png"
+                img:"homeheader.jpg"
                 }, 
                 { 
                 service: "Logo Design & Brand Identity", 
                 title: "Where Global Traveller Meets Local Explorer", 
                 client: "Good Stories Movement",
-                img:"homeheader.png"
+                img:"homeheader.jpg"
                 },
             ]
         }

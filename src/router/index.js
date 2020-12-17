@@ -9,6 +9,7 @@ import Services from '../views/Services.vue'
 import Smart from '../views/Template_Smart'
 import Projects from '../views/Projects'
 
+
 const routes = [
   {
     path: '/',
