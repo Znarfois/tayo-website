@@ -51,25 +51,20 @@ a, .project, .project-img {
 }
 
 .overlay-text {
-    display: none;
+    overflow: hidden;
 }
+
 
 .title {
     text-transform: uppercase;
     color: #EAA200;
 }
 
-@media screen and (min-width: 1367px) {
-    .project:hover .overlay {
-        height: 50%;
-        opacity: 1;
-        color: black;
-        background: white;
-    }
-
-    .project:hover .overlay-text {
-        display: block;
-    }
+.project:hover .overlay {
+    height: 50%;
+    opacity: 1;
+    color: black;
+    background: white;
 }
 
 

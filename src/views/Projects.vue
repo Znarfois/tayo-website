@@ -9,23 +9,13 @@
   <section class="client-work m-top">
       <h3 class="client-work__header header-margin">Client Work</h3>
       <div class="project-list">
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
+          <Hover v-for="(client, i) in clients" :service="client.service" :title="client.title" :client="client.client" :img="client.img" :key="i"/>
       </div>
   </section>
   <section class="tayo-projects m-top">
       <h3 class="tayo-projects__header header-margin">Tayo Projects</h3>
       <div class="project-list">
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
-          <Hover service="Type of Service" title="Title of Work" client="Client" img="homeheader.png"/>
+          <Hover v-for="(project, i) in projects" :service="project.service" :title="project.title" :client="project.client" :img="project.img" :key="i"/>
       </div>
   </section>
   <a class="work-link" href="">View more work</a>
@@ -37,6 +27,40 @@ import Hover from '../components/projects/Hover'
 export default {
     components: {
         Hover
+    },
+    data() {
+        return {
+            
+            clients: [
+                { 
+                service: "Brand Identity", 
+                title: "Where Telco meets Child Protection", 
+                client: "PLDT-SMART",
+                img:"homeheader.png"
+                }, 
+                { 
+                service: "Logo Design & Brand Identity", 
+                title: "Where Global Traveller Meets Local Explorer", 
+                client: "Good Stories Movement",
+                img:"homeheader.png"
+                }, 
+            ],
+
+            projects: [
+                { 
+                service: "Brand Identity", 
+                title: "Where Telco meets Child Protection", 
+                client: "PLDT-SMART",
+                img:"homeheader.png"
+                }, 
+                { 
+                service: "Logo Design & Brand Identity", 
+                title: "Where Global Traveller Meets Local Explorer", 
+                client: "Good Stories Movement",
+                img:"homeheader.png"
+                },
+            ]
+        }
     }
 }
 </script>
