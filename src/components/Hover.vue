@@ -1,12 +1,12 @@
 <template>
     <a href="">
         <div class="project">
-            <img class="project-img" :src="require(`@/assets/img/${img}`)" alt="">
+            <img class="project-img" :src="require(`@/assets/img/template-projects/${img}`)" alt="">
             <div class="overlay">
                 <div class="overlay-text">
                     <p class="body-2 service">{{ service }}</p>
                     <h3 class="title"> {{ title }}</h3>
-                    <h3 class="client">{{ client }}</h3>
+                    <h4 class="client">{{ client }}</h4>
                 </div>
             </div>
         </div>
@@ -36,6 +36,10 @@ a, .project, .project-img {
   position: relative;
 }
 
+.project img {
+    object-fit: cover;
+}
+
 .overlay {
   position: absolute;
   height: 0;
@@ -48,6 +52,7 @@ a, .project, .project-img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 0 2rem;
 }
 
 .overlay-text {
@@ -65,6 +70,7 @@ a, .project, .project-img {
     color: black;
     background: white;
 }
+
 
 @media screen and (max-width: 1366px) {
     .overlay {
