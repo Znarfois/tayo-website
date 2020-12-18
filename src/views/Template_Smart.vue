@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import ProjectTemplate from '../components/ProjectTemplate'
+import ProjectTemplate from './ProjectTemplate'
 export default {
     components: {
         ProjectTemplate

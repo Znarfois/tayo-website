@@ -51,7 +51,8 @@
               color="#375998" 
               image="kfk/KFK_COVER.png"
               icon="kfk/KFK_ROUND.png"
-              link="#/whoweare/kidsforkids"
+              link="/whoweare/kidsforkids"
+              :hasLink="true"
  
               />
 
@@ -62,7 +63,8 @@
               color="#D463A1"
               image="retaso/RETASO_COVER.png"
               icon="retaso/RETASO_ROUND.png"
-              link="#/whoweare/retaso"
+              link="/whoweare/retaso"
+              :hasLink="true"
    
               />
 
@@ -73,7 +75,8 @@
               color="#2D5F46"
               image="kamalayan/KAM_COVER.png"
               icon="kamalayan/KAMALAYAN_ROUND.png"
-              link="#/whoweare/kamalayan"
+              link="/whoweare/kamalayan"
+              :hasLink="true"
  
               />
 
@@ -84,7 +87,8 @@
               color="#F66324"
               image="habilin/HAB_COVER.png"
               icon="habilin/HABILIN_ROUND.png"
-              link="#/whoweare/habilin"
+              link="/whoweare/habilin"
+              :hasLink="true"
            
               />
 
@@ -101,6 +105,7 @@
               image="kubo/KUBO_COVER.png"
               color="#EAA200"
               icon="kubo/KUBO_ROUND.png"
+              :hasLink="false"
               />
 
               <AboutCard 
@@ -109,8 +114,8 @@
               advocacy="For Circular Design" 
               image="inyo/INYO_COVER.png"
               color="#5AA3A9"
-              icon="inyo/INYO_ROUND.png"/>
-
+              icon="inyo/INYO_ROUND.png"
+              :hasLink="false"/>
           </div>
       </section>
 

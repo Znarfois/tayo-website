@@ -1,5 +1,5 @@
 <template>
-    <a href="">
+    <router-link :to="{name: 'ProjectTemplate', params : {project_id: id}}">
         <div class="project">
             <img class="project-img" :src="require(`@/assets/img/template-projects/${img}`)" alt="">
             <div class="overlay">
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-    </a>
+    </router-link>
 </template>
 
 <script>
@@ -20,6 +20,7 @@ export default {
         title: String,
         client: String,
         img: String,
+        id: String,
     }
 
 }

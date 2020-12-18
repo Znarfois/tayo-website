@@ -8,6 +8,7 @@ import WWA_Kamalayan from '../views/WWA_Kamalayan.vue'
 import Services from '../views/Services.vue'
 import Smart from '../views/Template_Smart'
 import Projects from '../views/Projects'
+import ProjectTemplate from '../views/ProjectTemplate'
 
 
 const routes = [
@@ -55,6 +56,11 @@ const routes = [
     path: '/projects/smart',
     name: 'Smart',
     component: Smart,
+  },
+  {
+    path: '/projects/:project_id',
+    name: 'ProjectTemplate',
+    component: ProjectTemplate,
   },
 ]
 
