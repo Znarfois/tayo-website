@@ -6,7 +6,6 @@ import WWA_Habilin from '../views/WWA_Habilin.vue'
 import WWA_Retaso from '../views/WWA_Retaso.vue'
 import WWA_Kamalayan from '../views/WWA_Kamalayan.vue'
 import Services from '../views/Services.vue'
-import Smart from '../views/Template_Smart'
 import Projects from '../views/Projects'
 import ProjectTemplate from '../views/ProjectTemplate'
 
@@ -51,11 +50,6 @@ const routes = [
     path: '/projects',
     name: 'Projects',
     component: Projects,
-  },
-  {
-    path: '/projects/smart',
-    name: 'Smart',
-    component: Smart,
   },
   {
     path: '/projects/:project_id',

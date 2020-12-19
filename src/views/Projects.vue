@@ -1,4 +1,5 @@
 <template>
+
 <main class="projects">
   <section class="projects-header">
       <div class="project-header__content">
@@ -17,9 +18,10 @@
       <div class="project-list">
 
       </div>
-      <p v-for="client in clients" :key="client">{{ client.image }}</p>
+      <p v-for="client in clients" :key="client.id" >{{client.image}}</p>
   </section>
 </main>
+
 </template>
 
 <script>
@@ -38,11 +40,10 @@ export default {
     created() {
         // Get Client Projects
         db.collection('projects').where('type', '==', 'Client Project').get()
-        .then(snapshot => snapshot.forEach(
-            doc => {
+        .then(snapshot => snapshot.forEach(doc => {
 
                 const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
-                let projectRef = reference.child(String('projects/' + doc.data().project_id + '/cover.png'));
+                let projectRef = reference.child('projects/' + doc.data().project_id + '/cover.png');
 
                 projectRef.getDownloadURL().then((url)=> {
                     data.image = url;
@@ -58,7 +59,6 @@ export default {
                 }
 
                 this.clients.push(data)
-                console.log(this.clients)
             }
         ))
     },
