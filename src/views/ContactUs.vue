@@ -8,14 +8,16 @@
             <input id="email-input" type="email" v-model="email">
             <p>Message</p>
             <textarea id="message-input" v-model="message"></textarea>
-            <button id='submit-btn' type="submit">Send Message</button>
+            <button id='submit-btn' type="submit" @click="successSend">Send Message</button>
         </form>
         <img 
             alt="contact-asset"
             :src="require('@/assets/img/contact_us_asset.png')"
         />
-        <div class="success-msg">
+        <!-- <div :style="successStyle" class="successDefault" id="success"> -->
+        <div class="successDefault" id="successMsg" style="z-index:-1;">
             <span>Message successfully sent!</span>
+            <img src="@/assets/img/exit_icon.png" v-on:click="successSend()">
         </div>
     </main>
 </template>
@@ -50,7 +52,6 @@ export default {
         }
     },
     methods: {
-        
         contactSend: function (evt) {
             evt.preventDefault();
 
@@ -67,8 +68,30 @@ export default {
             this.message = "";
 
             evt.target.reset();
+        },
+        successSend() {
+            var successMsg = document.querySelector('#successMsg');
+            if (successMsg.style.zIndex == "-1") {
+                successMsg.classList.add('success-msg');
+                // successMsg.style.display = 'flex';
+                successMsg.style.zIndex = "5";
+            }
+            else {
+                successMsg.classList.remove('success-msg');
+                // successMsg.style.display = 'none';
+                successMsg.style.zIndex = "-1";
+            }
+            setTimeout(() => successMsg.classList.remove('success-msg'), 5000);
+            setTimeout(() => successMsg.style.zIndex = "-1", 5000);
         }
-    }
+    },
+    // computed: {
+    //     successStyle() {
+    //         return {
+    //             display: 'none',
+    //         }
+    //     }
+    // }
 }
 
 </script>
@@ -90,28 +113,41 @@ export default {
         }
 
         main img {
-            width: 60%;
+            width: 43%;
         }
     
         .success-msg{
-            display: none;
+            top: calc(100vh - 120px) !important;
+            /* transition-delay: 5s; */
+            z-index: 5 !important;
+            transition: all 1s;
+        }
+        /* @keyframes slideup {
+            0%{top: calc(100vh - 120px + 300px)}
+            100%{top: calc(100vh - 120px)}
+        } */
+
+        .successDefault {
+            display: flex;
+            top: calc(100vh - 120px + 300px);
             position: absolute;
-            translate: -716px;
+            justify-content: space-between;
             width: 400px;
             height: 80px;
             background-color: #5AA3A9;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
             color: #FAFAFA;
-            display: flex;
             align-items: center;
-            padding: 0 0 0 16px;
-            top: 716px;
-            right: -400px;
-            -webkit-animation: slide 0.5s forwards;
-            -webkit-animation-delay: 2s;
-            animation: slide 0.5s forwards;
-            animation-delay: 2s;
+            padding: 0 16px 0 16px;
+            right: 0;
+            z-index: -1;
+            transition: all 1s;
+        }  
+
+        .successDefault img {
+            width: 32px;
+            cursor: pointer;
         }
 
         p {
@@ -154,11 +190,11 @@ export default {
         /* textarea {
             rows: '4';
         } */
-    @media screen and (max-width: 1440px) {
+    /* @media screen and (max-width: 1440px) {
         main img {
             width: 43%;
         }
-    }
+    } */
     @media screen and (max-width: 1024px) {
         main img {
             display: none;
