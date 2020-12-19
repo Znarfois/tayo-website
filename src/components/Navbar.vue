@@ -22,23 +22,23 @@
         id="desktop-nav"
       >
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/"
+          <router-link :style="(isHome || isService)  ? navLink : {}" to="/"
             >Home</router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/services"
+          <router-link :style="(isHome || isService)  ? navLink : {}" to="/services"
             >Services</router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/projects/kidsforkids"
+          <router-link :style="(isHome || isService) ? navLink : {}" to="/projects/kidsforkids"
             >Projects</router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/about"
+          <router-link :style="(isHome || isService) ? navLink : {}" to="/about"
             >Who We Are</router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/contactus"
+          <router-link :style="(isHome || isService) ? navLink : {}" to="/contactus"
             >Contact Us</router-link>
         </li>
       </ul>
@@ -111,10 +111,9 @@ export default {
       // var target = document.querySelectorAll(".bar");
       this.isHome = to.path === "/" ? true : false;
       this.isService = to.path === "/services" ? true : false;
-      console.log(this.isService)
-      to.path === "/" || to.path === "/services" ? document.querySelector('#tayo-logo').style.visibility = 'hidden' : document.querySelector('#tayo-logo').style.visibility = 'visible';
+      (to.path === "/" || to.path === "/services") ? document.querySelector('#tayo-logo').style.visibility = 'hidden' : document.querySelector('#tayo-logo').style.visibility = 'visible';
       // this.brand = this.isHome ? "tayo-logo-black.png" : "tayo-logo-black.png";
-      (to.path === "/services" || to.path === "/") ? this.setColor("#FAFAFA") : this.setColor("#333333"); 
+      // to.path === "/services" || to.path === "/" ? this.setColor("#FAFAFA") : this.setColor("#333333"); 
       // to.path === "/" ? document.querySelector(".bar").style.backgroundColor = "#FAFAFA" : document.querySelector(".bar").style.backgroundColor = "#333333";   
     }
   },
@@ -145,11 +144,13 @@ export default {
     handleResizeNav() {
       if (window.innerWidth < 768) {
         this.isDesktop = false;
-      } else {
+      } 
+      else {
         this.isDesktop = true;
       }
     },
     handleScroll() {
+      console.log(this.isService);
       if ((this.isHome || this.isService) & (this.isDesktop)) {
         if (window.scrollY > 20) {
           this.navHome = {
