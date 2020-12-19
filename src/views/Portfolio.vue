@@ -30,8 +30,12 @@
             <p>Reason for Request</p>
             <textarea class="full-width" v-model="reason"></textarea>
             </div>
-            <button type='submit'>Send Message</button>
+            <button type='submit' @click="successSend">Send Message</button>
             <span>Expect a response within seven (7) working days.</span>
+            <div class="successDefault" id="successMsg" style="z-index:-1;">
+                <span>Message successfully sent!</span>
+                <img src="@/assets/img/exit_icon.png" v-on:click="successSend()">
+            </div>
         </form>
     </main>
 </template>
@@ -92,6 +96,22 @@ export default {
             this.reason = "";
 
             evt.target.reset();
+        },
+
+        successSend() {
+            var successMsg = document.querySelector('#successMsg');
+            if (successMsg.style.zIndex == "-1") {
+                successMsg.classList.add('success-msg');
+                // successMsg.style.display = 'flex';
+                successMsg.style.zIndex = "5";
+            }
+            else {
+                successMsg.classList.remove('success-msg');
+                // successMsg.style.display = 'none';
+                successMsg.style.zIndex = "-1";
+            }
+            setTimeout(() => successMsg.classList.remove('success-msg'), 5000);
+            setTimeout(() => successMsg.style.zIndex = "-1", 5000);
         }
     }
 }
@@ -159,7 +179,7 @@ export default {
         width: 208px;
         height: 64px;
         background-color: #EAA200;
-        color: #FFFFFF;
+        color: #FAFAFA;
     }
 
     form span {
@@ -169,6 +189,39 @@ export default {
         line-height: 32px;
         color: #333333;
         opacity: 0.5;
+    }
+
+    .success-msg{
+        top: calc(100vh - 120px) !important;
+        z-index: 5 !important;
+        transition: all 1s;
+    }
+  
+    .successDefault {
+        display: flex;
+        top: calc(100vh - 120px + 450px);
+        position: absolute;
+        justify-content: space-between;
+        width: 400px;
+        height: 80px;
+        background-color: #5AA3A9;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        align-items: center;
+        padding: 0 16px 0 16px;
+        right: 0;
+        z-index: -1;
+        transition: all 1s;
+    }  
+
+    .successDefault span {
+        color: #FAFAFA;
+        margin-top: 0;
+        opacity: 1;
+    }
+
+    .successDefault img {
+        cursor: pointer;
     }
 
     .full-width {
@@ -192,6 +245,33 @@ export default {
             height: 168px;
             margin-bottom: 36px;
             width: 100%;
+        }
+
+        .success-msg{
+            top: calc(100vh - 120px) !important;
+            /* transition-delay: 5s; */
+            z-index: 5 !important;
+            transition: all 1s;
+        }
+        /* @keyframes slideup {
+            0%{top: calc(100vh - 120px + 300px)}
+            100%{top: calc(100vh - 120px)}
+        } */
+        .successDefault {
+            display: flex;
+            top: calc(100vh - 120px + 800px);
+            position: absolute;
+            justify-content: space-between;
+            width: 300px;
+            height: 80px;
+            border-radius: 5px;
+            align-self: center;
+            right: calc(50vw - 150px);
+            z-index: -1;
+            transition: all 1s;
+        }  
+        .success-msg img {
+            display: block;
         }
     }
 </style>
