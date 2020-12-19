@@ -27,7 +27,9 @@
 <script>
 import Hover from '../components/Hover'
 import db from '../components/firebaseinit'
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/storage';  // If using Firebase storage
+import 'firebase/firestore'
 export default {
     components: {
         Hover
