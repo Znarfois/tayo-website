@@ -1,18 +1,14 @@
 <template>
   <main>
       <section class="project-intro">
-          <p class="container project-name">Projects / Title of Featured Work, Client</p>
-          <!-- <Carousel :slideshow="slideshow"/> -->
+          <p class="container project-name">Projects / {{ title }}</p>
+          <Carousel :slideshow="slideshow"/>
       </section>
       
       <section class="project-information">
           <h3 class="project-info type cap">{{ service }}</h3>
           <h1 class="project-info title cap">{{ title }}</h1>
           <h2 class="project-info client">{{ client }}</h2>
-      </section>
-      <section v-if="person" class="container project-involved">
-          <h3 class="mini-text">Who was involved</h3>
-          <p class="multi-par mini-text mini-par" v-for="person in persons" :key="person">{{ person }}</p>
       </section>
       <section v-if="date" class="container project-date">
           <h3 class="mini-text">Project Dates</h3>
@@ -30,38 +26,38 @@
                     <p class="multi-par project-detail__par">{{ began }}</p>
                 </div>
             </div>  
-            <!-- <img class="project-image" :src="require(`../assets/img/template-projects/${image1}`)" alt="image1"> -->
+            <img class="project-image" :src="image1" alt="image1">
             <div class="project-detail">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">What We Were Successful With</h1>
                     <p class="multi-par project-detail__par">{{ successful }}</p>
                 </div>
             </div>  
-            <!-- <img class="project-image" :src="require(`../assets/img/template-projects/${image2}`)" alt="image2"> -->
+            <img class="project-image" :src="image2" alt="image2">
         </section>
-        <section class="project-quote container">
+        <section class="project-quote container" v-if="quote">
             <h1 class="quote-text">“{{ quote }}”</h1>
-            <p>– {{ author }}</p>
+            <p>– {{ quote_author }}</p>
         </section>
         <section class="related-work">
             <h3 class="related-work__header cap">Related Work</h3>
             <div class="related-work__cards">
-                <!-- <Hover service="Service" title="Title" client="Client" img="cmw/cmw_cover.png"/>
-                <Hover service="Service" title="Title" client="Client" img="cmw/cmw_cover.png"/>
-                <Hover service="Service" title="Title" client="Client" img="cmw/cmw_cover.png"/> -->
+                <Hover v-for="card in cards" :image="card.image" :service="card.service" :title="card.title" :client="card.client" :key="card.id" :id="card.project_id"/>
             </div>
         </section>
   </main>
 </template>
 
 <script>
-// import Hover from '../components/Hover'
+import Hover from '../components/Hover'
 import db from '../components/firebaseinit'
-// import Carousel from '../components/Carousel'
+import Carousel from '../components/Carousel'
+import firebase from 'firebase/app';
+
 export default {
     components: {
-        // Hover,
-        // Carousel
+        Hover,
+        Carousel
     },
 
     data() {
@@ -70,36 +66,154 @@ export default {
             service: null,
             title: null,
             client: null,
-            statemen: null,
+            statement: null,
             began: null,
             successful: null,
             quote: null,
-            author: null,
-            persons: null, 
+            quote_author: null,
             date: null, 
+
+            // Statement images
+            image1: null, 
+            image2: null, 
+
+            // Carousel images
+            cover: null,
+            carousel1: null,
+            carousel2: null,
+            carousel3: null,
+            carousel4: null,
+            carousel5: null,
+
+            // Hover Cards
+            cards: [],
+        }
+    },
+    computed: {
+        slideshow() {
+            let initialList = [ this.cover, 
+                                this.carousel1, 
+                                this.carousel2, 
+                                this.carousel3, 
+                                this.carousel4, 
+                                this.carousel5 ] 
+            return initialList
+                        .map(img => String(img))
+                        .filter(img => img != "null")
         }
     },
     created() {
-        db.collection('projects').where('project_id', '==', this.$route.params.project_id).get()
+        // get content
+        this.getContent()
+
+        // get all images
+        this.getImages()
+
+        // create related hover cards
+        this.getHover()
+            
+    },
+    methods: {
+
+        // Get content from firebase
+        getContent() {
+            db.collection('projects').where('project_id', '==', Number(this.$route.params.project_id)).get()
             .then(querySnapshot => {
                 querySnapshot.forEach(doc => {
+
                     this.id = doc.id
                     this.project_id = doc.data().project_id
                     this.service = doc.data().service
                     this.title = doc.data().title
                     this.client= doc.data().client
                     this.statement = doc.data().statement
+
                     const textBegan = doc.data().began
-                    const spaced = textBegan.replace(/\\n/g,"\n")
-                    this.began = spaced
-                    this.successful = doc.data().successful
+                    const spacedBegan = textBegan.replace(/\\n/g,"\n")
+                    this.began = spacedBegan
+
+                    const textSuccessful = doc.data().successful
+                    const spacedSuccessful = textSuccessful.replace(/\\n/g,"\n")
+                    this.successful = spacedSuccessful
+
                     this.quote = doc.data().quote
-                    this.author = doc.data().author
-                    this.persons = doc.data().persons
+                    this.quote_author = doc.data().quote_author
                     this.date = doc.data().date
                 })
             })
+        },
+
+        // Get images from firebase
+        getImages() {
+            const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
+                    let image1 = reference.child('projects/' + this.$route.params.project_id + '/1.png');
+                    let image2 = reference.child('projects/' + this.$route.params.project_id + '/2.png');
+                    let carousel1 = reference.child('projects/' + this.$route.params.project_id + '/carousel_1.png');
+                    let carousel2 = reference.child('projects/' + this.$route.params.project_id + '/carousel_2.png');
+                    let carousel3 = reference.child('projects/' + this.$route.params.project_id + '/carousel_3.png');
+                    let carousel4 = reference.child('projects/' + this.$route.params.project_id + '/carousel_4.png');
+                    let carousel5 = reference.child('projects/' + this.$route.params.project_id + '/carousel_5.png');
+                    let cover = reference.child('projects/' + this.$route.params.project_id + '/cover.png');
+
+                    image1.getDownloadURL().then((url)=> {
+                        this.image1 = url;
+                    })
+                    image2.getDownloadURL().then((url)=> {
+                        this.image2 = url;
+                    })
+
+                    carousel1.getDownloadURL().then((url)=> {
+                        this.carousel1 = url;
+                    })
+
+                    carousel2.getDownloadURL().then((url)=> {
+                        this.carousel2 = url;
+                    })
+
+                    carousel3.getDownloadURL().then((url)=> {
+                        this.carousel3 = url;
+                    })
+
+                    carousel4.getDownloadURL().then((url)=> {
+                        this.carousel4 = url;
+                    })
+
+                    carousel5.getDownloadURL().then((url)=> {
+                        this.carousel5 = url;
+                    })
+
+                    cover.getDownloadURL().then((url)=> {
+                        this.cover = url;
+                    })
+        
+        },
+
+        // get related hover cards
+        getHover() {
+            db.collection('projects')
+                    .where('subsidiary', '==', 'Tayo')
+                    .where('project_id', '!=', Number(this.$route.params.project_id)).get()
+                    .then(snapshot => snapshot.forEach(doc => {
+
+                    const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
+                    let projectRef = reference.child('projects/' + doc.data().project_id + '/cover.png');
+
+                    projectRef.getDownloadURL().then((url)=> {
+                        const data = {
+                            id: doc.id,
+                            project_id: doc.data().project_id,
+                            service: doc.data().service,
+                            title: doc.data().title,  
+                            client: doc.data().client,
+                            image: url,
+                        }
+                        this.cards.push(data)
+                    })
+                }
+            ))
+        }
     }
+    
 }
 </script>
 
@@ -109,7 +223,7 @@ export default {
     }
 
 /* Global */
-    .project-involved, .project-date {
+    .project-date {
         margin-bottom: 80px;
     }
 
@@ -127,13 +241,6 @@ export default {
     .project-intro {
         margin-bottom: 200px;
     }
-
-    /* .carousel {
-        width: 100%;
-        height: 80%;
-        background: grey;
-        margin-bottom: 255px;
-    } */
 
 /* Project Info */
 
@@ -213,7 +320,7 @@ export default {
 
     .related-work__cards {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
         grid-auto-rows: 352px;
     }
 
@@ -255,15 +362,8 @@ export default {
             line-height: 32px;
         }
 
-        .project-involved, .project-date, .medium-article {
+        .project-date, .medium-article {
             margin-bottom: 60px;
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        .related-work__cards {
-            display: block;
-            grid-template-columns: repeat(3, 1fr);
         }
     }
 
@@ -282,7 +382,7 @@ export default {
             padding-bottom: 25px;
         }
 
-        .project-involved, .project-date, .medium-article {
+        .project-date, .medium-article {
             margin-bottom: 40px;
         }
 
@@ -346,7 +446,12 @@ export default {
             font-size: 24px;
             line-height: 32px;
         }
+
+        .related-work__cards {
+            grid-template-columns: 1fr;
+        }
     }
 
 
 </style>
+

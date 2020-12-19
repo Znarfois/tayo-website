@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{name: 'ProjectTemplate', params : {project_id: id}}">
+    <router-link :to="{name: 'ProjectTemplate', params : {project_id: String(id)}}">
         <div class="project">
             <img class="project-img" :src="image" alt="Project Image">
             <div class="overlay">
@@ -46,6 +46,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   padding: 0 2rem;
 }

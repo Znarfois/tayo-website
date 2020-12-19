@@ -18,7 +18,6 @@
       <div class="project-list">
 
       </div>
-      <p v-for="client in clients" :key="client.id" >{{client.image}}</p>
   </section>
 </main>
 
@@ -28,8 +27,6 @@
 import Hover from '../components/Hover'
 import db from '../components/firebaseinit'
 import firebase from 'firebase/app';
-import 'firebase/storage';  // If using Firebase storage
-import 'firebase/firestore'
 export default {
     components: {
         Hover
@@ -41,8 +38,9 @@ export default {
     },
     created() {
         // Get Client Projects
-        db.collection('projects').where('type', '==', 'Client Project').get()
+        db.collection('projects').where('type', '==', 'Client Work').orderBy('project_id').get()
         .then(snapshot => snapshot.forEach(doc => {
+                console.log(doc.data())
 
                 const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
                 let projectRef = reference.child('projects/' + doc.data().project_id + '/cover.png');
@@ -58,10 +56,6 @@ export default {
                     }
                     this.clients.push(data)
                 })
-
-                
-
-               
             }
         ))
     },
