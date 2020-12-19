@@ -89,7 +89,9 @@ export default {
                     this.title = doc.data().title
                     this.client= doc.data().client
                     this.statement = doc.data().statement
-                    this.began = doc.data().began
+                    const textBegan = doc.data().began
+                    const spaced = textBegan.replace(/\\n/g,"\n")
+                    this.began = spaced
                     this.successful = doc.data().successful
                     this.quote = doc.data().quote
                     this.author = doc.data().author
@@ -117,6 +119,7 @@ export default {
 
     .multi-par {
         margin-bottom: 50px;
+        white-space: pre-wrap;
     }
 
 /* Project intro */
@@ -309,6 +312,7 @@ export default {
         }
 
         .project-detail__par {
+            
             font-size: 16px;
             line-height: 32px;
         }
