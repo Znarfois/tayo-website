@@ -1,21 +1,3 @@
-
-    <!-- <nav>
-        <div class='nav'>
-            <div class='nav-content'>
-                <div class="nav-primary">
-                    <router-link to="/"><img :src="require('../assets/img/' + brand + '')" id="tayo-logo" alt="TAYO logo"></router-link>
-                </div>
-                <div class="nav-secondary">
-                    <router-link to="/">Home</router-link>
-                    <router-link to="/about">Who We Are</router-link>
-                    <router-link to="/projects/kidsforkids">Projects</router-link>
-                    <router-link to="/services">Services</router-link>
-                    <router-link to="/contactus">Contact Us</router-link>
-                </div>
-            </div>
-        </div>
-    </nav> -->
-
 <template>
   <div class="black-overlay"></div>
   <nav :style="navHome">
@@ -70,27 +52,27 @@
           />
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService) ? navLink : {}" to="/" v-on:click="showBurger()">
             <span>Home</span>
           </router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/services" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService) ? navLink : {}" to="/services" v-on:click="showBurger()">
             <span>Services</span>
           </router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/projects/kidsforkids" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService)  ? navLink : {}" to="/projects/kidsforkids" v-on:click="showBurger()">
             <span>Projects</span>
           </router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/about" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService)  ? navLink : {}" to="/about" v-on:click="showBurger()">
             <span>Who We Are</span>
           </router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/contactus" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService)  ? navLink : {}" to="/contactus" v-on:click="showBurger()">
             <span>Contact Us</span>
           </router-link>
         </li>
@@ -119,7 +101,7 @@ export default {
         boxShadow: "none"
       },
       navLink: {
-        color: "#FFFFFF"
+        color: "#FAFAFA"
       }
     };
   },
@@ -128,9 +110,11 @@ export default {
     $route(to, from) {
       // var target = document.querySelectorAll(".bar");
       this.isHome = to.path === "/" ? true : false;
-      to.path === "/" ? document.querySelector('#tayo-logo').style.visibility = 'hidden' : document.querySelector('#tayo-logo').style.visibility = 'visible';
+      this.isService = to.path === "/services" ? true : false;
+      console.log(this.isService)
+      to.path === "/" || to.path === "/services" ? document.querySelector('#tayo-logo').style.visibility = 'hidden' : document.querySelector('#tayo-logo').style.visibility = 'visible';
       // this.brand = this.isHome ? "tayo-logo-black.png" : "tayo-logo-black.png";
-      to.path === "/services" || to.path === "/" ? this.setColor("#FAFAFA") : this.setColor("#333333"); 
+      (to.path === "/services" || to.path === "/") ? this.setColor("#FAFAFA") : this.setColor("#333333"); 
       // to.path === "/" ? document.querySelector(".bar").style.backgroundColor = "#FAFAFA" : document.querySelector(".bar").style.backgroundColor = "#333333";   
     }
   },
@@ -149,9 +133,6 @@ export default {
         document.querySelector(".black-overlay").style.display = "inline-block";
         document.querySelector("html").style.overflow = "hidden";
         document.querySelector("body").style.overflow = "hidden";
-        // document.querySelector(".bar").style.backgroundColor = "#333333"; 
-        // document.querySelector(".bar-2").style.backgroundColor = "#333333"; 
-        // document.querySelector(".bar-3").style.backgroundColor = "#333333"; 
       } 
       else {
         mobileNav.style.top = '-420px';
@@ -159,9 +140,6 @@ export default {
         document.querySelector(".black-overlay").style.display = "none";
         document.querySelector("html").style.overflow = "initial";
         document.querySelector("body").style.overflow = "initial";
-        // document.querySelector(".bar").style.backgroundColor = "#FAFAFA"; 
-        // document.querySelector(".bar-2").style.backgroundColor = "#FAFAFA"; 
-        // document.querySelector(".bar-3").style.backgroundColor = "#FAFAFA"; 
       }
     },
     handleResizeNav() {
@@ -172,16 +150,16 @@ export default {
       }
     },
     handleScroll() {
-      if (this.isHome & this.isDesktop) {
+      if ((this.isHome || this.isService) & (this.isDesktop)) {
         if (window.scrollY > 20) {
           this.navHome = {
-            background: "#FFFFFF",
+            background: "#FAFAFA",
             transition: "background 0.25s ease-in-out",
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
             // color: '#000000'
           };
           this.navLink = {
-            color: "#000000",
+            color: "#333333",
             transition: "color 0.25s ease-in-out"
           };
           this.brand = "tayo-logo-black.png";
@@ -194,7 +172,7 @@ export default {
             boxShadow: "none",
           };
           this.navLink = {
-            color: "#FFFFFF",
+            color: "#FAFAFA",
             transition: "color 0.25s ease-in-out"
           };
           this.brand = "tayo-logo-black.png";
@@ -204,7 +182,7 @@ export default {
       else if (this.isDesktop) {
         if (window.scrollY > 20) {
           this.navHome = {
-              background: "#FFFFFF",
+              background: "#FAFAFA",
               transition: "background 0.25s ease-in-out",
               boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
           };
@@ -216,23 +194,17 @@ export default {
             boxShadow: "none",
           };  
           this.navLink = {
-            color: "#000000",
+            color: "#333333",
             transition: "color 0.25s ease-in-out"
           };
         }
       }
-      else if (this.isHome & !this.isDesktop) {
+      else if ((this.isHome || this.isService) & (!this.isDesktop)) {
         if (window.scrollY > 600) {
           this.setColor("#333333");
-          // document.querySelector(".bar").style.backgroundColor = "#333333"; 
-          // document.querySelector(".bar-2").style.backgroundColor = "#333333"; 
-          // document.querySelector(".bar-3").style.backgroundColor = "#333333"; 
         }
         else {
           this.setColor("#FAFAFA");
-          // document.querySelector(".bar").style.backgroundColor = "#FAFAFA"; 
-          // document.querySelector(".bar-2").style.backgroundColor = "#FAFAFA"; 
-          // document.querySelector(".bar-3").style.backgroundColor = "#FAFAFA"; 
         }
       }
     }
