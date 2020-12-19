@@ -208,5 +208,34 @@ export default {
             width: 90%;
             height: 48px;
         }
+
+        .success-msg{
+            top: calc(100vh - 120px) !important;
+            /* transition-delay: 5s; */
+            z-index: 5 !important;
+            transition: all 1s;
+        }
+        /* @keyframes slideup {
+            0%{top: calc(100vh - 120px + 300px)}
+            100%{top: calc(100vh - 120px)}
+        } */
+
+        .successDefault {
+            display: flex;
+            top: calc(100vh - 120px + 300px);
+            position: absolute;
+            justify-content: space-between;
+            width: 300px;
+            height: 80px;
+            border-radius: 5px;
+            align-self: center;
+            right: calc(50vw - 150px);
+            z-index: -1;
+            transition: all 1s;
+        }  
+
+        .success-msg img {
+            display: block;
+        }
     }
 </style>
