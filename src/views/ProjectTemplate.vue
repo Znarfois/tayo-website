@@ -40,27 +40,27 @@
             <!-- <img class="project-image" :src="require(`../assets/img/template-projects/${image2}`)" alt="image2"> -->
         </section>
         <section class="project-quote container">
-            <h1 class="quote-text">{{ quote }}</h1>
+            <h1 class="quote-text">“{{ quote }}”</h1>
             <p>– {{ author }}</p>
         </section>
         <section class="related-work">
             <h3 class="related-work__header cap">Related Work</h3>
             <div class="related-work__cards">
+                <!-- <Hover service="Service" title="Title" client="Client" img="cmw/cmw_cover.png"/>
                 <Hover service="Service" title="Title" client="Client" img="cmw/cmw_cover.png"/>
-                <Hover service="Service" title="Title" client="Client" img="cmw/cmw_cover.png"/>
-                <Hover service="Service" title="Title" client="Client" img="cmw/cmw_cover.png"/>
+                <Hover service="Service" title="Title" client="Client" img="cmw/cmw_cover.png"/> -->
             </div>
         </section>
   </main>
 </template>
 
 <script>
-import Hover from '../components/Hover'
+// import Hover from '../components/Hover'
 import db from '../components/firebaseinit'
 // import Carousel from '../components/Carousel'
 export default {
     components: {
-        Hover,
+        // Hover,
         // Carousel
     },
 

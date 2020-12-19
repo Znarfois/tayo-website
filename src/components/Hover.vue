@@ -1,7 +1,7 @@
 <template>
     <router-link :to="{name: 'ProjectTemplate', params : {project_id: id}}">
         <div class="project">
-            <img class="project-img" :src="require(`@/assets/img/template-projects/${img}`)" alt="">
+            <img class="project-img" :src="image" alt="Project Image">
             <div class="overlay">
                 <div class="overlay-text">
                     <p class="body-2 service">{{ service }}</p>
@@ -15,20 +15,14 @@
 
 <script>
 export default {
-    props: {
-        service: String,
-        title: String,
-        client: String,
-        img: String,
-        id: String,
-    }
-
+    props: ['service', 'title', 'client', 'image', 'id'],
 }
+
 </script>
 
 <style scoped>
 
-a, .project, .project-img {
+.project, .project-img {
     width: 100%;
     height: 100%;
 }
@@ -65,13 +59,14 @@ a, .project, .project-img {
     color: #EAA200;
 }
 
-.project:hover .overlay {
-    height: 50%;
-    opacity: 1;
-    color: black;
-    background: white;
+@media screen and (min-width: 1377px){
+    .project:hover .overlay {
+        height: 50%;
+        opacity: 1;
+        color: black;
+        background: white;
+    }
 }
-
 
 @media screen and (max-width: 1366px) {
     .overlay {
