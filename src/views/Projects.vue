@@ -48,19 +48,20 @@ export default {
                 let projectRef = reference.child('projects/' + doc.data().project_id + '/cover.png');
 
                 projectRef.getDownloadURL().then((url)=> {
-                    data.image = url;
+                    const data = {
+                        id: doc.id,
+                        project_id: doc.data().project_id,
+                        service: doc.data().service,
+                        title: doc.data().title,  
+                        client: doc.data().client,
+                        image: url,
+                    }
+                    this.clients.push(data)
                 })
 
-                const data = {
-                    id: doc.id,
-                    project_id: doc.data().project_id,
-                    service: doc.data().service,
-                    title: doc.data().title, 
-                    client: doc.data().client,
-                    image: ''
-                }
+                
 
-                this.clients.push(data)
+               
             }
         ))
     },
