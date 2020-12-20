@@ -2,7 +2,7 @@
   <main>
       <section class="project-intro">
           <p class="container project-name">Projects / {{ title }}</p>
-          <Carousel :slideshow="slideshow"/>
+          <!-- <Carousel :slideshow="slideshow"/> -->
       </section>
       
       <section class="project-information">
@@ -42,7 +42,7 @@
         <section class="related-work">
             <h3 class="related-work__header cap">Related Work</h3>
             <div class="related-work__cards">
-                <Hover v-for="card in cards" :image="card.image" :service="card.service" :title="card.title" :client="card.client" :key="card.id" :id="card.project_id"/>
+                <Hover v-for="card in cards" :image="card.image" :service="card.service" :title="card.title" :client="card.client" :key="card.id" :id="card.project_id" :sub="card.subsidiary"/>
             </div>
         </section>
   </main>
@@ -51,13 +51,13 @@
 <script>
 import Hover from '../components/Hover'
 import db from '../components/firebaseinit'
-import Carousel from '../components/Carousel'
+// import Carousel from '../components/Carousel'
 import firebase from 'firebase/app';
 
 export default {
     components: {
         Hover,
-        Carousel
+        // Carousel
     },
 
     data() {
@@ -79,11 +79,11 @@ export default {
 
             // Carousel images
             cover: null,
-            carousel1: null,
-            carousel2: null,
-            carousel3: null,
-            carousel4: null,
-            carousel5: null,
+            // carousel1: null,
+            // carousel2: null,
+            // carousel3: null,
+            // carousel4: null,
+            // carousel5: null,
 
             // Hover Cards
             cards: [],
@@ -91,7 +91,7 @@ export default {
     },
     computed: {
         slideshow() {
-            let initialList = [ this.cover, 
+            let initialList = [ this.cover,
                                 this.carousel1, 
                                 this.carousel2, 
                                 this.carousel3, 
@@ -136,9 +136,15 @@ export default {
                     const spacedSuccessful = textSuccessful.replace(/\\n/g,"\n")
                     this.successful = spacedSuccessful
 
+                    const textDate = doc.data().date
+                    if (textDate) {
+                        const spacedDate = textDate.replace(/\\n/g,"\n")
+                        this.date = spacedDate
+                    }
+                    
+
                     this.quote = doc.data().quote
                     this.quote_author = doc.data().quote_author
-                    this.date = doc.data().date
                 })
             })
         },
@@ -148,11 +154,11 @@ export default {
             const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
                     let image1 = reference.child('projects/' + this.$route.params.project_id + '/1.png');
                     let image2 = reference.child('projects/' + this.$route.params.project_id + '/2.png');
-                    let carousel1 = reference.child('projects/' + this.$route.params.project_id + '/carousel_1.png');
-                    let carousel2 = reference.child('projects/' + this.$route.params.project_id + '/carousel_2.png');
-                    let carousel3 = reference.child('projects/' + this.$route.params.project_id + '/carousel_3.png');
-                    let carousel4 = reference.child('projects/' + this.$route.params.project_id + '/carousel_4.png');
-                    let carousel5 = reference.child('projects/' + this.$route.params.project_id + '/carousel_5.png');
+                    // let carousel1 = reference.child('projects/' + this.$route.params.project_id + '/carousel_1.png');
+                    // let carousel2 = reference.child('projects/' + this.$route.params.project_id + '/carousel_2.png');
+                    // let carousel3 = reference.child('projects/' + this.$route.params.project_id + '/carousel_3.png');
+                    // let carousel4 = reference.child('projects/' + this.$route.params.project_id + '/carousel_4.png');
+                    // let carousel5 = reference.child('projects/' + this.$route.params.project_id + '/carousel_5.png');
                     let cover = reference.child('projects/' + this.$route.params.project_id + '/cover.png');
 
                     image1.getDownloadURL().then((url)=> {
@@ -162,26 +168,36 @@ export default {
                         this.image2 = url;
                     })
 
-                    carousel1.getDownloadURL().then((url)=> {
-                        this.carousel1 = url;
-                    })
-
-                    carousel2.getDownloadURL().then((url)=> {
-                        this.carousel2 = url;
-                    })
-
-                    carousel3.getDownloadURL().then((url)=> {
-                        this.carousel3 = url;
-                    })
-
-                    carousel4.getDownloadURL().then((url)=> {
-                        this.carousel4 = url;
-                    })
-
-                    carousel5.getDownloadURL().then((url)=> {
-                        this.carousel5 = url;
-                    })
-
+                    // if (carousel1) {
+                    //     carousel1.getDownloadURL().then((url)=> {
+                    //     this.carousel1 = url;
+                    // })
+                    // }
+                    
+                    // if (carousel2) {
+                    //     carousel2.getDownloadURL().then((url)=> {
+                    //     this.carousel2 = url;
+                    // })
+                    // }
+                    
+                    // if (carousel3) {
+                    //     carousel3.getDownloadURL().then((url)=> {
+                    //     this.carousel3 = url;
+                    // })
+                    // }
+                    
+                    // if (carousel4) {
+                    //     carousel4.getDownloadURL().then((url)=> {
+                    //     this.carousel4 = url;
+                    // })
+                    // }
+                    
+                    // if (carousel5) {
+                    //     carousel5.getDownloadURL().then((url)=> {
+                    //     this.carousel5 = url;
+                    // })
+                    // }
+                
                     cover.getDownloadURL().then((url)=> {
                         this.cover = url;
                     })
@@ -191,12 +207,12 @@ export default {
         // get related hover cards
         getHover() {
             db.collection('projects')
-                    .where('subsidiary', '==', 'Tayo')
+                    .where('subsidiary', '==', this.$route.params.subsidiary)
                     .where('project_id', '!=', Number(this.$route.params.project_id)).get()
                     .then(snapshot => snapshot.forEach(doc => {
 
                     const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
-                    let projectRef = reference.child('projects/' + doc.data().project_id + '/cover.png');
+                    let projectRef = reference.child('projects/' + String(doc.data().project_id) + '/cover.png');
 
                     projectRef.getDownloadURL().then((url)=> {
                         const data = {
@@ -206,6 +222,7 @@ export default {
                             title: doc.data().title,  
                             client: doc.data().client,
                             image: url,
+                            subsidiary: doc.data().subsidiary
                         }
                         this.cards.push(data)
                     })
@@ -250,7 +267,8 @@ export default {
 
     .project-information {
         text-align: center;
-        margin-bottom: 70px;
+        width: 80%;
+        margin: 0 auto 70px;
     }
 
     .project-info {
@@ -292,7 +310,9 @@ export default {
     }
 
     .project-image {
+        height: 400px;
         width: 100%;
+        object-fit: cover;
     }
 
     /* Quote */

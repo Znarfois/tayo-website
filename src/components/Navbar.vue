@@ -17,7 +17,8 @@
     </nav> -->
 
 <template>
-  <div class="black-overlay"></div>
+  <div>
+    <div class="black-overlay"></div>
   <nav :style="navHome">
     <div class="nav-content">
       <div id="nav-brand">
@@ -97,6 +98,7 @@
       </ul>
     </div>
   </nav>
+  </div>
 </template>
 
 <script>
