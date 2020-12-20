@@ -223,7 +223,9 @@ export default {
     background: #FAFAFA;
     padding: 16px 32px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    top: 0;
   }
+  
   nav img {
       width: 48px;
   }
