@@ -24,7 +24,7 @@
                 <a href="#"><img class="footer-logo" src="../assets/img/footer-ig.png" alt="instagram"></a>
                 <a href="#"><img class="footer-logo" src="../assets/img/footer-m.png" alt="m"></a>
             </section>
-            <a href=""><button class="portfolio-link">Request for Portfolio</button></a>
+            <router-link to="/portfolio"><button class="portfolio-link">Request for Portfolio</button></router-link>
         </aside>
         <aside class="copyright-mobile">
             <p class="footer-mobile copyright">Copyright &copy; TAYO Sustainable Strategies & Creative Consultancy 2020</p>
