@@ -75,6 +75,9 @@ export default {
     methods: {
         
         requestSend: function (evt) {
+
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
             evt.preventDefault();
 
             db.collection('Requests').add({
@@ -84,6 +87,7 @@ export default {
             job: this.job,
             company: this.company,
             reason: this.reason,
+            date: date
             })
             .then(function(){
                 console.log("Document successfully written!");
@@ -94,7 +98,7 @@ export default {
             this.job = "";
             this.company = "";
             this.reason = "";
-
+            date = "";
             evt.target.reset();
         },
 
