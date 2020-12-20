@@ -5,6 +5,7 @@ import WWA_KidsForKids from '../views/WWA_KidsForKids.vue'
 import WWA_Habilin from '../views/WWA_Habilin.vue'
 import WWA_Retaso from '../views/WWA_Retaso.vue'
 import WWA_Kamalayan from '../views/WWA_Kamalayan.vue'
+import ContactUs from '../views/ContactUs.vue'
 import Services from '../views/Services.vue'
 import Projects from '../views/Projects'
 import ProjectTemplate from '../views/ProjectTemplate'
@@ -40,6 +41,11 @@ const routes = [
     path: '/whoweare/habilin',
     name: 'WWA_Habilin',
     component: WWA_Habilin
+  },
+  {
+    path: '/contactus',
+    name: 'ContactUs',
+    component: ContactUs
   },
   {
     path: '/services',
