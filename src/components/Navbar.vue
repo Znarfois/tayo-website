@@ -31,7 +31,7 @@
             >Services</router-link>
         </li>
         <li>
-          <router-link :style="(isHome || isService) ? navLink : {}" to="/projects/kidsforkids"
+          <router-link :style="(isHome || isService) ? navLink : {}" to="/projects"
             >Projects</router-link>
         </li>
         <li>
