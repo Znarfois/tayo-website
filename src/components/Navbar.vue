@@ -48,7 +48,7 @@
             >Services</router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/projects/kidsforkids"
+          <router-link :style="isHome ? navLink : {}" to="/projects"
             >Projects</router-link>
         </li>
         <li>
@@ -80,7 +80,7 @@
           </router-link>
         </li>
         <li>
-          <router-link :style="isHome ? navLink : {}" to="/projects/kidsforkids" v-on:click="showBurger()">
+          <router-link :style="isHome ? navLink : {}" to="/whoweare/kidsforkids" v-on:click="showBurger()">
             <span>Projects</span>
           </router-link>
         </li>
@@ -250,7 +250,9 @@ export default {
     background: #FAFAFA;
     padding: 16px 32px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    top: 0;
   }
+  
   nav img {
       width: 48px;
   }

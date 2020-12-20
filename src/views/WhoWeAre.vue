@@ -1,25 +1,18 @@
 <template>
     <main id="who-content">
       <div class="who-content__intro">
-            <p class="text-bold who-statement statement-1">We are a change agency that cultivates creative solutions & sustainable strategies, always taking a global perspective rooted in local culture & tradition.</p>
-
-            <div class="who-statement__img">
-                <img src="@/assets/img/projects/kfk/head-1.png" alt="who-statement image">
-            </div>
+            <p class="text-bold who-statement statement-1">We are a community of friends who continuously cultivate creative solutions & sustainable strategies, always taking a global perspective rooted in local culture & tradition.</p>
+            <img class="who-statement__img" src="@/assets/img/whoweare/WHOWEARE_1.png" alt="who-statement image">
       </div>
 
       <section class="who-subheading who-subheadings-1">
-          <div class="who-subheadings__img">
-              <img src="@/assets/img/projects/kfk/head-1.png" alt="">
-          </div>
+          <img class="who-subheadings__img" src="@/assets/img/whoweare/WHOWEARE_2.png" alt="who-statement image">
           <p class="text-bold who-sub who-sub1">We authentically connect you to the next generation of world leaders, dreamers, & thinkers to put positive purpose in your next endeavor.</p>
       </section>
 
       <section class="who-subheading  who-subheadings-2">
           <p class="text-bold who-sub who-sub2">We advocate awareness, build brands, & create content (ABC’s) through research to redesign & redefine the way our world works.</p>
-          <div class="who-subheadings__img">
-              <img src="@/assets/img/projects/kfk/head-1.png" alt="">
-          </div>
+          <img class="who-subheadings__img" src="@/assets/img/whoweare/WHOWEARE_3.png" alt="who-statement image">
       </section>
 
       <section class="who-images">
@@ -36,43 +29,96 @@
       <section class="who-about who-about1 container">
           <h1 class="section-header">Sustainable strategies & creative consultancy for and by our generation</h1>
           <div class="who-about1__details">
-              <AboutDetails detail="We stand for a switch in perspective to make way for our vision of a world where the economy, environment, and society act as a united entity for both people and planet." />
-              <AboutDetails detail="Our mission is to cultivate collaboration and innovation amongst people using authentic research to redesign and redefine problem solving and storytelling, building brands that go beyond profit for positive impact, and sustainable change. "/>
+              <AboutDetails 
+              detail="We stand for a switch in perspective to make way for our vision of a world where the economy, environment, and society act as a united entity for both people and planet." 
+              hut="hut1.png" />
+
+              <img class="people-walking" src="@/assets/img/whoweare/walking.png" alt="">
+
+              <AboutDetails 
+              detail="Our mission is to cultivate collaboration and innovation amongst people using authentic research to redesign and redefine problem solving and storytelling, building brands that go beyond profit for positive impact, and sustainable change. " 
+              hut="hut2.png"/>
           </div>
       </section>
 
       <section class="who-about who-about2 container">
           <h1 class="section-header">What we stand for</h1>
           <div class="who-cards">
-              <AboutCard type="Organization" title="Kids for Kids PH" advocacy="For the Youth"/>
-              <AboutCard type="Social Enterprise" title="Retaso" advocacy="For Regenerative Design"/>
-              <AboutCard type="Movement" title="Kamalayan" advocacy="For Local Collaboration"/>
-              <AboutCard type="Movement" title="HABILIN" advocacy="For Intergenerational Innovation"/>
+              <AboutCard 
+              type="Organization" 
+              title="Kids for Kids PH" 
+              advocacy="For the Youth" 
+              color="#375998" 
+              image="kfk/KFK_COVER.png"
+              icon="kfk/KFK_ROUND.png"
+              link="/whoweare/kidsforkids"
+              :hasLink="true"
+ 
+              />
+
+              <AboutCard 
+              type="Social Enterprise" 
+              title="Retaso" 
+              advocacy="For Regenerative Design" 
+              color="#D463A1"
+              image="retaso/RETASO_COVER.png"
+              icon="retaso/RETASO_ROUND.png"
+              link="/whoweare/retaso"
+              :hasLink="true"
+   
+              />
+
+              <AboutCard 
+              type="Movement" 
+              title="Kamalayan" 
+              advocacy="For Local Collaboration" 
+              color="#2D5F46"
+              image="kamalayan/KAM_COVER.png"
+              icon="kamalayan/KAMALAYAN_ROUND.png"
+              link="/whoweare/kamalayan"
+              :hasLink="true"
+ 
+              />
+
+              <AboutCard 
+              type="Movement" 
+              title="Habilin" 
+              advocacy="For Intergenerational Innovation" 
+              color="#F66324"
+              image="habilin/HAB_COVER.png"
+              icon="habilin/HABILIN_ROUND.png"
+              link="/whoweare/habilin"
+              :hasLink="true"
+           
+              />
+
           </div>
       </section>
 
       <section class="who-about who-about3 container">
           <h1 class="section-header">Coming Soon</h1>
           <div class="who-cards">
-              <AboutCard type="Organization" title="Brand X" advocacy="For the Environment"/>
-              <AboutCard type="Social Enterprise" title="Inyo" advocacy="For Circular Design"/>
+              <AboutCard 
+              type="Organization" 
+              title="Kubo" 
+              advocacy="For the Environment" 
+              image="kubo/KUBO_COVER.png"
+              color="#EAA200"
+              icon="kubo/KUBO_ROUND.png"
+              :hasLink="false"
+              />
+
+              <AboutCard 
+              type="Social Enterprise" 
+              title="Inyo" 
+              advocacy="For Circular Design" 
+              image="inyo/INYO_COVER.png"
+              color="#5AA3A9"
+              icon="inyo/INYO_ROUND.png"
+              :hasLink="false"/>
           </div>
       </section>
 
-      <section class="who-about who-about4 container">
-          <h1 class="section-header">Communities We Have Worked With</h1>
-          <div class="comm-cards">
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-              <CommunityCard title="Community" partner="In partnership with UNICEF"/>
-          </div>
-      </section>
 
   </main>
 </template>
@@ -80,30 +126,23 @@
 <script>
 import AboutDetails from '../components/whoweare/AboutDetails'
 import AboutCard from '../components/whoweare/AboutCard'
-import CommunityCard from '../components/whoweare/CommunityCard'
 
 export default {
     name: "WhoWeAre",
     components: {
         AboutDetails,
         AboutCard,
-        CommunityCard,
     },
 }
 </script>
 
 <style scoped>
 
-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
 /* Statement */
     .who-content__intro {
         display: flex;
         flex-direction: column;
+        margin-top: 60px;
     }
 
 
@@ -117,8 +156,8 @@ img {
     .who-statement__img {
         width: 100%; 
         height: 432px;
+        object-fit: cover;
     }
-
 
 /* Subheadings */
     .who-subheadings-1 {
@@ -171,31 +210,25 @@ img {
     .who-about1__details {
         display: flex;
         justify-content: space-around;
+        position: relative;
+    }
+
+    .people-walking {
+        position: absolute;
+        width: 277px;
+        top: 50px;
     }
 
     .who-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, 480px);
+        grid-template-columns: repeat(auto-fit, 490px);
         grid-gap: 48px;
         justify-content: center;
     }
 
-    .comm-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 300px);
-        grid-gap: 24px;
-        justify-content: center;
-    }
-
-    .who-about4 {
+    .who-about3 {
         margin-bottom: 88px;
     }
-
-
-
-
-
-
 
 
 /* Media Queries */
@@ -218,6 +251,10 @@ img {
 
     .who-subheadings-1, .who-subheadings-2 {
         display: block;
+    }
+
+    .people-walking {
+        display: none;
     }
 
     .who-sub {
@@ -262,8 +299,8 @@ img {
     }
 }
 
-@media screen and (max-width: 700px) {
-    .who-cards, .comm-cards {
+@media screen and (max-width: 767px) {
+    .who-cards{
         display: block;
     }
 
@@ -271,12 +308,12 @@ img {
         margin-bottom: 3rem;
     }
 
-    .card, .comm-card {
+    .card {
         margin-top: 24px;
     }
 
     /* Images */
-
+    
     .who-images {
         margin: 3rem 0;
         display: grid;
