@@ -17,7 +17,7 @@
   <meta name="description"
     content="Where sustainability meets creativity." />
   <Navbar />
-  <router-view />
+  <router-view :key="$route.fullPath"/>
   <Footer />
 </main>
 </template>
