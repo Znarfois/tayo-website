@@ -58,9 +58,10 @@ const routes = [
     component: Projects,
   },
   {
-    path: '/projects/:project_id',
+    path: '/projects/:subsidiary/:project_id',
     name: 'ProjectTemplate',
     component: ProjectTemplate,
+
   },
 ]
 

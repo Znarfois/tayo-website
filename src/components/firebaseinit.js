@@ -3,6 +3,8 @@ import 'firebase/storage';  // If using Firebase storage
 import 'firebase/firestore'
 import firebaseConfig from './firebaseConfig'
 
-const firebaseApp = firebase.initializeApp(firebaseConfig)
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
-export default firebaseApp.firestore();
+export default firebase.firestore();

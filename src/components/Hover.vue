@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{name: 'ProjectTemplate', params : {project_id: String(id)}}">
+    <router-link :to="{name: 'ProjectTemplate', params: {subsidiary: sub, project_id: String(id)}}">
         <div class="project">
             <img class="project-img" :src="image" alt="Project Image">
             <div class="overlay">
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-    props: ['service', 'title', 'client', 'image', 'id'],
+    props: ['service', 'title', 'client', 'image', 'id', 'sub'],
 }
 
 </script>
