@@ -3,20 +3,23 @@
 <main class="projects">
   <section class="projects-header">
       <div class="project-header__content">
-          <img class="header-image" src="../assets/img/homeheader.jpg" alt="Project Heading">
+          <!-- <video controls poster="@/assets/img/video_thumbnail.png">
+            <source src="@/assets/video/tayo_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video> -->
           <h2>We want the world not just to survive, but to thrive.</h2>
       </div>
   </section>
   <section class="client-work m-top">
       <h3 class="client-work__header header-margin">Client Work</h3>
       <div class="project-list">
-          <Hover v-for="client in clients" :image="client.image" :service="client.service" :title="client.title" :client="client.client"  :key="client.id" :id="client.project_id"/>
+          <Hover v-for="client in clients" :image="client.image" :service="client.service" :title="client.title" :client="client.client"  :key="client.id" :id="client.project_id" :sub="client.subsidiary"/>
       </div>
   </section>
   <section class="tayo-projects m-top">
       <h3 class="tayo-projects__header header-margin">Tayo Projects</h3>
       <div class="project-list">
-
+          <Hover v-for="project in projects" :image="project.image" :service="project.service" :title="project.title" :client="project.client"  :key="project.id" :id="project.project_id" :sub="project.subsidiary"/>
       </div>
   </section>
 </main>
@@ -34,13 +37,13 @@ export default {
     data() {
         return {
             clients: [],
+            projects: [],
         }
     },
     created() {
         // Get Client Projects
         db.collection('projects').where('type', '==', 'Client Work').orderBy('project_id').get()
         .then(snapshot => snapshot.forEach(doc => {
-                console.log(doc.data())
 
                 const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
                 let projectRef = reference.child('projects/' + doc.data().project_id + '/cover.png');
@@ -52,9 +55,34 @@ export default {
                         service: doc.data().service,
                         title: doc.data().title,  
                         client: doc.data().client,
+                        subsidiary: doc.data().subsidiary,
                         image: url,
+
                     }
                     this.clients.push(data)
+                })
+            }
+        ))
+
+        // Get Tayo Projects
+        db.collection('projects').where('type', '==', 'Tayo Project').orderBy('project_id').get()
+        .then(snapshot => snapshot.forEach(doc => {
+
+                const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
+                let projectRef = reference.child('projects/' + doc.data().project_id + '/cover.png');
+
+                projectRef.getDownloadURL().then((url)=> {
+                    const data = {
+                        id: doc.id,
+                        project_id: doc.data().project_id,
+                        service: doc.data().service,
+                        title: doc.data().title,  
+                        client: doc.data().client,
+                        subsidiary: doc.data().subsidiary,
+                        image: url,
+
+                    }
+                    this.projects.push(data)
                 })
             }
         ))
@@ -86,6 +114,11 @@ a:visited {
 
 .projects-header {
     height: 100vh;
+    margin-top: 3rem;
+}
+
+.project-header__content h2 {
+    width: 80%;
 }
 
 .project-header__content {
@@ -97,9 +130,13 @@ a:visited {
     padding-bottom: 3rem;
 }
 
-.header-image {
-    width: 80%;
+video {
+    width: 60%;
     margin-bottom: 2rem;
+}
+
+video:focus {
+    outline: none;
 }
 
 /* Projects */
@@ -151,7 +188,14 @@ a:visited {
         grid-template-columns: 1fr;
     }
 
-    h2, h3 {
+
+    video {
+        width: 100%;
+    }   
+}
+
+@media screen and (max-width: 320px) {
+     h2, h3 {
         font-size: 16px;
         line-height: 24px;
     }

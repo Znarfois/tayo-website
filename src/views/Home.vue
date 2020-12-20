@@ -1,5 +1,6 @@
 <template>
-  <header id="home-header">
+<main>
+    <header id="home-header">
       <div class="header-content">
         <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="Tayo logo">
         <img class="header-logo-desktop" src="@/assets/img/headerlogo.png" alt="Tayo logo">
@@ -96,6 +97,7 @@
         </div>
     </section>
   </main>
+</main>
 </template>
 
 <script>
