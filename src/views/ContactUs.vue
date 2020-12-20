@@ -24,6 +24,9 @@
 
 <script>
 
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
 const firebaseConfig = {
   apiKey: "AIzaSyC9Vsa6Md62rE_fK8cM5u5R0_L1ZQrn8iE",
   authDomain: "tayo-c846e.firebaseapp.com",
@@ -48,6 +51,8 @@ export default {
                 name: '',
                 email: '',
                 message: '',
+                date: date
+
             }
         }
     },
@@ -59,6 +64,7 @@ export default {
             name: this.name,
             email: this.email,
             message: this.message,
+            date: date
             })
             .then(function(){
                 console.log("Document successfully written!");
@@ -66,6 +72,7 @@ export default {
             this.name = "";
             this.email = "";
             this.message = "";
+            date = "";
 
             evt.target.reset();
         },
