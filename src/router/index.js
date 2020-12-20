@@ -6,6 +6,7 @@ import WWA_Habilin from '../views/WWA_Habilin.vue'
 import WWA_Retaso from '../views/WWA_Retaso.vue'
 import WWA_Kamalayan from '../views/WWA_Kamalayan.vue'
 import ContactUs from '../views/ContactUs.vue'
+import Portfolio from '../views/Portfolio.vue'
 import Services from '../views/Services.vue'
 import Projects from '../views/Projects'
 import ProjectTemplate from '../views/ProjectTemplate'
@@ -63,6 +64,11 @@ const routes = [
     component: ProjectTemplate,
 
   },
+  {
+    path: '/portfolio',
+    name: 'Portfolio',
+    component: Portfolio,
+  }
 ]
 
 const router = createRouter({

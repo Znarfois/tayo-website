@@ -41,24 +41,7 @@
 </template>
 
 <script>
-
-const firebaseConfig = {
-  apiKey: "AIzaSyC9Vsa6Md62rE_fK8cM5u5R0_L1ZQrn8iE",
-  authDomain: "tayo-c846e.firebaseapp.com",
-  databaseURL: "https://tayo-c846e.firebaseio.com",
-  projectId: "tayo-c846e",
-  storageBucket: "tayo-c846e.appspot.com",
-  messagingSenderId: "91886545753",
-  appId: "1:91886545753:web:9574d19c0fa60bbe80ba48",
-  measurementId: "G-6XESH3H38B"
-};
-
-import firebase from 'firebase/app'
-import 'firebase/firestore'
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
-
+import db from '../components/firebaseinit';
 export default {
     data: function () {
         return {
