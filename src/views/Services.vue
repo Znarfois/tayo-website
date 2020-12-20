@@ -1,14 +1,15 @@
 <template>
   <main>
     <div class="services-landing">
-        <img class='landing-logo' src="../assets/images/tayo-logo.png">
-        <p>A change agency that innovates for <br /> transformational growth — where <br/> sustainability and creativity meet for positive change</p>
+        <img class='landing-logo' src="../assets/img/tayo-logo.png">
+        <p>Here's how we can collaborate.</p>
+        <span>We do quite a lot - but we’re young so why not?</span>
     </div>
     <div class="value-section">
         <h1>OUR VALUE</h1>
         <div class="value-content">
             <p>We are the intersection of sustainability & creativity, and we use authentic connections with young people to include your company as part of our vision in promoting the spirit of Bayanihan within the economy, environment, & society of the Philippines and the new world. </p>
-            <img src="../assets/images/value-image.png">
+            <img src="../assets/img/services_value.png">
         </div>
     </div>
     <div class="what-we-offer-section">
@@ -16,18 +17,18 @@
         <!-- Can be componentised -->
         <div class='offers'>
             <div class="offer">
-                <img src="../assets/images/Icon.png">
+                <img src="../assets/img/service_a.png">
                 <h2>Advocacy and Awareness</h2>
                 <span>It’s up to us to create an ideal world that lives in harmony with the greater good, thus we’re here to amplify and generate new voices for change, working hand-in-hand with innovative thinkers and designers to create campaigns that matter, and are remembered.</span>
             </div>
             <div class="offer">
-                <img src="../assets/images/Icon.png">
+                <img src="../assets/img/service_b.png">
                 <h2>Branding & Design Solutions</h2>
                 <span>Storytelling is our favorite thing to do. We bring art and creativity at the forefront of innovative publications, events, and initiatives that bring people together
 for a purpose. </span>
             </div>
             <div class="offer">
-                <img src="../assets/images/Icon.png">
+                <img src="../assets/img/service_c.png">
                 <h2>Communications & Executions</h2>
                 <span>We love to work just as much as we love to tell stories. Whether it be on ground or on screen, we aim to bring the same transformational experiences that impact the community through collaboration for good.</span>
             </div>
@@ -87,7 +88,7 @@ export default {
 
 main {
     background-color: #FCF7F2;
-    margin-top: 80px;
+    /* margin-top: 80px; */
 }
 h1 {
     color: #333333;
@@ -97,7 +98,7 @@ h1 {
 /* LANDING */
 .services-landing {
     display: flex;
-    background: url("../assets/images/services-bg.png") no-repeat center center fixed;
+    background: url("../assets/img/service_header.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -106,12 +107,12 @@ h1 {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #FFFFFF;
+    color: #FAFAFA;
 }
 
 .landing-logo {
     width: 272px;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
 }
 
 .services-landing p {
@@ -119,6 +120,13 @@ h1 {
     font-size: 32px;
     font-weight: 700;
     line-height: 48px;
+    color: #FAFAFA;
+}
+
+.services-landing span {
+     color: #FAFAFA;
+     font-size: 20px;
+     line-height: 40px;
 }
 
 /* VALUE SECTION */ 
@@ -195,6 +203,10 @@ h1 {
     margin: 48px auto;
 }
 
+.offer img {
+    width: 120px;
+}
+
 .offer h2 {
     font-size: 24px;
     font-weight: 700;
@@ -256,7 +268,7 @@ h1 {
 /* RESPONSIVE  */
 
 /* TABLET */
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1024px){
     p {
         font-size: 16px;
     }
@@ -281,6 +293,10 @@ h1 {
 
     .offer {
         width: 100vw;
+    }
+
+    .offer img {
+        width: 112px;
     }
 
     .offer h2 {

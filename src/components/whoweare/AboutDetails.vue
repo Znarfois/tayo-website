@@ -1,7 +1,7 @@
 <template>
   <div class="who-detail">
-      <div class="detail-image" style="width: 120px; height:120px; background: lightgrey"></div>
-      <p>{{ detail }}</p>
+      <img class="detail-image" :src="require(`@/assets/img/whoweare/${hut}`)" alt="Hut Image">
+      <p class="body-2">{{ detail }}</p>
   </div>
 </template>
 
@@ -9,6 +9,7 @@
 export default {
     props: {
         detail: String,
+        hut: String,
     }
 }
 </script>
