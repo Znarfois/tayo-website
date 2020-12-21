@@ -16,10 +16,10 @@
       </section>
 
       <section class="who-images">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <img src="@/assets/img/whoweare/WHOWEARE_4.png" alt="">
+        <img src="@/assets/img/whoweare/WHOWEARE_5.png" alt="">
+        <img src="@/assets/img/whoweare/WHOWEARE_6.png" alt="">
+        <img src="@/assets/img/whoweare/WHOWEARE_7.png" alt="">
       </section>
 
         <div class="container">
@@ -196,11 +196,8 @@ export default {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .who-images div {
+    .who-images img {
         width: 100%;
-        height: 240px; 
-        border: 1px solid gray; 
-        background: lightgray
     }
 
 /* About */
@@ -270,9 +267,6 @@ export default {
         margin: 0;
     }
 
-    .who-images div {
-        height: 200px;
-    }
 
     /* Statement */
 
@@ -293,15 +287,10 @@ export default {
     }
 }
 
-@media screen and (max-width: 900px) {
-    .who-images div {
-        height: 170px;
-    }
-}
 
 @media screen and (max-width: 767px) {
     .who-cards{
-        display: block;
+        grid-template-columns: 1fr;
     }
 
     .who-detail {
@@ -361,10 +350,6 @@ export default {
         width: 100%;
     }
 
-    /* Images */
-    .who-images div {
-        height: 100px;
-    }
 }
 
 

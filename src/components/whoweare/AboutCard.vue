@@ -1,6 +1,19 @@
 <template>
-    <router-link :to="link" v-if="hasLink">
-        <div class="card">
+    <div>
+        <router-link :to="link" v-if="hasLink">
+            <div class="card">
+                <div class="card-image" :style="{ background: `url(${require('@/assets/img/wwa-projects/' + image)}) center center/cover` }">
+                    <img class="card-icon" :src="require(`@/assets/img/wwa-projects/${icon}`)" alt="Project Icon">
+                </div>
+                <div class="card-text">
+                    <p class="card-type body-2">{{ type }}</p>
+                    <h3 :style="{'color': color}" class="card-title">{{ title }}</h3>
+                    <h4 class="card-advocacy">{{ advocacy }}</h4>
+                </div>
+            </div>
+        </router-link>
+
+        <div class="card" v-if="!hasLink">
             <div class="card-image" :style="{ background: `url(${require('@/assets/img/wwa-projects/' + image)}) center center/cover` }">
                 <img class="card-icon" :src="require(`@/assets/img/wwa-projects/${icon}`)" alt="Project Icon">
             </div>
@@ -9,17 +22,6 @@
                 <h3 :style="{'color': color}" class="card-title">{{ title }}</h3>
                 <h4 class="card-advocacy">{{ advocacy }}</h4>
             </div>
-        </div>
-    </router-link>
-
-    <div class="card" v-if="!hasLink">
-        <div class="card-image" :style="{ background: `url(${require('@/assets/img/wwa-projects/' + image)}) center center/cover` }">
-            <img class="card-icon" :src="require(`@/assets/img/wwa-projects/${icon}`)" alt="Project Icon">
-        </div>
-        <div class="card-text">
-            <p class="card-type body-2">{{ type }}</p>
-            <h3 :style="{'color': color}" class="card-title">{{ title }}</h3>
-            <h4 class="card-advocacy">{{ advocacy }}</h4>
         </div>
     </div>
 
