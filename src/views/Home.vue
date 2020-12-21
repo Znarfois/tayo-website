@@ -69,31 +69,35 @@
 <!-- Clients page -->
   <section id="clients">
         <div class="clients-sections container">
-            <h1 class="section-header clients-header">Our Clients</h1>
+            <h1 class="section-header clients-header">Our Community</h1>
             <p class="body-2 clients-subheading">We believe that everyone we work with has become a part of a community for change, hence, we call them our <strong>Barangay</strong> - a Filipino term for community or kinship. We cater to different individuals, startups, companies, and NGOs that are looking to take the next big step for positive change.</p>
-            <ClientList title="TAYO Clients:" :images="['D&G', 'Smart']"/>
-            <ClientList title="Our Partners Prior to TAYO:" 
+            <ClientList 
             :images="[
-                    'Adspin', 
-                    'Avida', 
-                    'Ayala-Malls', 
+                    'UNICEF-Philippines',
+                    'WWF',
+                    'For-the-Future',
+                    'Museo-Pambata',
+                    'Stages-Sessions',
                     'Bayanihan-Para-Sa-Magsasaka',
-                    'BBPB',
+                    'Philippine-Parks',
+                    'MUNI-PH',
+                    'GSM',
+                    'Digital-Spin',
+                    'Avida',
+                    'PLDT-Smart',
+                    'Lokal-Lab',
+                    'Youthtopia',
+                    'Where-To-Next',
+                    'Tamaraw-Society',
+                    'Tukod',
+                    'Adidas',
+                    'Kids-Who-Farm',
                     'Called-To-Rescue',
                     'Eco-Explorations',
-                    'For-the-Future',
-                    'Kids-Who-Farm',
-                    'Lokal-Lab',
-                    'Marine-Wildlife-Watch-of-the Philippines',
-                    'MUNI-PH',
-                    'Museo-Pambata',
-                    'Oceana',
-                    'Reef-Check',
+                    'BBPB',
+                    'SDSN',
                     'Taya-Pinas',
-                    'UN-SDSN-Youth',
-                    'UNICEF-Philippines',
-                    'Where-To-Next',
-                    'WWF']"/>
+                    'Green-Sun']"/>
         </div>
     </section>
   </main>
@@ -218,7 +222,7 @@ export default {
         max-width: 580px;
         text-align: center;
         margin: auto;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
     }
 
 /* Tablet */

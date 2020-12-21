@@ -118,7 +118,7 @@ a:visited {
 }
 
 .project-header__content h2 {
-    width: 80%;
+    width: 60%;
 }
 
 .project-header__content {
@@ -160,19 +160,9 @@ video:focus {
     .header-image {
         width: 90%;
     }
-
-    .project-header__content {
-        justify-content: flex-start;
-        margin-top: 150px
-    }
-
 }
 
 @media screen and (orientation: landscape) and (max-width: 767px){
-    .projects-header {
-        height: 600px;
-    }
-
     h2 {
         font-size: 16px;
         line-height: 24px;
@@ -188,6 +178,10 @@ video:focus {
         grid-template-columns: 1fr;
     }
 
+    h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
 
     video {
         width: 100%;
