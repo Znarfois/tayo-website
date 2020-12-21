@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>TAYO PH</title>
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <meta property="og:title" content="TAYO PH" />
   <meta developer="Franz Taborlupa" site="https://github.com/Znarfois">
   <meta developer="Renzo Tan" site="https://github.com/renzotimtan">
