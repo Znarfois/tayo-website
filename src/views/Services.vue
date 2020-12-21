@@ -14,7 +14,6 @@
     </div>
     <div class="what-we-offer-section">
         <h1 data-aos="fade-up" data-aos-duration="1500">THINGS WE CAN DO</h1>
-        <!-- Can be componentised -->
         <div class='offers'>
             <div class="offer">
                 <img src="../assets/img/service_a.png" data-aos="fade-up" data-aos-duration="1000">
@@ -338,6 +337,12 @@ h1 {
         font-size: 16px;
         line-height: 24px;
     }
+
+    .services-landing span {
+     color: #FAFAFA;
+     font-size: 12px;
+     line-height: 24px;
+    }   
 
     .value-section {
         width: 100%;

@@ -37,19 +37,70 @@
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">Be one of {{ volunteersCount }} volunteers!</h1>
                     <p class="project-detail__par" v-for="(i, index) in volunteer" :key="index" v-html="i"></p>
-                    <form class="subscribe" action="">
-                        <input type="text" placeholder="Email">
-                        <button type="submit">Update Me</button>
+                    <form class="subscribe" @submit.prevent="volunteerSend">
+                        <input type="email" v-model="email">
+                        <button type="submit" id="updateMe">Update Me</button>
                     </form>
                 </div>
             </div>  
-
+            <!-- <div class="successDefault" id="successMsg" style="z-index:-1;">
+                <span>Your email address has been sent!</span>
+                <img src="@/assets/img/exit_icon.png" v-on:click="successSend()">
+            </div> -->
         </section>
     </main>
 </template>
 
 <script>
+
+import db from '../components/firebaseinit'
+
 export default {
+    data: function () {
+        return {
+            volunteerForm: {
+                email: '',
+            }
+        }
+    },
+    methods: {
+        volunteerSend: function (evt) {
+            evt.preventDefault();
+
+            db.collection('Volunteers').add({
+            email: this.email,
+            })
+            .then(function(){
+                console.log("Document successfully written!");
+            })
+            this.email = "";
+
+            var update = document.querySelector("#updateMe");
+
+            update.innerHTML = "Sent!";
+
+            evt.target.reset();
+
+            setTimeout(() => update.innerHTML = "Update Me", 5000);
+
+            
+        },
+        // successSend() {
+        //     var successMsg = document.querySelector('#successMsg');
+        //     if (successMsg.style.zIndex == "-1") {
+        //         successMsg.classList.add('success-msg');
+        //         // successMsg.style.display = 'flex';
+        //         successMsg.style.zIndex = "5";
+        //     }
+        //     else {
+        //         successMsg.classList.remove('success-msg');
+        //         // successMsg.style.display = 'none';
+        //         successMsg.style.zIndex = "-1";
+        //     }
+        //     setTimeout(() => successMsg.classList.remove('success-msg'), 5000);
+        //     setTimeout(() => successMsg.style.zIndex = "-1", 5000);
+        // },
+    },
     props: 
     {
         logo: String,
@@ -113,6 +164,35 @@ export default {
         right: 10px;
     }
 
+    .success-msg{
+            top: 4700px !important;
+            z-index: 5 !important;
+            transition: all 1s !important; 
+        }
+
+        .successDefault {
+            display: flex;
+            top: 5000x;
+            position: absolute;
+            justify-content: space-between;
+            width: 400px;
+            height: 80px;
+            background-color: #5AA3A9;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            color: #FAFAFA;
+            align-items: center;
+            padding: 0 16px 0 16px;
+            right: 0;
+            z-index: -1;
+            transition: all 1s !important;
+        }  
+
+        .successDefault img {
+            width: 32px;
+            cursor: pointer;
+        }
+
     .project-detail {
         margin: 7rem auto;
         display: flex;
@@ -149,11 +229,18 @@ export default {
             width: 80%;
             margin: 3rem auto;
         }
+        .success-msg{
+            top: 3300px !important;
+            transition: all 1s;
+        }
 
+        .successDefault {
+            top: 3500x;
+        }  
     }
 
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 600px) {
      
         img:not(.project-logo__img) {
             height: 200px;
@@ -206,6 +293,20 @@ export default {
 
         .imgOriginal {
             display: none;
+        }
+
+        .success-msg{
+            top: 2500px !important;
+            transition: all 1s;
+        }
+
+        .successDefault {
+            top: 2900x;
+        }  
+
+        .successDefault img {
+            width: 32px;
+            height: 32px;
         }
     }
    
