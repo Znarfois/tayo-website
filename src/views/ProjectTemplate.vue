@@ -2,7 +2,7 @@
   <main>
       <section class="project-intro" data-aos="fade" data-aos-duration="1000">
           <p class="container project-name">Projects / {{ title }}</p>
-          <Carousel :slideshow="slideshow"/>
+          <Carousel :slideshow="slideshow" :isAuto="isAuto"/>
       </section>
       
       <section class="project-information" data-aos="fade-up" data-aos-duration="1000">
@@ -79,7 +79,7 @@ export default {
 
             // Carousel images
             cover: null,
-            carouselPics: null,
+            carouselPics: [],
 
             // Hover Cards
             cards: [],
@@ -87,7 +87,10 @@ export default {
     },
     computed: {
         slideshow() {
-            return [this.cover]
+            return [this.cover, ...this.carouselPics]
+        },
+        isAuto() {
+            return this.carouselPics.length !== 0
         }
     },
     created() {
@@ -146,19 +149,16 @@ export default {
             cover.getDownloadURL().then(url => this.cover = url)
             image1.getDownloadURL().then(url => this.image1 = url)
             image2.getDownloadURL().then(url => this.image2 = url)
-
-            
+   
             // Get all carousel links
-            // let tempList = []
-            // const listRef = reference.child('projects/' + this.$route.params.project_id)
-            // listRef.listAll()
-            //     .then(res => res.items.forEach(item => {
-            //         if (item.name.includes("carousel")) {
-            //             item.getDownloadURL().then(url => tempList.push(String(url)))
-            //         }
-            //     }))
-            // this.carouselPics = tempList
-        },
+            const listRef = reference.child('projects/' + this.$route.params.project_id)
+            listRef.listAll()
+                .then(res => res.items.forEach(item => {
+                    if (item.name.includes("carousel")) {
+                        item.getDownloadURL().then(url => this.carouselPics.push(url))
+                    }
+                }))
+            },
 
         // get related hover cards
         getHover() {

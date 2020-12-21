@@ -121,8 +121,9 @@ export default {
 
 <style scoped>
 /* Header */
+
     #home-header {
-        background: no-repeat right center/cover fixed url('../assets/img/homeheader.jpg');
+        background: no-repeat right center/cover url('../assets/img/homeheader.jpg');
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -131,6 +132,13 @@ export default {
         text-align: center;
         padding: 5rem 0;
     }
+
+    @supports (background-attachment: fixed) {
+        #home-header {
+            background-attachment: fixed;
+        }
+    }
+
 
 
     .header-content {
