@@ -1,6 +1,6 @@
 <template>
     <main>
-        <section id="project-intro">
+        <section id="project-intro" data-aos="fade" data-aos-duration="1000">
             <div class="project-logo">
                 <img class="project-logo__img" :src="require(`../assets/img/wwa-projects/${logo}`)" alt="Project Logo">
             </div>
@@ -11,29 +11,29 @@
         </section>
         <section class="container project-details">
             <div class="project-detail">
-                <div class="project-detail__content">
-                    <h1 class="project-detail__header" :style="{'color': color}">Who</h1>
+                <div class="project-detail__content" data-aos="fade-left" data-aos-duration="1500">
+                    <h1 class="project-detail__header" :style="{'color': color}" >Who</h1>
                     <p class="project-detail__par" v-for="(i, index) in who" :key="index" v-html="i"></p>
                 </div>
             </div>  
-            <img :src="require(`../assets/img/wwa-projects/${image1}`)" alt="Who Image">
+            <img :src="require(`../assets/img/wwa-projects/${image1}`)" alt="Who Image" data-aos="fade" data-aos-duration="1500">
             <div class="project-detail">
-                <div class="project-detail__content">
+                <div class="project-detail__content" data-aos="fade-left" data-aos-duration="1500">
                     <h1 class="project-detail__header" :style="{'color': color}">What</h1>
                     <p class="project-detail__par" v-for="(i, index) in what" :key="index" v-html="i"></p>
                 </div>
             </div>  
-            <img :src="require(`../assets/img/wwa-projects/${image2}`)" alt="What Image">
+            <img :src="require(`../assets/img/wwa-projects/${image2}`)" alt="What Image" data-aos="fade" data-aos-duration="1000">
             <div class="project-detail">
-                <div class="project-detail__content">
+                <div class="project-detail__content" data-aos="fade-left" data-aos-duration="1500">
                     <h1 class="project-detail__header" :style="{'color': color}">Why</h1>
                     <p class="project-detail__par" v-for="(i, index) in why" :key="index" v-html="i"></p>
                 </div>
             </div>  
 
-            <img class="imgOriginal" :src="require(`../assets/img/wwa-projects/${image3}`)" alt="Why Image" v-if="isKfk">
-            <img class="imgReplace" :src="require('../assets/img/wwa-projects/kfk/KFK_MOBILE.png')" alt="Why Image" v-if="isKfk">
-            <div class="project-detail volunteer" v-if="isKfk">
+            <img class="imgOriginal" :src="require(`../assets/img/wwa-projects/${image3}`)" alt="Why Image" v-if="isKfk" data-aos="fade" data-aos-duration="1000">
+            <img class="imgReplace" :src="require('../assets/img/wwa-projects/kfk/KFK_MOBILE.png')" alt="Why Image" v-if="isKfk" data-aos="fade" data-aos-duration="1000">
+            <div class="project-detail volunteer" v-if="isKfk" data-aos="fade-left" data-aos-duration="1500">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">Be one of {{ volunteersCount }} volunteers!</h1>
                     <p class="project-detail__par" v-for="(i, index) in volunteer" :key="index" v-html="i"></p>

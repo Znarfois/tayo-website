@@ -1,49 +1,49 @@
 <template>
     <main id="who-content">
       <div class="who-content__intro">
-            <p class="text-bold who-statement statement-1">We are a community of friends who continuously cultivate creative solutions & sustainable strategies, always taking a global perspective rooted in local culture & tradition.</p>
-            <img class="who-statement__img" src="@/assets/img/whoweare/WHOWEARE_1.png" alt="who-statement image">
+            <p class="text-bold who-statement statement-1" data-aos="fade-up" data-aos-duration="1500">We are a community of friends who continuously cultivate creative solutions & sustainable strategies, always taking a global perspective rooted in local culture & tradition.</p>
+            <img class="who-statement__img" src="@/assets/img/whoweare/WHOWEARE_1.png" alt="who-statement image" data-aos="fade-up" data-aos-duration="2000">
       </div>
 
-      <section class="who-subheading who-subheadings-1">
+      <section class="who-subheading who-subheadings-1" data-aos="fade-right" data-aos-duration="1500">
           <img class="who-subheadings__img" src="@/assets/img/whoweare/WHOWEARE_2.png" alt="who-statement image">
           <p class="text-bold who-sub who-sub1">We authentically connect you to the next generation of world leaders, dreamers, & thinkers to put positive purpose in your next endeavor.</p>
       </section>
 
-      <section class="who-subheading  who-subheadings-2">
+      <section class="who-subheading  who-subheadings-2" data-aos="fade-left" data-aos-duration="1500">
           <p class="text-bold who-sub who-sub2">We advocate awareness, build brands, & create content (ABC’s) through research to redesign & redefine the way our world works.</p>
           <img class="who-subheadings__img" src="@/assets/img/whoweare/WHOWEARE_3.png" alt="who-statement image">
       </section>
 
       <section class="who-images">
-        <img src="@/assets/img/whoweare/WHOWEARE_4.png" alt="">
-        <img src="@/assets/img/whoweare/WHOWEARE_5.png" alt="">
-        <img src="@/assets/img/whoweare/WHOWEARE_6.png" alt="">
-        <img src="@/assets/img/whoweare/WHOWEARE_7.png" alt="">
+        <img src="@/assets/img/whoweare/WHOWEARE_4.png" alt="" data-aos="fade-up" data-aos-duration="500">
+        <img src="@/assets/img/whoweare/WHOWEARE_5.png" alt="" data-aos="fade-up" data-aos-duration="1000">
+        <img src="@/assets/img/whoweare/WHOWEARE_6.png" alt="" data-aos="fade-up" data-aos-duration="1500">
+        <img src="@/assets/img/whoweare/WHOWEARE_7.png" alt="" data-aos="fade-up" data-aos-duration="2000">
       </section>
 
         <div class="container">
-            <p class="text-bold who-statement statement-2">We aim to foster the Filipino spirit of Bayanihan amongst our clients & communities, redefining how society operates through building a Barangay that stands for both people & planet.</p>
+            <p class="text-bold who-statement statement-2" data-aos="fade-up" data-aos-duration="1500">We aim to foster the Filipino spirit of Bayanihan amongst our clients & communities, redefining how society operates through building a Barangay that stands for both people & planet.</p>
         </div>
 
       <section class="who-about who-about1 container">
-          <h1 class="section-header">Sustainable strategies & creative consultancy for and by our generation</h1>
-          <div class="who-about1__details">
+          <h1 class="section-header" data-aos="fade-up" data-aos-duration="1500">Sustainable strategies & creative consultancy for and by our generation</h1>
+          <div class="who-about1__details" data-aos="fade-left" data-aos-duration="1000">
               <AboutDetails 
               detail="We stand for a switch in perspective to make way for our vision of a world where the economy, environment, and society act as a united entity for both people and planet." 
-              hut="hut1.png" />
+              hut="hut1.png"/>
 
               <img class="people-walking" src="@/assets/img/whoweare/walking.png" alt="">
 
               <AboutDetails 
               detail="Our mission is to cultivate collaboration and innovation amongst people using authentic research to redesign and redefine problem solving and storytelling, building brands that go beyond profit for positive impact, and sustainable change. " 
-              hut="hut2.png"/>
+              hut="hut2.png" data-aos="fade-up"/>
           </div>
       </section>
 
       <section class="who-about who-about2 container">
-          <h1 class="section-header">What we stand for</h1>
-          <div class="who-cards">
+          <h1 class="section-header" data-aos="fade-up" data-aos-duration="1500">What we stand for</h1>
+          <div class="who-cards" data-aos="fade-up" data-aos-duration="1500">
               <AboutCard 
               type="Organization" 
               title="Kids for Kids PH" 
@@ -77,7 +77,8 @@
               icon="kamalayan/KAMALAYAN_ROUND.png"
               link="/whoweare/kamalayan"
               :hasLink="true"
- 
+
+
               />
 
               <AboutCard 
@@ -96,8 +97,8 @@
       </section>
 
       <section class="who-about who-about3 container">
-          <h1 class="section-header">Coming Soon</h1>
-          <div class="who-cards">
+          <h1 class="section-header" data-aos="fade-up" data-aos-duration="1500">Coming Soon</h1>
+          <div class="who-cards" data-aos="fade-up" data-aos-duration="1500">
               <AboutCard 
               type="Organization" 
               title="Kubo" 
@@ -115,7 +116,9 @@
               image="inyo/INYO_COVER.png"
               color="#5AA3A9"
               icon="inyo/INYO_ROUND.png"
-              :hasLink="false"/>
+              :hasLink="false"
+              />
+              
           </div>
       </section>
 

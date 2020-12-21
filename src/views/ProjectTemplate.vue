@@ -1,6 +1,6 @@
 <template>
   <main>
-      <section class="project-intro">
+      <section class="project-intro" data-aos="fade" data-aos-duration="1000">
           <p class="container project-name">Projects / {{ title }}</p>
           <!-- <Carousel :slideshow="slideshow"/> -->
       </section>
@@ -20,26 +20,26 @@
           </div>
       </section>
       <section class="container project-details">
-            <div class="project-detail">
+            <div class="project-detail" data-aos="fade-left" data-aos-duration="1500">
                 <div class="project-detail__content">
                     <h1 class="project-detail__header">How It Began</h1>
                     <p class="multi-par project-detail__par">{{ began }}</p>
                 </div>
             </div>  
-            <img class="project-image" :src="image1" alt="image1">
+            <img class="project-image" :src="image1" alt="image1" data-aos="fade-" data-aos-duration="1000">
             <div class="project-detail">
-                <div class="project-detail__content">
+                <div class="project-detail__content" data-aos="fade-left" data-aos-duration="1500">
                     <h1 class="project-detail__header">What We Were Successful With</h1>
                     <p class="multi-par project-detail__par">{{ successful }}</p>
                 </div>
             </div>  
-            <img class="project-image" :src="image2" alt="image2">
+            <img class="project-image" :src="image2" alt="image2" data-aos="fade" data-aos-duration="1000">
         </section>
-        <section class="project-quote container" v-if="quote">
+        <section class="project-quote container" v-if="quote" data-aos="fade" data-aos-duration="1000">
             <h1 class="quote-text">“{{ quote }}”</h1>
             <p>– {{ quote_author }}</p>
         </section>
-        <section class="related-work">
+        <section class="related-work" data-aos="fade-up" data-aos-duration="1500">
             <h3 class="related-work__header cap">Related Work</h3>
             <div class="related-work__cards">
                 <Hover v-for="card in cards" :image="card.image" :service="card.service" :title="card.title" :client="card.client" :key="card.id" :id="card.project_id" :sub="card.subsidiary"/>

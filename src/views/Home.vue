@@ -3,10 +3,10 @@
     <header id="home-header">
       <div class="header-content">
         <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="Tayo logo">
-        <img class="header-logo-desktop" src="@/assets/img/headerlogo.png" alt="Tayo logo">
+        <img class="header-logo-desktop" src="@/assets/img/headerlogo.png" alt="Tayo logo" data-aos="fade" data-aos-duration="1500">
         <div class="header-buttons">
-            <button class="header-button button-request"><strong>Request for Porfolio</strong></button>
-            <button class="header-button button-contact"><strong>Contact Us</strong></button>
+            <button class="header-button button-request" data-aos="fade-up" data-aos-duration="1500"><strong>Request for Porfolio</strong></button>
+            <button class="header-button button-contact" data-aos="fade-up" data-aos-duration="2000"><strong>Contact Us</strong></button>
         </div>
       </div>
   </header>
@@ -14,27 +14,26 @@
   <main id="home-content">
 <!-- Mission Section -->
       <article id="mission" class="container">
-        <h1 class="mission-header section-header">We are a change agency that innovates design for both people and planet. </h1>
+        <h1 class="mission-header section-header" data-aos="fade-up" data-aos-duration="1500">We are a change agency that innovates design for both people and planet. </h1>
         <div class="mission-content">
-            <!-- <p class="mission-statement">Our mission is to cultivate collaboration & innovation amongst people.</p> -->
-            <img class="mission-illus" src="@/assets/img/homeillustration.png" alt="">
-            <p class="mission-details">Generations are progressing, and you should too. We are here to help people move forward through design and sustainable strategies, by collaborating to disrupt and change the world. We integrate culture in innovating purpose, evolving with the times, and fostering a community that goes beyond for people and planet. </p>
+            <img class="mission-illus" src="@/assets/img/homeillustration.png" alt="" data-aos="fade-up" data-aos-duration="2000">
+            <p class="mission-details"  data-aos="fade-up" data-aos-duration="2500">Generations are progressing, and you should too. We are here to help people move forward through design and sustainable strategies, by collaborating to disrupt and change the world. We integrate culture in innovating purpose, evolving with the times, and fostering a community that goes beyond for people and planet. </p>
         </div>
     </article>
 
 <!-- Stats Section -->
     <section id="home-stats">
       <div class="home-stats__content container">
-        <HomeStat num="21" subj="clients & partners" />
-        <HomeStat num="47,707" subj="cumulative media reach" />
-        <HomeStat num="16" subj="beneficiaries" />
+        <HomeStat num="21" subj="clients & partners" data-aos="fade-up" data-aos-duration="1500"/>
+        <HomeStat num="47,707" subj="cumulative media reach" data-aos="fade-up" data-aos-duration="2000"/>
+        <HomeStat num="16" subj="beneficiaries" data-aos="fade-up" data-aos-duration="2500"/>
       </div>
     </section>
 
 <!-- Offer Sections -->
-      <section id="offers">
-      <h1 class="offering-header section-header">What We Offer</h1>
-      <div class="offers-content container"> 
+      <section id="offers" >
+      <h1 class="offering-header section-header" data-aos="fade-up" data-aos-duration="1500">What We Offer</h1>
+      <div class="offers-content container" data-aos="fade-left" data-aos-duration="2000"> 
           <HomeOffer 
           image="service_a.png" 
           title="Advocacy & Awareness" 
@@ -69,9 +68,10 @@
 <!-- Clients page -->
   <section id="clients">
         <div class="clients-sections container">
-            <h1 class="section-header clients-header">Our Community</h1>
-            <p class="body-2 clients-subheading">We believe that everyone we work with has become a part of a community for change, hence, we call them our <strong>Barangay</strong> - a Filipino term for community or kinship. We cater to different individuals, startups, companies, and NGOs that are looking to take the next big step for positive change.</p>
+            <h1 class="section-header clients-header"  data-aos="fade-up" data-aos-duration="1500">Our Community</h1>
+            <p class="body-2 clients-subheading"  data-aos="fade-up" data-aos-duration="2000">We believe that everyone we work with has become a part of a community for change, hence, we call them our <strong>Barangay</strong> - a Filipino term for community or kinship. We cater to different individuals, startups, companies, and NGOs that are looking to take the next big step for positive change.</p>
             <ClientList 
+             data-aos="fade-up" data-aos-duration="2500"
             :images="[
                     'UNICEF-Philippines',
                     'WWF',
