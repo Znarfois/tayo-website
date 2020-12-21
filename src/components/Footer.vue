@@ -5,8 +5,8 @@
             <section class="footer-intro">
                 <h3>Let's work together</h3>
                 <img src="../assets/img/footer-rectangle.png" alt="rectangle">
-                <p class="footer-mobile">Email</p>
-                <p class="footer-mobile">Contact #</p>
+                <p class="footer-mobile">kamusta@tayo.com.ph</p>
+                <p class="footer-mobile">+63 917 521 5785</p>
             </section>
             <aside class="copyright-desktop">
                 <p class="footer-mobile copyright">Copyright &copy; TAYO Sustainable Strategies & Creative Consultancy 2020</p>
@@ -20,9 +20,9 @@
                     <input type="email" placeholder="Enter your email">
                     <button type="submit" class="email-submit">Subscribe</button>
                 </form>
-                <a href="#"><img class="footer-logo" src="../assets/img/footer-fb.png" alt="facebook"></a>
-                <a href="#"><img class="footer-logo" src="../assets/img/footer-ig.png" alt="instagram"></a>
-                <a href="#"><img class="footer-logo" src="../assets/img/footer-m.png" alt="m"></a>
+                <a href="https://facebook.com/tayo.change" target="_blank" rel="noreferrer noopenner"><img class="footer-logo" src="../assets/img/footer-fb.png" alt="Facebook"></a>
+                <a href="https://instagram.com/tayo.com.ph" target="_blank" rel="noreferrer noopenner"><img class="footer-logo" src="../assets/img/footer-ig.png" alt="Instagram"></a>
+                <a href="http://medium.com/kwento-tayo" target="_blank" rel="noreferrer noopenner"><img class="footer-logo" src="../assets/img/footer-m.png" alt="Medium"></a>
             </section>
             <router-link to="/portfolio"><button class="portfolio-link">Request for Portfolio</button></router-link>
         </aside>

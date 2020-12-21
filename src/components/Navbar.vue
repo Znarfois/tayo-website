@@ -53,27 +53,27 @@
           />
         </li>
         <li>
-          <router-link :style="(isHome || isService) ? navLink : {}" to="/" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService) ? navLink : {}" to="/" v-on:click="showBurger(), handleScroll()">
             <span>Home</span>
           </router-link>
         </li>
         <li>
-          <router-link :style="(isHome || isService) ? navLink : {}" to="/services" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService) ? navLink : {}" to="/services" v-on:click="showBurger(), handleScroll()">
             <span>Services</span>
           </router-link>
         </li>
         <li>
-          <router-link :style="(isHome || isService)  ? navLink : {}" to="/projects/kidsforkids" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService)  ? navLink : {}" to="/projects/kidsforkids" v-on:click="showBurger(), handleScroll()">
             <span>Projects</span>
           </router-link>
         </li>
         <li>
-          <router-link :style="(isHome || isService)  ? navLink : {}" to="/about" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService)  ? navLink : {}" to="/about" v-on:click="showBurger(), handleScroll()">
             <span>Who We Are</span>
           </router-link>
         </li>
         <li>
-          <router-link :style="(isHome || isService)  ? navLink : {}" to="/contactus" v-on:click="showBurger()">
+          <router-link :style="(isHome || isService)  ? navLink : {}" to="/contactus" v-on:click="showBurger(), handleScroll()">
             <span>Contact Us</span>
           </router-link>
         </li>
@@ -96,6 +96,7 @@ export default {
   data() {
     return {
       isHome: this.$route.path === "/" ? true : false,
+      isService: this.$route.path === "/services" ? true : false,
       isDesktop: window.innerWidth >= 768 ? true : false,
       brand: "tayo-logo-black.png",
       navHome: {
@@ -116,6 +117,7 @@ export default {
       (to.path === "/" || to.path === "/services") ? document.querySelector('#tayo-logo').style.visibility = 'hidden' : document.querySelector('#tayo-logo').style.visibility = 'visible';
       // this.brand = this.isHome ? "tayo-logo-black.png" : "tayo-logo-black.png";
       // to.path === "/services" || to.path === "/" ? this.setColor("#FAFAFA") : this.setColor("#333333"); 
+      (to.path === "/" || to.path === "/services") ? this.navLink = {color: "#FAFAFA", transition: "color 0.25s ease-in-out"} : this.navLink = {color: "#333333", transition: "color 0.25s ease-in-out"}
       // to.path === "/" ? document.querySelector(".bar").style.backgroundColor = "#FAFAFA" : document.querySelector(".bar").style.backgroundColor = "#333333";   
     }
   },
@@ -152,14 +154,12 @@ export default {
       }
     },
     handleScroll() {
-      console.log(this.isService);
       if ((this.isHome || this.isService) & (this.isDesktop)) {
         if (window.scrollY > 20) {
           this.navHome = {
             background: "#FAFAFA",
             transition: "background 0.25s ease-in-out",
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1)",
-            // color: '#000000'
           };
           this.navLink = {
             color: "#333333",
@@ -202,7 +202,7 @@ export default {
           };
         }
       }
-      else if ((this.isHome || this.isService) & (!this.isDesktop)) {
+    if ((this.isHome || this.isService) & (!this.isDesktop)) {
         if (window.scrollY > 600) {
           this.setColor("#333333");
         }
@@ -246,7 +246,7 @@ export default {
     display: inline;
   }
   #desktop-nav li > a {
-    color: #000000;
+    color: #333333;
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
