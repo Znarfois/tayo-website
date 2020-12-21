@@ -186,7 +186,7 @@ export default {
   
     .successDefault {
         display: flex;
-        top: calc(100vh - 120px + 450px);
+        top: calc(100vh - 120px + 300px);
         position: absolute;
         justify-content: space-between;
         width: 400px;
