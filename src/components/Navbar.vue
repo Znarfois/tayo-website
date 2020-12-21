@@ -12,11 +12,13 @@
           />
         </router-link>
       </div>
+
+      <div id="burger-bg"></div>
       <div class="burger-button" v-on:click="showBurger()">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     
       <ul
         v-if="isDesktop"
@@ -88,6 +90,7 @@ export default {
   created() {
     window.addEventListener("resize", this.handleResizeNav);
     window.addEventListener("scroll", this.handleScroll);
+    this.setColor("#333333");
   },
   unmounted() {
     window.removeEventListener("resize", this.handleResizeNav);
@@ -114,6 +117,7 @@ export default {
       // var target = document.querySelectorAll(".bar");
       this.isHome = to.path === "/" ? true : false;
       this.isService = to.path === "/services" ? true : false;
+      this.setColor("#333333");
       (to.path === "/" || to.path === "/services") ? document.querySelector('#tayo-logo').style.visibility = 'hidden' : document.querySelector('#tayo-logo').style.visibility = 'visible';
       // this.brand = this.isHome ? "tayo-logo-black.png" : "tayo-logo-black.png";
       // to.path === "/services" || to.path === "/" ? this.setColor("#FAFAFA") : this.setColor("#333333"); 
@@ -136,6 +140,7 @@ export default {
         document.querySelector(".black-overlay").style.display = "inline-block";
         document.querySelector("html").style.overflow = "hidden";
         document.querySelector("body").style.overflow = "hidden";
+        this.setColor("#333333");
       } 
       else {
         mobileNav.style.top = '-420px';
@@ -143,11 +148,13 @@ export default {
         document.querySelector(".black-overlay").style.display = "none";
         document.querySelector("html").style.overflow = "initial";
         document.querySelector("body").style.overflow = "initial";
+        this.setColor("#333333");
       }
     },
     handleResizeNav() {
       if (window.innerWidth < 768) {
         this.isDesktop = false;
+        this.setColor("#333333");
       } 
       else {
         this.isDesktop = true;
@@ -200,16 +207,12 @@ export default {
             color: "#333333",
             transition: "color 0.25s ease-in-out"
           };
+          
         }
       }
-    if ((this.isHome || this.isService) & (!this.isDesktop)) {
-        if (window.scrollY > 600) {
-          this.setColor("#333333");
-        }
-        else {
-          this.setColor("#FAFAFA");
-        }
-      }
+    if (!this.isDesktop) {
+      this.setColor("#333333");
+    }
     }
   }
 };
@@ -261,6 +264,10 @@ export default {
     border-bottom: 4px solid #EAA200;
   }
 
+  #burger-bg {
+    display: none;
+  }
+
   /* Mobile Nav */
   .black-overlay {
     display: none;
@@ -309,6 +316,17 @@ export default {
     line-height: 24px;
   }
 
+  #burger-bg {
+    position: absolute;
+    /* z-index: -1; */
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    transform: translateX(-8px);
+    background-color: #FAFAFA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
   .burger_button {
       display: none;
       position: absolute;
@@ -329,6 +347,10 @@ export default {
 
   #mobile-nav {
     clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  }
+
+  #burger-bg {
+    display: flex;
   }
 
   .nav-content {
@@ -359,7 +381,7 @@ export default {
     height: 2px;
     margin: 6px 0;
     opacity: 1;
-    background-color: #FAFAFA;
+    background-color: #333333;
     -webkit-transition: .25s ease-in-out;
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
@@ -369,7 +391,7 @@ export default {
 .burger-button div:nth-child(1) {
     /*won't inherit from .burger_button div*/
     height: 2px;
-    margin: 0 0 6px 0;
+    margin: 4px 0 6px 0;
     -webkit-transition: .25s ease-in-out;
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
