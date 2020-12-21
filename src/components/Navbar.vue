@@ -63,7 +63,7 @@
           </router-link>
         </li>
         <li>
-          <router-link :style="(isHome || isService)  ? navLink : {}" to="/projects/kidsforkids" v-on:click="showBurger(), handleScroll()">
+          <router-link :style="(isHome || isService)  ? navLink : {}" to="/projects" v-on:click="showBurger(), handleScroll()">
             <span>Projects</span>
           </router-link>
         </li>

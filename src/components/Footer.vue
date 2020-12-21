@@ -18,7 +18,7 @@
                 <img src="../assets/img/footer-rectangle.png" alt="rectangle">
                 <form @submit.prevent="subscribeSend">
                     <input type="email" placeholder="Enter your email" v-model="email">
-                    <button type="submit" class="email-submit">Subscribe<img id ="checkmark" src='../assets/img/confirm-check.png' /></button>
+                    <button type="submit" class="email-submit">Subscribe</button>
                 </form>
                 <a href="https://facebook.com/tayo.change" target="_blank" rel="noreferrer noopenner"><img class="footer-logo" src="../assets/img/footer-fb.png" alt="Facebook"></a>
                 <a href="https://instagram.com/tayo.com.ph" target="_blank" rel="noreferrer noopenner"><img class="footer-logo" src="../assets/img/footer-ig.png" alt="Instagram"></a>
