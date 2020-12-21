@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: Karla;
   color: #333333;

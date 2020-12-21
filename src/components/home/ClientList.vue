@@ -1,6 +1,5 @@
 <template>
   <div class="client-list">
-      <p class="client-list__header">{{ title }}</p>
       <div class="client-logos">
           <div class="client" v-for="image in images" :key="image">
               <img class="client-image" :src="require(`@/assets/img/clients/${image}.png`)">
@@ -24,27 +23,15 @@ export default {
         margin-bottom: 64px;
     }
 
-    .client-list__header {
-        margin-bottom: 1rem;
-    }
-
     .client-logos {
         display: grid;
         grid-gap: 48px;
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         align-items: center;
     }
 
     .client-image {
         width: 100%;
-    }
-
-/* Mobile */
-    @media screen and (max-width: 767px) {
-        .client-list__header {
-            font-size: 1rem;
-            line-height: 32px;
-        }
     }
 
 </style>

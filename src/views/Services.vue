@@ -1,70 +1,70 @@
 <template>
   <main>
     <div class="services-landing">
-        <img class='landing-logo' src="../assets/img/tayo-logo.png">
-        <p>Here's how we can collaborate.</p>
-        <span>We do quite a lot - but we’re young so why not?</span>
+        <img class='landing-logo' src="../assets/img/tayo-logo.png" data-aos="fade" data-aos-duration="1500">
+        <p data-aos="fade-up" data-aos-duration="1500">Here's how we can collaborate.</p>
+        <span data-aos="fade-up" data-aos-duration="1500">We do quite a lot - but we’re young so why not?</span>
     </div>
     <div class="value-section">
-        <h1>OUR VALUE</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1500">OUR VALUE</h1>
         <div class="value-content">
-            <p>We are the intersection of sustainability & creativity, and we use authentic connections with young people to include your company as part of our vision in promoting the spirit of Bayanihan within the economy, environment, & society of the Philippines and the new world. </p>
-            <img src="../assets/img/services_value.png">
+            <p data-aos="fade-up" data-aos-duration="2000">We are the intersection of sustainability & creativity, and we use authentic connections with young people to include your company as part of our vision in promoting the spirit of Bayanihan within the economy, environment, & society of the Philippines and the new world. </p>
+            <img src="../assets/img/services_value.png" data-aos="fade-up" data-aos-duration="3000">
         </div>
     </div>
     <div class="what-we-offer-section">
-        <h1>THINGS WE CAN DO</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1500">THINGS WE CAN DO</h1>
         <div class='offers'>
             <div class="offer">
-                <img src="../assets/img/service_a.png">
-                <h2>Advocacy and Awareness</h2>
-                <span>It’s up to us to create an ideal world that lives in harmony with the greater good, thus we’re here to amplify and generate new voices for change, working hand-in-hand with innovative thinkers and designers to create campaigns that matter, and are remembered.</span>
+                <img src="../assets/img/service_a.png" data-aos="fade-up" data-aos-duration="1000">
+                <h2 data-aos="fade-up" data-aos-duration="1500">Advocacy and Awareness</h2>
+                <span data-aos="fade-up" data-aos-duration="1500">It’s up to us to create an ideal world that lives in harmony with the greater good, thus we’re here to amplify and generate new voices for change, working hand-in-hand with innovative thinkers and designers to create campaigns that matter, and are remembered.</span>
             </div>
             <div class="offer">
-                <img src="../assets/img/service_b.png">
-                <h2>Branding & Design Solutions</h2>
-                <span>Storytelling is our favorite thing to do. We bring art and creativity at the forefront of innovative publications, events, and initiatives that bring people together
+                <img src="../assets/img/service_b.png" data-aos="fade-up" data-aos-duration="1000">
+                <h2 data-aos="fade-up" data-aos-duration="1500">Branding & Design Solutions</h2>
+                <span data-aos="fade-up" data-aos-duration="1500">Storytelling is our favorite thing to do. We bring art and creativity at the forefront of innovative publications, events, and initiatives that bring people together
 for a purpose. </span>
             </div>
             <div class="offer">
-                <img src="../assets/img/service_c.png">
-                <h2>Communications & Executions</h2>
-                <span>We love to work just as much as we love to tell stories. Whether it be on ground or on screen, we aim to bring the same transformational experiences that impact the community through collaboration for good.</span>
+                <img src="../assets/img/service_c.png" data-aos="fade-up" data-aos-duration="1000">
+                <h2 data-aos="fade-up" data-aos-duration="1500">Communications & Executions</h2>
+                <span data-aos="fade-up" data-aos-duration="1500">We love to work just as much as we love to tell stories. Whether it be on ground or on screen, we aim to bring the same transformational experiences that impact the community through collaboration for good.</span>
             </div>
         </div>
     </div>
     <div class="and-more-section">
-        <h1>...AND MORE</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1500">...AND MORE</h1>
         <div class="more-offers">
-            <div class="more-offer">
+            <div class="more-offer" data-aos="fade-up" data-aos-duration="800">
                 <p>01</p>
                 <span>We have a wide network, making our friends your friends</span>
             </div>
-            <div class="more-offer">
+            <div class="more-offer" data-aos="fade-up" data-aos-duration="1000">
                 <p>02</p>
                 <span>We have connections to everyone, especially the youth</span>
             </div>
-            <div class="more-offer">
+            <div class="more-offer" data-aos="fade-up" data-aos-duration="800">
                 <p>03</p>
                 <span>Because our generation is the future, we care</span>
             </div>
-            <div class="more-offer">
+            <div class="more-offer" data-aos="fade-up" data-aos-duration="1000">
                 <p>04</p>
                 <span>We keep you relevant and make sure you’re up-to-date</span>
             </div>
-            <div class="more-offer">
+            <div class="more-offer" data-aos="fade-up" data-aos-duration="800">
                 <p>05</p>
                 <span>We don’t just follow trends, we are trendsetters</span>
             </div>
-            <div class="more-offer">
+            <div class="more-offer" data-aos="fade-up" data-aos-duration="1000">
                 <p>06</p>
                 <span>We are honest and transparent, we want what’s best for you</span>
             </div>
-            <div class="more-offer">
+            <div class="more-offer" data-aos="fade-up" data-aos-duration="800">
                 <p>07</p>
                 <span>We make sure you can resonate with us</span>
             </div>
-            <div class="more-offer">
+            <div class="more-offer" data-aos="fade-up" data-aos-duration="1000">
                 <p>08</p>
                 <span>We make sure you can resonate with us</span>
             </div>

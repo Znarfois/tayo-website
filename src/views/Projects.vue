@@ -3,10 +3,10 @@
 <main class="projects">
   <section class="projects-header">
       <div class="project-header__content">
-          <!-- <video controls poster="@/assets/img/video_thumbnail.png">
-            <source src="@/assets/video/tayo_video.mp4" type="video/mp4">
+          <video controls poster="@/assets/img/tayo-video-thumbnail.png">
+            <source src="https://firebasestorage.googleapis.com/v0/b/tayo-c846e.appspot.com/o/tayo-videos%2Ftayo_video.mp4?alt=media&token=862af318-74f2-40d7-9330-7329d43eaba3" type="video/mp4">
             Your browser does not support the video tag.
-          </video> -->
+          </video>
           <h2>We want the world not just to survive, but to thrive.</h2>
       </div>
   </section>
@@ -118,7 +118,7 @@ a:visited {
 }
 
 .project-header__content h2 {
-    width: 80%;
+    width: 60%;
 }
 
 .project-header__content {
@@ -160,19 +160,9 @@ video:focus {
     .header-image {
         width: 90%;
     }
-
-    .project-header__content {
-        justify-content: flex-start;
-        margin-top: 150px
-    }
-
 }
 
 @media screen and (orientation: landscape) and (max-width: 767px){
-    .projects-header {
-        height: 600px;
-    }
-
     h2 {
         font-size: 16px;
         line-height: 24px;
@@ -188,6 +178,10 @@ video:focus {
         grid-template-columns: 1fr;
     }
 
+    h2 {
+        font-size: 20px;
+        line-height: 30px;
+    }
 
     video {
         width: 100%;
