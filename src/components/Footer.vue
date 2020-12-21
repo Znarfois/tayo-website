@@ -5,8 +5,8 @@
             <section class="footer-intro">
                 <h3>Let's work together</h3>
                 <img src="../assets/img/footer-rectangle.png" alt="rectangle">
-                <p class="footer-mobile">Email</p>
-                <p class="footer-mobile">Contact #</p>
+                <p class="footer-mobile">kamusta@tayo.com.ph</p>
+                <p class="footer-mobile">+63 917 521 5785</p>
             </section>
             <aside class="copyright-desktop">
                 <p class="footer-mobile copyright">Copyright &copy; TAYO Sustainable Strategies & Creative Consultancy 2020</p>
@@ -16,13 +16,13 @@
             <section>
                 <h3>Join our newsletter!</h3>
                 <img src="../assets/img/footer-rectangle.png" alt="rectangle">
-                <form>
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit" class="email-submit">Subscribe</button>
+                <form @submit.prevent="subscribeSend">
+                    <input type="email" placeholder="Enter your email" v-model="email">
+                    <button type="submit" class="email-submit">Subscribe<img id ="checkmark" src='../assets/img/confirm-check.png' /></button>
                 </form>
-                <a href="#"><img class="footer-logo" src="../assets/img/footer-fb.png" alt="facebook"></a>
-                <a href="#"><img class="footer-logo" src="../assets/img/footer-ig.png" alt="instagram"></a>
-                <a href="#"><img class="footer-logo" src="../assets/img/footer-m.png" alt="m"></a>
+                <a href="https://facebook.com/tayo.change" target="_blank" rel="noreferrer noopenner"><img class="footer-logo" src="../assets/img/footer-fb.png" alt="Facebook"></a>
+                <a href="https://instagram.com/tayo.com.ph" target="_blank" rel="noreferrer noopenner"><img class="footer-logo" src="../assets/img/footer-ig.png" alt="Instagram"></a>
+                <a href="http://medium.com/kwento-tayo" target="_blank" rel="noreferrer noopenner"><img class="footer-logo" src="../assets/img/footer-m.png" alt="Medium"></a>
             </section>
             <router-link to="/portfolio"><button class="portfolio-link">Request for Portfolio</button></router-link>
         </aside>
@@ -34,8 +34,43 @@
 </template>
 
 <script>
+import db from '../components/firebaseinit'
 export default {
     name: 'Footer',
+    data: function () {
+        return {
+            subscribeForm: {
+                email: '',
+            }
+        }
+    },
+    methods: {
+        subscribeSend: function (evt) {
+            evt.preventDefault();
+
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+            db.collection('Newsletter').add({
+            email: this.email,
+            date: date,
+            })
+            .then(function(){
+                console.log("Document successfully written!");
+            })
+            this.email = ""
+            date = "";
+            
+            var submitConfirm = document.querySelector(".email-submit");
+            // const check = document.querySelector("#checkmark");
+            submitConfirm.innerHTML = "Subscribed!";
+            // check.style.zIndex = "5";
+            // check.style.display = "inline";
+            evt.target.reset();
+
+            setTimeout(() => submitConfirm.innerHTML = "Subscribe", 5000);
+        },
+    }
 }
 
 </script>
@@ -71,6 +106,10 @@ export default {
         height: 40px;
     }
 
+    #checkmark {
+        display: none;
+    }
+
     .footer-column-1 {
         display: flex;
         flex-direction: column;
@@ -100,6 +139,7 @@ export default {
     .email-submit {
         background: #EAA201;
         width: 120px;
+        transition: all 1s;
     }
 
     .portfolio-link {
