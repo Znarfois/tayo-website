@@ -2,19 +2,19 @@
   <main>
       <section class="project-intro" data-aos="fade" data-aos-duration="1000">
           <p class="container project-name">Projects / {{ title }}</p>
-          <!-- <Carousel :slideshow="slideshow"/> -->
+          <Carousel :slideshow="slideshow"/>
       </section>
       
-      <section class="project-information">
+      <section class="project-information" data-aos="fade-up" data-aos-duration="1000">
           <h3 class="project-info type cap">{{ service }}</h3>
           <h1 class="project-info title cap">{{ title }}</h1>
           <h2 class="project-info client">{{ client }}</h2>
       </section>
-      <section v-if="date" class="container project-date">
+      <section v-if="date" class="container project-date" data-aos="fade-right" data-aos-duration="1000">
           <h3 class="mini-text">Project Dates</h3>
           <p class="multi-par mini-text mini-par">{{ date }}</p>
       </section>
-      <section class="project-statement container">
+      <section class="project-statement container" data-aos="fade-right" data-aos-duration="1000">
           <div class="project-statement__content">
             <h1 class="project-statement__text">{{ statement }}</h1>
           </div>
@@ -51,13 +51,13 @@
 <script>
 import Hover from '../components/Hover'
 import db from '../components/firebaseinit'
-// import Carousel from '../components/Carousel'
+import Carousel from '../components/Carousel'
 import firebase from 'firebase/app';
 
 export default {
     components: {
         Hover,
-        // Carousel
+        Carousel
     },
 
     data() {
@@ -79,11 +79,7 @@ export default {
 
             // Carousel images
             cover: null,
-            // carousel1: null,
-            // carousel2: null,
-            // carousel3: null,
-            // carousel4: null,
-            // carousel5: null,
+            carouselPics: null,
 
             // Hover Cards
             cards: [],
@@ -91,15 +87,7 @@ export default {
     },
     computed: {
         slideshow() {
-            let initialList = [ this.cover,
-                                this.carousel1, 
-                                this.carousel2, 
-                                this.carousel3, 
-                                this.carousel4, 
-                                this.carousel5 ] 
-            return initialList
-                        .map(img => String(img))
-                        .filter(img => img != "null")
+            return [this.cover]
         }
     },
     created() {
@@ -142,7 +130,6 @@ export default {
                         this.date = spacedDate
                     }
                     
-
                     this.quote = doc.data().quote
                     this.quote_author = doc.data().quote_author
                 })
@@ -151,57 +138,26 @@ export default {
 
         // Get images from firebase
         getImages() {
-            const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
-                    let image1 = reference.child('projects/' + this.$route.params.project_id + '/1.png');
-                    let image2 = reference.child('projects/' + this.$route.params.project_id + '/2.png');
-                    // let carousel1 = reference.child('projects/' + this.$route.params.project_id + '/carousel_1.png');
-                    // let carousel2 = reference.child('projects/' + this.$route.params.project_id + '/carousel_2.png');
-                    // let carousel3 = reference.child('projects/' + this.$route.params.project_id + '/carousel_3.png');
-                    // let carousel4 = reference.child('projects/' + this.$route.params.project_id + '/carousel_4.png');
-                    // let carousel5 = reference.child('projects/' + this.$route.params.project_id + '/carousel_5.png');
-                    let cover = reference.child('projects/' + this.$route.params.project_id + '/cover.png');
+            const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/')
+            const image1 = reference.child('projects/' + this.$route.params.project_id + '/1.png')
+            const image2 = reference.child('projects/' + this.$route.params.project_id + '/2.png')
+            const cover = reference.child('projects/' + this.$route.params.project_id + '/cover.png')
 
-                    image1.getDownloadURL().then((url)=> {
-                        this.image1 = url;
-                    })
-                    image2.getDownloadURL().then((url)=> {
-                        this.image2 = url;
-                    })
+            cover.getDownloadURL().then(url => this.cover = url)
+            image1.getDownloadURL().then(url => this.image1 = url)
+            image2.getDownloadURL().then(url => this.image2 = url)
 
-                    // if (carousel1) {
-                    //     carousel1.getDownloadURL().then((url)=> {
-                    //     this.carousel1 = url;
-                    // })
-                    // }
-                    
-                    // if (carousel2) {
-                    //     carousel2.getDownloadURL().then((url)=> {
-                    //     this.carousel2 = url;
-                    // })
-                    // }
-                    
-                    // if (carousel3) {
-                    //     carousel3.getDownloadURL().then((url)=> {
-                    //     this.carousel3 = url;
-                    // })
-                    // }
-                    
-                    // if (carousel4) {
-                    //     carousel4.getDownloadURL().then((url)=> {
-                    //     this.carousel4 = url;
-                    // })
-                    // }
-                    
-                    // if (carousel5) {
-                    //     carousel5.getDownloadURL().then((url)=> {
-                    //     this.carousel5 = url;
-                    // })
-                    // }
-                
-                    cover.getDownloadURL().then((url)=> {
-                        this.cover = url;
-                    })
-        
+            
+            // Get all carousel links
+            // let tempList = []
+            // const listRef = reference.child('projects/' + this.$route.params.project_id)
+            // listRef.listAll()
+            //     .then(res => res.items.forEach(item => {
+            //         if (item.name.includes("carousel")) {
+            //             item.getDownloadURL().then(url => tempList.push(String(url)))
+            //         }
+            //     }))
+            // this.carouselPics = tempList
         },
 
         // get related hover cards

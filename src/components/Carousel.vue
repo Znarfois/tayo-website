@@ -1,5 +1,5 @@
 <template>
-    <vueper-slides autoplay fixed-height="79vh">
+    <vueper-slides fixed-height="79vh">
         <vueper-slide
         v-for="(image, i) in slideshow"
         :key="i"
