@@ -39,14 +39,14 @@
                     <p class="project-detail__par" v-for="(i, index) in volunteer" :key="index" v-html="i"></p>
                     <form class="subscribe" @submit.prevent="volunteerSend">
                         <input type="email" v-model="email">
-                        <button type="submit" v-on:click="successSend()">Update Me</button>
+                        <button type="submit" id="updateMe">Update Me</button>
                     </form>
                 </div>
             </div>  
-            <div class="successDefault" id="successMsg" style="z-index:-1;">
+            <!-- <div class="successDefault" id="successMsg" style="z-index:-1;">
                 <span>Your email address has been sent!</span>
                 <img src="@/assets/img/exit_icon.png" v-on:click="successSend()">
-            </div>
+            </div> -->
         </section>
     </main>
 </template>
@@ -75,23 +75,31 @@ export default {
             })
             this.email = "";
 
+            var update = document.querySelector("#updateMe");
+
+            update.innerHTML = "Sent!";
+
             evt.target.reset();
+
+            setTimeout(() => update.innerHTML = "Update Me", 5000);
+
+            
         },
-        successSend() {
-            var successMsg = document.querySelector('#successMsg');
-            if (successMsg.style.zIndex == "-1") {
-                successMsg.classList.add('success-msg');
-                // successMsg.style.display = 'flex';
-                successMsg.style.zIndex = "5";
-            }
-            else {
-                successMsg.classList.remove('success-msg');
-                // successMsg.style.display = 'none';
-                successMsg.style.zIndex = "-1";
-            }
-            setTimeout(() => successMsg.classList.remove('success-msg'), 5000);
-            setTimeout(() => successMsg.style.zIndex = "-1", 5000);
-        },
+        // successSend() {
+        //     var successMsg = document.querySelector('#successMsg');
+        //     if (successMsg.style.zIndex == "-1") {
+        //         successMsg.classList.add('success-msg');
+        //         // successMsg.style.display = 'flex';
+        //         successMsg.style.zIndex = "5";
+        //     }
+        //     else {
+        //         successMsg.classList.remove('success-msg');
+        //         // successMsg.style.display = 'none';
+        //         successMsg.style.zIndex = "-1";
+        //     }
+        //     setTimeout(() => successMsg.classList.remove('success-msg'), 5000);
+        //     setTimeout(() => successMsg.style.zIndex = "-1", 5000);
+        // },
     },
     props: 
     {
