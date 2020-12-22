@@ -1,7 +1,6 @@
 <template>
     <Project 
 
-    :isKfk="true"
     logo='kfk/KFK_LOGO.png'
     title='Kids for Kids PH'
     header='kfk/KFK_COVER.png'

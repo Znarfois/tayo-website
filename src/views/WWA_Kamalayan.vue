@@ -1,7 +1,6 @@
 <template>
     <Project 
 
-    :isKfk="false"
     logo='kamalayan/KAMALAYAN_LOGO.png'
     title='Kamalayan'
     header='kamalayan/KAM_COVER.png'

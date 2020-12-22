@@ -31,7 +31,7 @@
                 </div>
             </div>  
 
-            <img class="imgOriginal" :src="require(`../assets/img/wwa-projects/${image3}`)" alt="Why Image" v-if="isKfk" data-aos="fade" data-aos-duration="1000">
+            <img class="imgOriginal" :src="require(`../assets/img/wwa-projects/${image3}`)" alt="Why Image" v-if="image3" data-aos="fade" data-aos-duration="1000">
             <img class="imgReplace" :src="require('../assets/img/wwa-projects/kfk/KFK_MOBILE.png')" alt="Why Image" v-if="isKfk" data-aos="fade" data-aos-duration="1000">
             <div class="project-detail volunteer" v-if="isKfk" data-aos="fade-left" data-aos-duration="1500">
                 <div class="project-detail__content">
@@ -114,7 +114,6 @@ export default {
         why: Array,
         volunteer: Array,
         volunteersCount: String,
-        isKfk: Boolean,
         color: String,
     }
 }

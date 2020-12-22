@@ -37,7 +37,7 @@
 
               <AboutDetails 
               detail="Our mission is to cultivate collaboration and innovation amongst people using authentic research to redesign and redefine problem solving and storytelling, building brands that go beyond profit for positive impact, and sustainable change. " 
-              hut="hut2.png" data-aos="fade-up"/>
+              hut="hut2.png"/>
           </div>
       </section>
 

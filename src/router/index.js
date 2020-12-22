@@ -1,16 +1,16 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import WhoWeAre from '../views/WhoWeAre.vue'
-import WWA_KidsForKids from '../views/WWA_KidsForKids.vue'
-import WWA_Habilin from '../views/WWA_Habilin.vue'
-import WWA_Retaso from '../views/WWA_Retaso.vue'
-import WWA_Kamalayan from '../views/WWA_Kamalayan.vue'
-import ContactUs from '../views/ContactUs.vue'
-import Portfolio from '../views/Portfolio.vue'
-import Services from '../views/Services.vue'
-import Projects from '../views/Projects'
-import ProjectTemplate from '../views/ProjectTemplate'
 
+const Home = () => import('../views/Home.vue')
+const WhoWeAre = () => import('../views/WhoWeAre.vue')
+const WWA_KidsForKids = () => import('../views/WWA_KidsForKids.vue')
+const WWA_Habilin = () => import('../views/WWA_Habilin.vue')
+const WWA_Retaso = () => import('../views/WWA_Retaso.vue')
+const WWA_Kamalayan = () => import('../views/WWA_Kamalayan.vue')
+const ContactUs = () => import('../views/ContactUs.vue')
+const Portfolio = () => import('../views/Portfolio.vue')
+const Services = () => import('../views/Services.vue')
+const Projects = () => import('../views/Projects.vue')
+const ProjectTemplate = () => import('../views/ProjectTemplate.vue')
 
 const routes = [
   {

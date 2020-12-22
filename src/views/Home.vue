@@ -5,8 +5,8 @@
         <img class="header-logo" src="@/assets/img/tayo-logo.png" alt="Tayo logo">
         <img class="header-logo-desktop" src="@/assets/img/headerlogo.png" alt="Tayo logo" data-aos="fade" data-aos-duration="1500">
         <div class="header-buttons">
-            <button class="header-button button-request" data-aos="fade-up" data-aos-duration="1500"><strong>Request for Porfolio</strong></button>
-            <button class="header-button button-contact" data-aos="fade-up" data-aos-duration="2000"><strong>Contact Us</strong></button>
+            <router-link to="/portfolio"><button class="header-button button-request" data-aos="fade-up" data-aos-duration="1500"><strong>Request for Porfolio</strong></button></router-link>
+            <router-link to="/contactus"><button class="header-button button-contact" data-aos="fade-up" data-aos-duration="2000"><strong>Contact Us</strong></button></router-link>
         </div>
       </div>
   </header>
@@ -122,6 +122,7 @@ export default {
 <style scoped>
 /* Header */
 
+
     #home-header {
         background: no-repeat right center/cover url('../assets/img/homeheader.jpg');
         display: flex;
@@ -132,14 +133,6 @@ export default {
         text-align: center;
         padding: 5rem 0;
     }
-
-    @supports (background-attachment: fixed) {
-        #home-header {
-            background-attachment: fixed;
-        }
-    }
-
-
 
     .header-content {
         width: 90%;

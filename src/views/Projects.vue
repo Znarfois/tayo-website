@@ -42,7 +42,7 @@ export default {
     },
     created() {
         // Get Client Projects
-        db.collection('projects').where('type', '==', 'Client Work').orderBy('project_id').get()
+        db.collection('projects').orderBy('project_id').where('type', '==', 'Client Work').get()
         .then(snapshot => snapshot.forEach(doc => {
 
                 const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
@@ -57,15 +57,15 @@ export default {
                         client: doc.data().client,
                         subsidiary: doc.data().subsidiary,
                         image: url,
-
                     }
+
                     this.clients.push(data)
                 })
             }
         ))
 
         // Get Tayo Projects
-        db.collection('projects').where('type', '==', 'Tayo Project').orderBy('project_id').get()
+        db.collection('projects').where('type', '==', 'Tayo Project').get()
         .then(snapshot => snapshot.forEach(doc => {
 
                 const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
@@ -87,6 +87,7 @@ export default {
             }
         ))
     },
+
 }
 </script>
 
