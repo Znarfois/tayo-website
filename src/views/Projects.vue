@@ -65,7 +65,7 @@ export default {
         ))
 
         // Get Tayo Projects
-        db.collection('projects').where('type', '==', 'Tayo Project').get()
+        db.collection('projects').orderBy('project_id').where('type', '==', 'Tayo Project').get()
         .then(snapshot => snapshot.forEach(doc => {
 
                 const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
