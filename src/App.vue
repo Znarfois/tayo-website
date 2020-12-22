@@ -18,11 +18,9 @@
   <meta name="description"
     content="Where sustainability meets creativity." />
   <Navbar />
-  <router-view v-slot="{ Component }">
     <transition name="fade" mode="out-in">
-      <component :is="Component" />
+      <router-view :key="$route.path" />
     </transition>
-  </router-view>
   <Footer />
 </main>
 </template>
