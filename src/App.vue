@@ -18,11 +18,14 @@
   <meta name="description"
     content="Where sustainability meets creativity." />
   <Navbar />
-  <router-view :key="$route.fullPath"/>
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
   <Footer />
 </main>
 </template>
-
 <script>
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'

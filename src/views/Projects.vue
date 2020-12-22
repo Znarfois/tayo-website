@@ -1,7 +1,7 @@
 <template>
 
 <main class="projects">
-  <section class="projects-header">
+  <section class="projects-header" data-aos="fade-up" data-aos-duration="1000">
       <div class="project-header__content">
           <video controls poster="@/assets/img/tayo-video-thumbnail.png">
             <source src="https://firebasestorage.googleapis.com/v0/b/tayo-c846e.appspot.com/o/tayo-videos%2Ftayo_video.mp4?alt=media&token=862af318-74f2-40d7-9330-7329d43eaba3" type="video/mp4">
@@ -42,7 +42,7 @@ export default {
     },
     created() {
         // Get Client Projects
-        db.collection('projects').where('type', '==', 'Client Work').orderBy('project_id').get()
+        db.collection('projects').orderBy('project_id').where('type', '==', 'Client Work').get()
         .then(snapshot => snapshot.forEach(doc => {
 
                 const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
@@ -57,15 +57,15 @@ export default {
                         client: doc.data().client,
                         subsidiary: doc.data().subsidiary,
                         image: url,
-
                     }
+
                     this.clients.push(data)
                 })
             }
         ))
 
         // Get Tayo Projects
-        db.collection('projects').where('type', '==', 'Tayo Project').orderBy('project_id').get()
+        db.collection('projects').orderBy('project_id').where('type', '==', 'Tayo Project').get()
         .then(snapshot => snapshot.forEach(doc => {
 
                 const reference = firebase.storage().refFromURL('gs://tayo-c846e.appspot.com/');
@@ -87,6 +87,7 @@ export default {
             }
         ))
     },
+
 }
 </script>
 

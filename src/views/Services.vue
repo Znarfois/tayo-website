@@ -109,11 +109,6 @@ h1 {
     color: #FAFAFA;
 }
 
-@supports (background-attachment: fixed) {
-        .services-landing {
-            background-attachment: fixed;
-        }
-    }
 
 .landing-logo {
     width: 272px;

@@ -1,7 +1,6 @@
 <template>
     <Project 
 
-    :isKfk="false"
     logo='habilin/HABILIN_LOGO.png'
     title='Habilin'
     header='habilin/HAB_COVER.png'

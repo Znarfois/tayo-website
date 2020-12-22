@@ -1,7 +1,6 @@
 <template>
     <Project 
 
-    :isKfk="false"
     logo='retaso/RETASO_LOGO.png'
     title='Retaso'
     header='retaso/RETASO_COVER.png'
