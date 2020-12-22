@@ -18,7 +18,9 @@
   <meta name="description"
     content="Where sustainability meets creativity." />
   <Navbar />
-  <router-view :key="$route.fullPath"/>
+  <transition name="fade" mode="out-in">
+    <router-view :key="$route.fullPath"/>
+  </transition>
   <Footer />
 </main>
 </template>

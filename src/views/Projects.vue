@@ -1,7 +1,7 @@
 <template>
 
 <main class="projects">
-  <section class="projects-header">
+  <section class="projects-header" data-aos="fade-up" data-aos-duration="1000">
       <div class="project-header__content">
           <video controls poster="@/assets/img/tayo-video-thumbnail.png">
             <source src="https://firebasestorage.googleapis.com/v0/b/tayo-c846e.appspot.com/o/tayo-videos%2Ftayo_video.mp4?alt=media&token=862af318-74f2-40d7-9330-7329d43eaba3" type="video/mp4">

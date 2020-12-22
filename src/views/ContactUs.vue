@@ -1,5 +1,5 @@
 <template>
-    <main> 
+    <main data-aos="fade" data-aos-duration="1000"> 
         <form @submit.prevent="contactSend">
             <h1>Let's Work Together</h1>
             <p>Full Name</p>
