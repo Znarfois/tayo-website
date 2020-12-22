@@ -97,7 +97,7 @@ h1 {
 /* LANDING */
 .services-landing {
     display: flex;
-    background: url("../assets/img/service_header.png") no-repeat center center fixed;
+    background: url("../assets/img/service_header.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -108,6 +108,12 @@ h1 {
     height: 100vh;
     color: #FAFAFA;
 }
+
+@supports (background-attachment: fixed) {
+        .services-landing {
+            background-attachment: fixed;
+        }
+    }
 
 .landing-logo {
     width: 272px;
