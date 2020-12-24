@@ -341,9 +341,8 @@ export default {
   }
 
 @media screen and (max-width: 767px) {
-
   nav {
-    padding: 30px 32px 16px;
+    padding-top: 30px;
   }
 
   #tayo-logo {
