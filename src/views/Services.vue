@@ -46,7 +46,7 @@ for a purpose. </span>
             </div>
             <div class="more-offer" data-aos="fade-up" data-aos-duration="800">
                 <p>03</p>
-                <span>Because our generation is the future, we care</span>
+                <span>We make sure you can resonate with us</span>
             </div>
             <div class="more-offer" data-aos="fade-up" data-aos-duration="1000">
                 <p>04</p>
@@ -62,11 +62,11 @@ for a purpose. </span>
             </div>
             <div class="more-offer" data-aos="fade-up" data-aos-duration="800">
                 <p>07</p>
-                <span>We make sure you can resonate with us</span>
+                <span>We think global & act local (you know how you find Filipinos everywhere in the world - we live for that)</span>
             </div>
             <div class="more-offer" data-aos="fade-up" data-aos-duration="1000">
                 <p>08</p>
-                <span>We make sure you can resonate with us</span>
+                <span>We never compromise the quality of our work (our structure is unique, we include everyone on the team)</span>
             </div>
         </div>
     </div>
@@ -246,6 +246,7 @@ h1 {
     align-items: center;
     width: 40%;
     margin: 0 0 100px 0;
+    line-height: 40px;
 }
 
 .more-offer span {
@@ -315,6 +316,10 @@ h1 {
 
     .more-offers {
         margin: 0 15%;
+    }
+
+    .more-offer {
+        line-height: 32px;
     }
 }
 
@@ -434,7 +439,7 @@ h1 {
     }
 
     .more-offer span {
-        line-height: 32px;
+        line-height: 24px;
         font-size: 12px;
     }
 
