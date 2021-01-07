@@ -18,9 +18,11 @@
   <meta name="description"
     content="Where sustainability meets creativity." />
   <Navbar />
-    <transition name="fade" mode="out-in">
-      <router-view :key="$route.path" />
-    </transition>
+      <router-view v-slot="slotProps">
+        <transition name="fade" mode="out-in">
+          <component :is="slotProps.Component" :key="$route.path"></component>
+        </transition>
+      </router-view>
   <Footer />
 </main>
 </template>
@@ -37,4 +39,17 @@ export default {
 }
 </script>
 
+<style>
+/* Page transitions */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.7s ease-out;
+}
+
+</style>
 

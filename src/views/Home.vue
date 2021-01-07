@@ -361,6 +361,14 @@ export default {
         }
 }
 
+@media screen and (orientation: landscape) and (max-width: 900px){
+    #home-header {
+        height: 700px;
+    }
+}
+
+
+
 @media screen and (orientation: landscape) and (max-width: 767px){
     #home-header {
         height: 600px;

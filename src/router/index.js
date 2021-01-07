@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import WhoWeAre from '../views/WhoWeAre.vue'
 import WWA_KidsForKids from '../views/WWA_KidsForKids.vue'
@@ -72,7 +72,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes, 
   scrollBehavior() {
     // always scroll to top

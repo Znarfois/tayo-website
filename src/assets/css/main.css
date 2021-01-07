@@ -124,13 +124,3 @@ button:hover {
   }
 }
 
-/* Page transitions */
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.7s ease-out;
-}

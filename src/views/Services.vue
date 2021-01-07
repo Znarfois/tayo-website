@@ -324,11 +324,30 @@ h1 {
 }
 
 /* MOBILE */
-@media screen and (max-width: 768px){
+@media screen and (orientation: landscape) and (max-width: 900px) {
+     h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
 
-    /* * {
-        width: 100vw;
-    } */
+    .landing-logo {
+        width: 150px;
+    }
+
+    .services-landing p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .services-landing span {
+        font-size: 12px;
+        line-height: 24px;
+    }   
+
+}
+
+@media screen and (max-width: 767px){
+
 
     h1 {
         font-size: 24px;
